@@ -1,1 +1,4 @@
-
+body{
+  @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+  font-family:"potta-one-regular"sans-serif;
+}
