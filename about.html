@@ -87,26 +87,26 @@
    margin:5px;
   }
   
-  /* 1. ふわふわ動くアニメーションの中身を定義 */
-@keyframes softFloat {
+  /* 動くアニメーションの中身を定義 */
+ @keyframes softFloat {
   0% {
-    transform: translateY(0);       /* 元の位置 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 普通の影 */
+    transform:scale(1);     
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 普通 */
   }
   50% {
-    transform: translateY(-8px);    /* 8px上に浮かぶ */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* 浮いたので影を大きく・薄く */
-  }
+    transform:scale(1.3);    /* 変化 */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); 
+   }
   100% {
-    transform: translateY(0);       /* 元の位置に戻る */
+    transform:scale(1);       /* 普通 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-}
+   }
+ }
 
-/* 2. 動かしたいボタンに適用するクラス */
-.move-animation {
-  animation: softFloat 3s ease-in-out infinite; /* 3秒かけて、滑らかに、無限に繰り返す */
-}
+  /* 動くボタン */
+  .move-animation {
+   animation: softFloat 3s ease-in-out infinite; /* 3秒かけて、滑らかに、無限に繰り返す */
+   }
   
   .startbutton:hover{
    transition:all 0.3s ease;/* 滑らかに動くようにする */
