@@ -1,11 +1,11 @@
 fetch("header.html")
-.then(response=>responce.text())
+.then(response=>response.text())
 .then(data=>{
- document.getElementById("header").inner
+ document.getElementById("header").innerHTML=data;
 });
 
 fetch("navi.html")
-.then(response=>responce.text())
+.then(response=>response.text())
 .then(data=>{
- document.getElementById("navi").inner
+ document.getElementById("navi").innerHTML=data;
 });
