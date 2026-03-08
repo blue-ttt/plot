@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 body{
-  @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
   font-family: "RocknRoll One", sans-serif;
 }
 .rocknroll-one-regular {
   font-family: "RocknRoll One", sans-serif;
-  font-weight: 400;
+  font-weight: 400px;
   font-style: normal;
 }
