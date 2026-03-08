@@ -3,6 +3,9 @@
 body{
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
+a{
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -10,4 +13,7 @@ body{
   'wght' 400,
   'GRAD' 0,
   'opsz' 24
+}
+.text-Link{
+  color:#FCAF17;
 }
