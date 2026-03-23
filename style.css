@@ -16,6 +16,10 @@ a{
 }
 .text-link a{
   color:#FCAF17;
+  text-decoration:underline;
+}
+.text-link a:hover{
+  text-decoration:none
 }
 h1{
   color:#FCAF17;
