@@ -22,8 +22,8 @@ a{
   text-decoration:none
 }
 .text-link a:active{
-  text-decoration:none
-  background-color:#bdbdbd
+  text-decoration:none;
+  background-color:#bdbdbd;
 }
 h1{
   color:#FCAF17;
