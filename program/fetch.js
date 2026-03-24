@@ -4,7 +4,7 @@ fetch("header.html")
  document.getElementById("header").innerHTML=data;
 });
 
-fetch("program/navi.html")
+fetch("https://blue-ttt.github.io/plot/program/navi.html")
 .then(response=>response.text())
 .then(data=>{
  document.getElementById("navi").innerHTML=data;
