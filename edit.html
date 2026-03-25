@@ -22,7 +22,7 @@
   .new{ font-size:20px; padding:5px; margin:10px; width:80px; border-radius:10px; }
   .share{ font-size:20px; padding:5px; margin:10px; width:80px; border-radius:10px; }
   button{position: relative;}
-  button:hover{content: attr(data-tooltip); /* data-tooltipの内容を表示 */ position: absolute;}
+  button::after{content: attr(data-tooltip); /* data-tooltipの内容を表示 */ position: absolute;}
   @media(max-width:768px){
     
   }
