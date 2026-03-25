@@ -4,7 +4,7 @@
  <header>
   <ul>
    <li><p>[題名のjsプログラム]</p></li>
-   <li><button><span class="material-symbols-outlined">home</span></button></li>
+   <li><button data-tooltip="ホーム"><span class="material-symbols-outlined">home</span></button></li>
    <li><button><span class="material-symbols-outlined">folder</span></button></li>
    <li><button><span class="material-symbols-outlined">settings</span></button></li>
    <li><button><span class="material-symbols-outlined">help</span></button></li>
@@ -21,6 +21,8 @@
   header{ background-color:#FCAF17; width:100%; height:50px; }
   .new{ font-size:20px; padding:5px; margin:10px; width:80px; border-radius:10px; }
   .share{ font-size:20px; padding:5px; margin:10px; width:80px; border-radius:10px; }
+  button{position: relative;}
+  button:hover{content: attr(data-tooltip); /* data-tooltipの内容を表示 */ position: absolute;}
   @media(max-width:768px){
     
   }
