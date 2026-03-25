@@ -23,7 +23,7 @@
   .share{ font-size:20px; padding:5px; margin:10px; width:80px; border-radius:10px; }
   
   button{position: relative;}
-  button[data-tooltip]::after{content: attr(data-tooltip); /* data-tooltipの内容を表示 */ position: absolute; visibility: hidden; color:#fff; background-color:#000; top: 100%; left: 50%; }
+  button[data-tooltip]::after{content: attr(data-tooltip); /* data-tooltipの内容を表示 */ position: absolute; visibility: hidden; color:#fff; background-color:#000; top: 100%; left: 50%; white-space: nowrap;}
   button[data-tooltip]:hover::after { opacity: 1; visibility: visible; }
   @media(max-width:768px){
     
