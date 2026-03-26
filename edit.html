@@ -14,11 +14,15 @@
  </header>
  <div class="ai-btn"><button data-tooltip="AI分析"><span class="material-symbols-outlined">smart_toy</span></button></div>
  
- <div class="mini-study"><button data-tooltip="閉じる"><span class="material-symbols-outlined">close</span></button><iframe src="https://blue-ttt.github.io/plot/study/index" width="800px" height="100%"></iframe></div>
+ <div class="mini-study">
+  <button class="mini-study-close" data-tooltip="閉じる"><span class="material-symbols-outlined">close</span></button>
+  <iframe src="https://blue-ttt.github.io/plot/study/index" width="800px" height="100%"></iframe>
+ </div>
  
  <script>
   document.querySelector(".home-btn").addEventListener('click', function() { window.open("https://blue-ttt.github.io/plot/index.html", "_blank"); }); 
-  document.querySelector(".help-btn").addEventListener('click', function() {const target = document.querySelector(".mini-study"); target.style.display = "block";}); /* ボタンが押されたらhelpを表示 */
+  document.querySelector(".help-btn").addEventListener('click', function() {const target = document.querySelector(".mini-study"); target.style.display = "block";}); /* ？ボタンが押されたらhelpを表示 */
+  document.querySelector(".mini-study-close").addEventListener('click', function() {const target = document.querySelector(".mini-study"); target.style.display = "none";}); /* ×ボタンが押されたらhelpを非表示 */
 
   const target = document.querySelector(".mini-study");  //最初にhelpを非表示
   target.style.display = "none";
