@@ -22,7 +22,7 @@ a{
   text-decoration:underline;
 }
 .text-link a:active{
-  text-decoration:none;
+  text-decoration:underline;
   background-color:#bdbdbd;
 }
 h1{
