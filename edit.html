@@ -13,10 +13,16 @@
   </ul>
  </header>
  <div class="ai-btn"><button data-tooltip="AI分析"><span class="material-symbols-outlined">smart_toy</span></button></div>
- <iframe src="https://blue-ttt.github.io/plot/study/index" width="800px" height="100%"></iframe>
+ 
+ <div class="mini-study"><iframe src="https://blue-ttt.github.io/plot/study/index" width="800px" height="100%"></iframe></div>
+ 
  <script>
-  document.querySelector(".home-btn").addEventListener('click', function() {window.open("https://blue-ttt.github.io/plot/index", "_blank");});
+  document.querySelector(".home-btn").addEventListener('click', function() {  const target = document.querySelector(".help-btn"); target.style.display = "block";}); /* ボタンが押されたらhelpを表示 */
   document.querySelector(".help-btn").addEventListener('click', function() {window.open("https://blue-ttt.github.io/plot/study/index", "_blank");});
+
+  const target = document.querySelector('.class名');  //最初にhelpを非表示
+  target.style.display = "none";
+  
  </script>
  
  <style>
