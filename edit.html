@@ -12,9 +12,8 @@
    <li><button class="share"><span class="material-symbols-outlined">share</span>共有</button></li>
   </ul>
  </header>
- <main>
+ <div class="ai-btn"><button data-toolip=AI分析></button></div>
   
- </main>
  <style>
   body{background-color:#fff; margin:0;}
   ul{ display:flex; flex-direction:row; list-style:none; }
@@ -25,6 +24,7 @@
   button{position: relative;}
   button[data-tooltip]::after{content: attr(data-tooltip); /* data-tooltipの内容を表示 */ position: absolute; visibility: hidden; color:#fff; background-color:#000; top: 110%; left: 0%; white-space:nowrap; transition: opacity 0.5s; }
   button[data-tooltip]:hover::after { opacity: 1; visibility: visible; }
+  .ai-btn{ color:#fff; background-color:#FCAF17; border-radius:30px; aspect-ratio:1/1; marigin:5px; padding:10px;}
   @media(max-width:768px){
     
   }
