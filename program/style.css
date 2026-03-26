@@ -16,10 +16,10 @@ a{
 }
 .text-link a{
   color:#FCAF17;
-  text-decoration:underline;
+  text-decoration:none
 }
 .text-link a:hover{
-  text-decoration:none
+  text-decoration:underline;
 }
 .text-link a:active{
   text-decoration:none;
