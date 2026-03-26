@@ -6,7 +6,7 @@
    <li><p>[題名のjsプログラム]</p></li>
    <li><button class="home-btn" data-tooltip="ホーム"><span class="material-symbols-outlined">home</span></button></li>
    <li><button data-tooltip="ファイル"><span class="material-symbols-outlined">folder</span></button></li>
-   <li><button data-tooltip="設定"><span class="material-symbols-outlined">settings</span></button></li>
+   <li><button class="set-btn" data-tooltip="設定"><span class="material-symbols-outlined">settings</span></button></li>
    <li><button class="help-btn" data-tooltip="ヘルプ"><span class="material-symbols-outlined">help</span></button></li>
    <li><button class="new"><span class="material-symbols-outlined">update</span>同期</button></li>
    <li><button class="share"><span class="material-symbols-outlined">share</span>共有</button></li>
@@ -18,11 +18,20 @@
   <button class="mini-study-close" data-tooltip="閉じる"><span class="material-symbols-outlined">close</span></button>
   <iframe src="https://blue-ttt.github.io/plot/study/index" width="800px" height="100%"></iframe>
  </div>
+ <div class="mini-setting">
+  <button class="mini-setting-close" data-tooltip="閉じる"><span class="material-symbols-outlined">close</span></button>
+  <iframe src="https://blue-ttt.github.io/plot/setting.html" width="800px" height="100%"></iframe>
+ </div>
  
  <script>
   document.querySelector(".home-btn").addEventListener('click', function() { window.open("https://blue-ttt.github.io/plot/index.html", "_blank"); }); 
+  
   document.querySelector(".help-btn").addEventListener('click', function() {const target = document.querySelector(".mini-study"); target.style.display = "block";}); /* ？ボタンが押されたらhelpを表示 */
   document.querySelector(".mini-study-close").addEventListener('click', function() {const target = document.querySelector(".mini-study"); target.style.display = "none";}); /* ×ボタンが押されたらhelpを非表示 */
+  
+  document.querySelector(".set-btn").addEventListener('click', function() {const target = document.querySelector(".mini-setting"); target.style.display = "block";}); /* ？ボタンが押されたらsettingを表示 */
+  document.querySelector(".mini-setting-close").addEventListener('click', function() {const target = document.querySelector(".mini-setting"); target.style.display = "none";}); /* ×ボタンが押されたらsettingを非表示 */
+
 
   const target = document.querySelector(".mini-study");  //最初にhelpを非表示
   target.style.display = "none";
