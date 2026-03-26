@@ -31,13 +31,6 @@
   
   document.querySelector(".set-btn").addEventListener('click', function() {const target = document.querySelector(".mini-setting"); target.style.display = "block";}); /* ？ボタンが押されたらsettingを表示 */
   document.querySelector(".mini-setting-close").addEventListener('click', function() {const target = document.querySelector(".mini-setting"); target.style.display = "none";}); /* ×ボタンが押されたらsettingを非表示 */
-
-
-  const target = document.querySelector(".mini-study");  //最初にhelpを非表示
-  target.style.display = "none";
-
-  const target = document.querySelector(".mini-setting");  //最初にsettingを非表示
-  target.style.display = "none";
   
  </script>
  
@@ -48,9 +41,9 @@
   .new{ font-size:20px; padding:5px; margin:10px; width:80px; border-radius:10px; }
   .share{ font-size:20px; padding:5px; margin:10px; width:80px; border-radius:10px; }
 
-  .mini-study{ background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #000; text-align:center; margin:auto; }
+  .mini-study{ display: none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #000; text-align:center; margin:auto; }
   .mini-study-close{ top:-600px; }
-  .mini-setting{ background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #000; text-align:center; margin:auto; }
+  .mini-setting{ display: none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #000; text-align:center; margin:auto; }
   .mini-setting-close{ top:-600px; }
   
   button{position: relative;}
