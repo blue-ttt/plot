@@ -34,3 +34,7 @@ h2{
 h3{
   color:#FCAF17;
 }
+/* ツールチップ　*/
+button{position: relative;}
+button[data-tooltip]::after{content: attr(data-tooltip); /* data-tooltipの内容を表示 */ position: absolute; visibility: hidden; color:#fff; background-color:#00000080; top: 110%; left: 0%; white-space:nowrap; transition: opacity 0.5s; }
+button[data-tooltip]:hover::after { opacity: 1; visibility: visible; }
