@@ -97,14 +97,14 @@ window.addEventListener("keyup", (e) => {
 function update() {
   content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
-  
+ window.addEventListener('wheel', (e) => {
+ e.preventDefault(); /* ページ全体がズームしないように */
+   
   function loop() {
    
    /* 動き */
-  if (Keys["ArrowRight"] === true)
-     { posX += 5; }
-  if (Keys["ArrowLeft"] === true)
-     { posX += -5; }
+  if (Keys["ArrowRight"] ) { posX += 5; }
+  if (Keys["ArrowLeft"] )  { posX -= 5; }
    
    /* ズーム */
   if (e.deltaY < 0) 
