@@ -47,6 +47,7 @@
 
  
  <script>
+   /* header */ 
   document.querySelector(".home-btn").addEventListener('click', function() { window.open("https://blue-ttt.github.io/plot/index.html", "_blank"); }); /* ホームへ移動 */
   
   document.querySelector(".help-btn").addEventListener('click', function() {const target = document.querySelector(".mini-study"); target.style.display = "block";}); /* ？ボタンが押されたらhelpを表示 */
@@ -54,6 +55,15 @@
   
   document.querySelector(".set-btn").addEventListener('click', function() {const target = document.querySelector(".mini-setting"); target.style.display = "block";}); /* ？ボタンが押されたらsettingを表示 */
   document.querySelector(".mini-setting-close").addEventListener('click', function() {const target = document.querySelector(".mini-setting"); target.style.display = "none";}); /* ×ボタンが押されたらsettingを非表示 */
+
+   /* tool */ 
+  const toolButtons = document.querySelectorAll('.toolbar button');
+
+  toolButtons.forEach(button => {
+  button.addEventListener('click', function() {
+   this.classList.add('active');
+    });
+  });
   
  </script>
  
