@@ -79,7 +79,21 @@
 
 const content = document.getElementById('canvas-content');
 
-  // 画面を更新(update関数)する関数（これを呼び出すと動く）
+
+  // キーの状態を保存する箱
+const Keys = {};
+
+// キーが押された瞬間に「true」にする
+window.addEventListener("keydown", (e) => {
+  Keys[e.key] = true;
+});
+
+// キーが離された瞬間に「false」にする
+window.addEventListener("keyup", (e) => {
+  Keys[e.key] = false;
+});
+  
+  // 画面を更新(update関数)する関数
 function update() {
   content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
@@ -91,11 +105,9 @@ function update() {
   if (Keys["ArrowLeft"] === true)
      { posX += -5; }
 
-   
+    update();
    requestAnimationFrame(loop);
      }
-  
-    update();
    loop();
 
   
