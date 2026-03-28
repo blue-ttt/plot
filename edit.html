@@ -83,12 +83,16 @@ const content = document.getElementById('canvas-content');
 function update() {
   content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
+  
   function loop() {
    /* 動き */
   if (Keys["ArrowRight"] === true)
      { posX += 5; }
   if (Keys["ArrowLeft"] === true)
      { posX += -5; }
+
+   
+   requestAnimationFrame(loop);
      }
   
     update();
