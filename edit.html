@@ -107,7 +107,6 @@ function update() {
      { posX += -5; }
    
    /* ズーム */
-  window.addEventListener('wheel', (e) => {
   if (e.deltaY < 0) 
      {scale += zoomSpeed * 5; /* 拡大 */ }
   else 
