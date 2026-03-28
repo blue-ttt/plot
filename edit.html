@@ -61,7 +61,8 @@
 
   toolButtons.forEach(button => {
   button.addEventListener('click', function() {
-   this.classList.add('active');
+   toolButtons.forEach(btn => btn.classList.remove('active')); /* リセット（他のボタンには色がついているから） */ 
+   this.classList.add('active'); /* activeを実行 */
     });
   });
   
