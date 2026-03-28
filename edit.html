@@ -72,51 +72,64 @@
   });
 
   /* canvas */
+  
+let scale = 1.0; 
+let posX = 0;    
+let posY = 0;    
+const zoomSpeed = 0.01; // ズームの速さ
 
-  let scale = 1.0; /* 倍率(最初は1) */
-  let posX = 0;    /* 左右 */
-  let posY = 0;    /* 上下 */
-
-const content = document.getElementById("canvas");
-
-
-  // キーの状態を保存する箱
+const content = document.getElementById("canvas"); // あなたのHTMLのid="canvas"
 const Keys = {};
 
-// キーが押された瞬間に「true」にする
+/* キーボードの設定（1回だけ設定） */
 window.addEventListener("keydown", (e) => {
   Keys[e.key] = true;
+  // 矢印キーで画面がスクロールするのを防ぐ
+  if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.key)) e.preventDefault();
 });
 
-// キーが離された瞬間に「false」にする
 window.addEventListener("keyup", (e) => {
   Keys[e.key] = false;
 });
+
+/* ズームの設定（1回だけ設定） */
+window.addEventListener('wheel', (e) => {
+  e.preventDefault(); // ページ全体のズームを防止
+
+  if (e.deltaY < 0) {
+    scale += zoomSpeed * 5; // 拡大
+  } else {
+    scale -= zoomSpeed * 5; // 縮小
+  }
+
+  // 小さくなりすぎ・大きくなりすぎを防止 (下限:0.1倍 上限:5倍)
+  scale = Math.min(Math.max(0.1, scale), 5);
   
-  // 画面を更新(update関数)する関数
+  update(); // ズームした時に見た目を更新
+}, { passive: false });
+
+
+/* 画面を更新する関数 */
 function update() {
-  content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+  if (content) {
+    content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+  }
 }
- window.addEventListener('wheel', (e) => {
- e.preventDefault(); /* ページ全体がズームしないように */
-   
-  function loop() {
-   
-   /* 動き */
-  if (Keys["ArrowRight"] ) { posX += 5; }
-  if (Keys["ArrowLeft"] )  { posX -= 5; }
-   
-   /* ズーム */
-  if (e.deltaY < 0) 
-     {scale += zoomSpeed * 5; /* 拡大 */ }
-  else 
-     {scale -= zoomSpeed * 5;  /* 縮小 */}
-      }
-     }
-    update();
-   requestAnimationFrame(loop);
-     }
-   loop();
+
+/* --- 5. 常に動き続けるループ --- */
+function loop() {
+  // 矢印キーでの移動（右キーで中身を左へ動かすと、右が見える）
+  if (Keys["ArrowRight"]) { posX -= 10; } 
+  if (Keys["ArrowLeft"])  { posX += 10; }
+  if (Keys["ArrowUp"])    { posY += 10; }
+  if (Keys["ArrowDown"])  { posY -= 10; }
+
+  update(); // 座標が変わったので見た目を更新
+  requestAnimationFrame(loop); // 次の画面書き換えを予約
+}
+
+/* --- 6. 最後に実行開始！ --- */
+loop();
 
   
  </script>
