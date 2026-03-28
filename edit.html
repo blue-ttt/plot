@@ -73,8 +73,27 @@
 
   /* canvas */
 
-  const viewport = document.getElementById('viewport');
-  const content = document.getElementById('canvas');
+  let scale = 1.0; /* 倍率(最初は1) */
+  let posX = 0;    /* 左右 */
+  let posY = 0;    /* 上下 */
+
+const content = document.getElementById('canvas-content');
+
+  // 画面を更新(update関数)する関数（これを呼び出すと動く）
+function update() {
+  content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+}
+   /* 動き */
+  if (Keys["ArrowRight"] === true)
+     { posX += 5; }
+  if (Keys["ArrowLeft"] === true)
+     { posX += -5; }
+
+  
+    update();
+
+
+  
  </script>
  
  <style>
