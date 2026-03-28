@@ -116,7 +116,7 @@ function update() {
   }
 }
 
-/* --- 5. 常に動き続けるループ --- */
+/* 常に動き続けるループ*/
 function loop() {
   // 矢印キーでの移動（右キーで中身を左へ動かすと、右が見える）
   if (Keys["ArrowRight"]) { posX -= 10; } 
@@ -128,7 +128,7 @@ function loop() {
   requestAnimationFrame(loop); // 次の画面書き換えを予約
 }
 
-/* --- 6. 最後に実行開始！ --- */
+/* もう一度ループ */
 loop();
 
   
