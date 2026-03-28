@@ -99,12 +99,21 @@ function update() {
 }
   
   function loop() {
+   
    /* 動き */
   if (Keys["ArrowRight"] === true)
      { posX += 5; }
   if (Keys["ArrowLeft"] === true)
      { posX += -5; }
-
+   
+   /* ズーム */
+  window.addEventListener('wheel', (e) => {
+  if (e.deltaY < 0) 
+     {scale += zoomSpeed * 5; /* 拡大 */ }
+  else 
+     {scale -= zoomSpeed * 5;  /* 縮小 */}
+      }
+   
     update();
    requestAnimationFrame(loop);
      }
