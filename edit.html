@@ -45,6 +45,11 @@
  </div>
 
 
+  <div id="viewport" class="viewport">
+  <div id="canvas" class="canvas">
+   
+  </div>
+  </div>
  
  <script>
    /* header */ 
@@ -57,7 +62,7 @@
   document.querySelector(".mini-setting-close").addEventListener('click', function() {const target = document.querySelector(".mini-setting"); target.style.display = "none";}); /* ×ボタンが押されたらsettingを非表示 */
 
    /* tool */ 
-  const toolButtons = document.querySelectorAll('.toolbar button');
+  const toolButtons = document.querySelectorAll('.toolbar button'); /* toolbarのボタンを取得 */ 
 
   toolButtons.forEach(button => {
   button.addEventListener('click', function() {
@@ -81,6 +86,9 @@
   .toolbar button.active{ background-color:#FCAF17; color:#fff; }
   .tools{ margin-top:10px; border-radius:30px; aspect-ratio:1/1; }
 
+  .canvas{ width:3000px; height:3000px; }
+  
+  
   .mini-study{ display: none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; }
   .mini-study-close{ top:-600px; }
   .mini-setting{ display: none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; }
