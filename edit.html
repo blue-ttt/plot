@@ -80,9 +80,9 @@
     /* mode */ 
   const modeButtons = document.querySelectorAll(".mode .modebar"); /* modeのボタンを取得 */ 
 
-  toolButtons.forEach(button => {
+  modeButtons.forEach(button => {
   button.addEventListener('click', function() {
-   toolButtons.forEach(btn => btn.classList.remove('active')); /* リセット（他のボタンには色がついているから） */ 
+   modeButtons.forEach(btn => btn.classList.remove('active')); /* リセット（他のボタンには色がついているから） */ 
    this.classList.add('active'); /* activeを実行 */
     });
   });
