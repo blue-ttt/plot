@@ -111,6 +111,15 @@ window.addEventListener("keyup", (e) => {
 /* ズームの設定（1回だけ設定） */
 window.addEventListener('wheel', (e) => {
   e.preventDefault(); // ページ全体のズームを防止
+ 
+ /* iPad / iPhone 用のズーム制御 */
+let initialScale = 1; /* 指が触れた瞬間の倍率を保存する用 */
+
+// 2本指で触れた（ジェスチャー開始）
+window.addEventListener("gesturestart", (e) => {
+  e.preventDefault();  /* ページ全体のズームを阻止 */
+  initialScale = scale;  /* 今の倍率を覚えておく */
+});
 
   if (e.deltaY < 0) {
     scale += zoomSpeed * 5; // 拡大
@@ -171,7 +180,7 @@ loop();
 
 
   .canvas{ width:3000px; height:3000px; transform-origin:0 0;  }
-  .viewport{ width:100vw; height:100vh; overflow: hidden; /* はみ出た部分は隠す（スクロールバーを出さない）*/ touch-action: none; /* ブラウザ独自のスクロールやズームを無効化する */ }
+  .viewport{ width:100vw; height:100vh; overflow: hidden; /* はみ出た部分は隠す（スクロールバーを出さない）*/ touch-action:none; /* ブラウザ独自のスクロールやズームを無効化する */ }
   
   
   .mini-study{ display: none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; }
