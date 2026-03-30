@@ -32,15 +32,15 @@
 
  <div class="toolbar">
   <ul>
-   <li><button class="tools" data-tooltip="操作する"><span class="material-symbols-outlined">arrow_selector_tool</span></button></li>
-   <li><button class="tools" data-tooltip="筆記用具で描く"><span class="material-symbols-outlined">ink_pen</span></button></li>
-   <li><button class="tools" data-tooltip="消しゴムで消す"><span class="material-symbols-outlined">ink_eraser</span></button></li>
-   <li><button class="tools" data-tooltip="付箋を追加"><span class="material-symbols-outlined">note_stack</span></button></li>
-   <li><button class="tools" data-tooltip="ピンを追加"><span class="material-symbols-outlined">add_location</span></button></li>
-   <li><button class="tools" data-tooltip="素材を追加"><span class="material-symbols-outlined">shapes</span></button></li>
-   <li><button class="tools" data-tooltip="テキストを追加"><span class="material-symbols-outlined">insert_text</span></button></li>
-   <li><button class="tools" data-tooltip="グラフを追加"><span class="material-symbols-outlined">add_chart</span></button></li>
-   <li><button class="tools" data-tooltip="ファイルをアップロード"><span class="material-symbols-outlined">upload</span></button></li>
+   <li><button class="tools edit-move" data-tooltip="操作する" onclick="tool = move""console.log('move')"><span class="material-symbols-outlined">arrow_selector_tool</span></button></li>
+   <li><button class="tools edit-write" data-tooltip="筆記用具で描く"><span class="material-symbols-outlined">ink_pen</span></button></li>
+   <li><button class="tools edit-delete" data-tooltip="消しゴムで消す"><span class="material-symbols-outlined">ink_eraser</span></button></li>
+   <li><button class="tools edit-note" data-tooltip="付箋を追加"><span class="material-symbols-outlined">note_stack</span></button></li>
+   <li><button class="tools edit-pin" data-tooltip="ピンを追加"><span class="material-symbols-outlined">add_location</span></button></li>
+   <li><button class="tools edit-material" data-tooltip="素材を追加"><span class="material-symbols-outlined">shapes</span></button></li>
+   <li><button class="tools edit-text" data-tooltip="テキストを追加"><span class="material-symbols-outlined">insert_text</span></button></li>
+   <li><button class="tools edit-graph" data-tooltip="グラフを追加"><span class="material-symbols-outlined">add_chart</span></button></li>
+   <li><button class="tools edit-file" data-tooltip="ファイルをアップロード"><span class="material-symbols-outlined">upload</span></button></li>
   </ul>
  </div>
  <div class="mode-board">
@@ -76,6 +76,9 @@
    this.classList.add('active'); /* activeを実行 */
     });
   });
+  /* 変数の初期設定 */
+  let mode = edit;
+  let tool = 0;
   
     /* mode */ 
   const modeButtons = document.querySelectorAll(".mode-board button"); /* modeのボタンを取得 */ 
