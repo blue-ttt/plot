@@ -9,8 +9,8 @@
 
 <script>
  /* 最初に変数を設定（エラー防止） */
-  let nowmode = "edit";
-  let nowtool = "move";
+  let nowmode = 0;
+  let nowtool = 0;
 </script>
 
 <body>
@@ -83,6 +83,8 @@
    this.classList.add('active'); /* activeを実行  */
     });
    toolButtons[0].classList.add('active'); /* 初期のtoolが「操作」だから */
+   nowtool = "move";
+   
   });
   
     /* mode */ 
@@ -93,6 +95,8 @@
    modeButtons.forEach(btn => btn.classList.remove('active')); /* リセット（他のボタンには色がついているから） */ 
    this.classList.add('active'); /* activeを実行 */
     });
+   toolButtons[1].classList.add('active'); /* 初期のmodeが「編集」だから */
+   nowmode = "edit";
   });
 
   /* canvas */
