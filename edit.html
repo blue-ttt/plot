@@ -171,7 +171,7 @@ loop();
 
 
   .canvas{ width:3000px; height:3000px; transform-origin:0 0;  }
-  .viewport{ width:100vw; height:100vh; overflow: hidden; /* はみ出た部分は隠す（スクロールバーを出さない） */ }
+  .viewport{ width:100vw; height:100vh; overflow: hidden; /* はみ出た部分は隠す（スクロールバーを出さない）*/ touch-action: none; /* ブラウザ独自のスクロールやズームを無効化する */ }
   
   
   .mini-study{ display: none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; }
