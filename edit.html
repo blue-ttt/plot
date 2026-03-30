@@ -7,6 +7,12 @@
  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
+<script>
+ /* 最初に変数を設定（エラー防止） */
+  let mode = edit;
+  let nowtool = 0;
+</script>
+
 <body>
  <header>
   <ul>
@@ -77,9 +83,6 @@
    this.classList.add('active'); /* activeを実行  */
     });
   });
-  /* 変数の初期設定 */
-  let mode = edit;
-  let nowtool = 0;
   
     /* mode */ 
   const modeButtons = document.querySelectorAll(".mode-board button"); /* modeのボタンを取得 */ 
