@@ -23,10 +23,7 @@
    <!---　題名入力欄 --->
    <li><div class="title-edit" contenteditable="true" role="textbox" aria-label="ドキュメントのタイトル">
     無題のドキュメント
-    <script=const titleEdit = document.querySelector('.title-edit');titleEdit.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-            e.preventDefault(); // 改行（Enter）の動作を無効化
-    }});</div></li>
+   </div></li>
    
    <li><button class="home-btn" data-tooltip="ホーム"><span class="material-symbols-outlined">home</span></button></li>
    <li><button data-tooltip="ファイル"><span class="material-symbols-outlined">folder</span></button></li>
@@ -86,6 +83,12 @@
   
   document.querySelector(".set-btn").addEventListener('click', function() {const target = document.querySelector(".mini-setting"); target.style.display = "block";}); /* ？ボタンが押されたらsettingを表示 */
   document.querySelector(".mini-setting-close").addEventListener('click', function() {const target = document.querySelector(".mini-setting"); target.style.display = "none";}); /* ×ボタンが押されたらsettingを非表示 */
+
+  /* 題名入力欄の部分 */
+  const titleEdit = document.querySelector('.title-edit');titleEdit.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+  e.preventDefault(); // 改行（Enter）の動作を無効化
+    }});
 
    /* tool */ 
   const toolButtons = document.querySelectorAll(".toolbar .tools"); /* toolbarのボタンを取得 */ 
