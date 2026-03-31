@@ -126,15 +126,15 @@ window.addEventListener('keyup', (event) => {
 /* --- 操作 --- */
   
  function update() {
-  
-   {content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;}
  
-  if (Keys["ArrowRight"]) { posX -= 10; } 
-  if (Keys["ArrowLeft"])  { posX += 10; }
-  if (Keys["ArrowUp"])    { posY += 10; }
-  if (Keys["ArrowDown"])  { posY -= 10; }
+  if (keys["ArrowRight"]) { posX -= 10; } 
+  if (keys["ArrowLeft"])  { posX += 10; }
+  if (keys["ArrowUp"])    { posY += 10; }
+  if (keys["ArrowDown"])  { posY -= 10; }
+
+  content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`; /* 座標の書き換え */
   
-  update();
+  requestAnimationFrame(update);
  }
   
  </script>
