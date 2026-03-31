@@ -146,7 +146,8 @@ window.addEventListener('keyup', (event) => {
   /* 付箋 */
 function addStickyNote(){
   const sticky = document.createElement("div");  /* divを作成 */
-  定数.className = "class名";
+  sticky.className = "sticky-note";
+ 
   sticky.innerHTML = '<textarea placeholder="メモを入力..."></textarea>';
 
   content.appendChild(sticky);
