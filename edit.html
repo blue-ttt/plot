@@ -20,7 +20,7 @@
 <body>
  <header>
   <ul>
-   <li><div contenteditable="true" role="textbox" aria-label="ドキュメントのタイトル">無題のドキュメント</div></li>
+   <li><div class="title-edit" contenteditable="true" role="textbox" aria-label="ドキュメントのタイトル">無題のドキュメント</div></li>
    
    <li><button class="home-btn" data-tooltip="ホーム"><span class="material-symbols-outlined">home</span></button></li>
    <li><button data-tooltip="ファイル"><span class="material-symbols-outlined">folder</span></button></li>
@@ -223,6 +223,7 @@ function addStickyNote(){
   
   .sticky-note { position: absolute;/* 自由位置へ */ width: 150px; height: 150px; background-color:#fff9c4; /* 薄い黄色 */ box-shadow:2px 2px 10px rgba(0,0,0,0.2); padding:10px; border-radius:5px; display:flex;  }
   .sticky-note textarea{ width:100%; height:100%; background-color:#ffffff00; border:none; outline:none; margin:0; } /* 付箋の入力欄のところ */
+  .title-edit{ width:200px; height:30px; }
   
   @media(max-width:768px){  }
   </style>
