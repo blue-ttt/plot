@@ -99,13 +99,12 @@
    nowmode = "edit";
   });
 
-  /* canvas */
+ /* --- canvas --- */
   
+  /* 初期設定 */
 let scale = 1.0; 
 let posX = 0;    
 let posY = 0;    
-let initialScale = 1; // iPad用
-const zoomSpeed = 0.01;
 
 const content = document.getElementById("canvas");
 const Keys = {};
@@ -114,7 +113,7 @@ const Keys = {};
 /* --- 操作 --- */
   
  function update() {
-  if (content) 
+  
    {content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;}
  }
 
@@ -128,8 +127,6 @@ const Keys = {};
   update();
   requestAnimationFrame(loop);
  }
-
- loop(); /* もう一度ループ */
   
  </script>
  
