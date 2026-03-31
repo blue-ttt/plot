@@ -155,7 +155,8 @@ function addStickyNote(){
   sticky.innerHTML = '<textarea placeholder="メモを入力..."></textarea><div class="drag"><span class="material-symbols-outlined" style="font-size:10px; background-color:#fff; ">drag_pan</span></div> ';
 
   content.appendChild(sticky);
-  
+
+ if(isMouseDown){
    /* 付箋の移動 */
    const handle = sticky.querySelector(".drag"); /* 移動のボタンを探す */
   handle.addEventListener('mousedown', (e) => {
@@ -179,10 +180,7 @@ function addStickyNote(){
     sticky.style.left = `${newX}px`;
     sticky.style.top = `${newY}px`;
   });
-  const upHandler = () => {
-    isDragging = false;
-    sticky.style.zIndex = 10;
-  }; /* マウスを離したら終了する */
+ }
  } /* 付箋コードここまで */
   
  </script>
