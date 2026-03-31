@@ -104,28 +104,37 @@
   /* 初期設定 */
 let scale = 1.0; 
 let posX = 0;    
-let posY = 0;    
+let posY = 0;
+const keys = {};
 
 const content = document.getElementById("canvas");
 const Keys = {};
  
+ /* ---- 操作準備 ---- */
+  
+  /* --- ブラウザ全体でキーの「ON/OFF」を監視する --- */
+window.addEventListener('keydown', (event) => {
+  // キーが押されたら true にする
+  keys[event.code] = true;
+});
+
+window.addEventListener('keyup', (event) => {
+  /* キーが離されたら false にする */
+  keys[event.code] = false;
+});
   
 /* --- 操作 --- */
   
  function update() {
   
    {content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;}
- }
-
- function loop() {
+ 
   if (Keys["ArrowRight"]) { posX -= 10; } 
   if (Keys["ArrowLeft"])  { posX += 10; }
   if (Keys["ArrowUp"])    { posY += 10; }
   if (Keys["ArrowDown"])  { posY -= 10; }
   
-
   update();
-  requestAnimationFrame(loop);
  }
   
  </script>
