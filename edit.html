@@ -185,6 +185,18 @@ function addStickyNote(){
   
   .ai-btn button{ color:#fff; background-color:#FCAF17; border-radius:30px; aspect-ratio:1/1; marigin:5px; padding:10px; width:50px; bottom: 20px;/* 下から20pxの位置 */ right: 20px;/* 右から20pxの位置 */ position:fixed;/* 画面に固定 */ z-index:100; }
   
+  .sticky-note {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #fff9c4; /* 薄い黄色 */
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  cursor: move; /* 掴める感じを出す */
+}
+  
   @media(max-width:768px){  }
   </style>
 </body>
