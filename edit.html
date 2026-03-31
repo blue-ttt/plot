@@ -86,6 +86,7 @@
    nowtool = "move";
    
   });
+   document.querySelector(".edit-note").addEventListener('click', addStickyNote());
   
     /* mode */ 
   const modeButtons = document.querySelectorAll(".mode-board button"); /* modeのボタンを取得 */ 
@@ -139,6 +140,17 @@ window.addEventListener('keyup', (event) => {
   requestAnimationFrame(update);
  }
   update(); /* 更新 */
+  
+  
+/* --- 要素 --- */
+  /* 付箋 */
+function addStickyNote(){
+  const sticky = document.createElement("div");  /* divを作成 */
+  定数.className = "class名";
+  sticky.innerHTML = '<textarea placeholder="メモを入力..."></textarea>';
+
+  content.appendChild(sticky);
+  }
   
  </script>
  
