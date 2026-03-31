@@ -131,8 +131,8 @@ window.addEventListener('keyup', (event) => {
   if (keys["ArrowLeft"])  { posX += 10; }
   if (keys["ArrowUp"])    { posY += 10; }
   if (keys["ArrowDown"])  { posY -= 10; }
-  if (keys["keyZ"])  { scale += 0.1; }
-  if (keys["keyX"])  { scale -= 0.1; }
+  if (keys["Z"])  { scale += 0.1; }
+  if (keys["X"])  { scale -= 0.1; }
 
 
   content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`; /* 座標の書き換え */
