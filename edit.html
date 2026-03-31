@@ -12,7 +12,6 @@
   let nowmode = 0;
   let nowtool = 0;
  /* 要素のドラック&ドロップ部分 */
-  const handle = sticky.querySelector(".drag-handle"); // 右下のボタンを探す
   let isDragging = false; 
   let diffX = 0;
   let diffY = 0;
@@ -158,6 +157,7 @@ function addStickyNote(){
   content.appendChild(sticky);
   
    /* 付箋の移動 */
+   const handle = sticky.querySelector(".drag-handle"); /* 移動のボタンを探す */
   handle.addEventListener('mousedown', (e) => {
     e.stopPropagation(); // 親（付箋）へのイベント伝達を止める
     isDragging = true;
