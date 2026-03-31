@@ -157,7 +157,7 @@ function addStickyNote(){
   content.appendChild(sticky);
   
    /* 付箋の移動 */
-   const handle = sticky.querySelector(".drag-handle"); /* 移動のボタンを探す */
+   const handle = sticky.querySelector(".drag"); /* 移動のボタンを探す */
   handle.addEventListener('mousedown', (e) => {
     e.stopPropagation(); // 親（付箋）へのイベント伝達を止める
     isDragging = true;
