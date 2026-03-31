@@ -109,67 +109,27 @@ const zoomSpeed = 0.01;
 
 const content = document.getElementById("canvas");
 const Keys = {};
+ 
   
-  /* --- 設定 --- */
+/* --- 操作 --- */
   
-/* --- キーボード（PC用） --- */
-window.addEventListener("keydown", (e) => {
-  Keys[e.key] = true;
-  if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].includes(e.key)) e.preventDefault();
-});
-window.addEventListener("keyup", (e) => {
-  Keys[e.key] = false;
-});
+ function update() {
+  if (content) 
+   {content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;}
+ }
 
-/* --- マウスホイール（PC用） --- */
-window.addEventListener('wheel', (e) => {
-  e.preventDefault(); 
-  if (e.deltaY < 0) {
-    scale += zoomSpeed * 5; 
-  } else {
-    scale -= zoomSpeed * 5; 
-  }
-  scale = Math.min(Math.max(0.1, scale), 5);
-  update();
-}, { passive: false });
-
-/* --- ジェスチャー（モバイル用） --- */
-window.addEventListener("gesturestart", (e) => {
-  e.preventDefault();
-  initialScale = scale; // ピンチ開始時の倍率を保存
-});
-
-window.addEventListener("gesturechange", (e) => {
-  e.preventDefault();
-  /* 指の広がり(e.scale)を今の倍率に掛ける */
-  scale = initialScale * e.scale;
-  scale = Math.min(Math.max(0.1, scale), 5);
-  update();
-});
-
-window.addEventListener("gestureend", (e) => {
-  e.preventDefault();
-});
-
-/* --- 画面更新 --- */
-function update() {
-  if (content) {
-    content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
-  }
-}
-
-function loop() {
+ function loop() {
   if (Keys["ArrowRight"]) { posX -= 10; } 
   if (Keys["ArrowLeft"])  { posX += 10; }
   if (Keys["ArrowUp"])    { posY += 10; }
   if (Keys["ArrowDown"])  { posY -= 10; }
+  
 
   update();
   requestAnimationFrame(loop);
-}
+ }
 
-/* もう一度ループ */
-loop();
+ loop(); /* もう一度ループ */
   
  </script>
  
