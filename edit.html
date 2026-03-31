@@ -148,7 +148,7 @@ function addStickyNote(){
   const sticky = document.createElement("div");  /* divを作成 */
   sticky.className = "sticky-note";
  
-  sticky.innerHTML = '<textarea placeholder="メモを入力..."></textarea>';
+  sticky.innerHTML = '<textarea placeholder="メモを入力..."></textarea><div class="drag"><span class="material-symbols-outlined" style="font-size:10px;">drag_pan</span></div> ';
 
   content.appendChild(sticky);
   }
