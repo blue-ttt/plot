@@ -11,6 +11,11 @@
  /* 最初に変数を設定（エラー防止） */
   let nowmode = 0;
   let nowtool = 0;
+ /* 要素のドラック&ドロップ部分 */
+  const handle = sticky.querySelector(".drag-handle"); // 右下のボタンを探す
+  let isDragging = false; 
+  let diffX = 0;
+  let diffY = 0;
 </script>
 
 <body>
