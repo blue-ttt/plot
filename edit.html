@@ -152,6 +152,28 @@ function addStickyNote(){
 
   content.appendChild(sticky);
   }
+   /* 付箋の移動 */
+  handle.addEventListener('mousedown', (e) => {
+    e.stopPropagation(); // 親（付箋）へのイベント伝達を止める
+    isDragging = true;
+    
+    /* マウスと付箋の左上の距離を計算 */
+    diffX = e.clientX - sticky.offsetLeft * scale;
+    diffY = e.clientY - sticky.offsetTop * scale;
+    
+    sticky.style.zIndex = 1000;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    /* スケールを考慮して位置を更新 */
+    const newX = (e.clientX - diffX) / scale;
+    const newY = (e.clientY - diffY) / scale;
+
+    sticky.style.left = `${newX}px`;
+    sticky.style.top = `${newY}px`;
+  });
   
  </script>
  
