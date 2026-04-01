@@ -211,6 +211,11 @@ function addStickyNote(){
     const target = document.querySelector('.ContextMenu');
     target.style.display = "block"; /* コンテキストメニューを表示 */
 });
+  /* コンテキストメニューを非表示 */
+  window.addEventListener('mousedown', (event) => {
+    const target = document.querySelector('.ContextMenu');
+    target.style.display = "none";
+});
  </script>
  
  <style>
