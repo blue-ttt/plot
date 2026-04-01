@@ -211,13 +211,6 @@ function addStickyNote(){
     const target = document.querySelector('.ContextMenu');
     target.style.display = "block"; /* コンテキストメニューを表示 */
    const cursor = document.getElementById('cursor');
-     /* マウスの位置へ移動 */
-   const ContextMenu = document.getElementById('ContextMenu');
-   window.addEventListener('mousemove', (e) => {
-    // e.clientX / Y でマウスの座標を取得し、直接スタイルに代入する
-    ContextMenu.style.left = e.clientX + 'px';
-    ContextMenu.style.top = e.clientY + 'px';
-    });
 });
   /* コンテキストメニューを非表示 */
   window.addEventListener('mousedown', (event) => {
