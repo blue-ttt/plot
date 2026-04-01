@@ -204,7 +204,13 @@ function addStickyNote(){
     sticky.style.zIndex = 10;
   });
  } /* 付箋コードここまで */
-  
+
+/* コンテキストメニューの表示 */
+  document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();  /* デフォルトのメニューが出るのを防ぐ */
+    const target = document.querySelector('.ContextMenu');
+    target.style.display = "block"; /* コンテキストメニューを表示 */
+});
  </script>
  
  <style>
