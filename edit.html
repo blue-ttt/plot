@@ -215,8 +215,8 @@ function addStickyNote(){
    const ContextMenu = document.getElementById('ContextMenu');
    window.addEventListener('mousemove', (e) => {
     // e.clientX / Y でマウスの座標を取得し、直接スタイルに代入する
-    ball.style.left = e.clientX + 'px';
-    ball.style.top = e.clientY + 'px';
+    ContextMenu.style.left = e.clientX + 'px';
+    ContextMenu.style.top = e.clientY + 'px';
     });
 });
   /* コンテキストメニューを非表示 */
