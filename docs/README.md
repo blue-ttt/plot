@@ -7,3 +7,6 @@
 * **Google Material Symbols / Icons**
     * ライセンス: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
     * 提供: [Google Fonts](https://fonts.google.com/icons)
+* **Google Fonts**
+    * ライセンス: [OFL (Open Font License)](https://scripts.sil.org/OFL) または [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
+    * 提供: [Google Fonts](https://fonts.google.com/)
