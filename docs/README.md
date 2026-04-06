@@ -5,6 +5,7 @@
 ## 著作権 (Copyright)
 * **ソフトウェア「plot」**
     * 著作権は制作者（blue-ttt）に帰属します。
+      
 * **マスコットキャラクター「plotくん」**
     <img src="https://blue-ttt.github.io/plot/data/plot-character.png" width="100">
     * 著作権は制作者（blue-ttt）に帰属します。無断での転載や再配布を禁止します。
