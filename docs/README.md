@@ -6,6 +6,7 @@
 * **ソフトウェア「plot」**
     * 著作権は制作者（blue-ttt）に帰属します。
 * **マスコットキャラクター「plotくん」**
+    ![plotくんの公式イラスト]((https://blue-ttt.github.io/plot/data/plot-character.png))
     * 著作権は制作者（blue-ttt）に帰属します。無断での転載や再配布を禁止します。
   
 ## 使用している外部素材 (Credits)
