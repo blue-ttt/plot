@@ -182,6 +182,21 @@ window.addEventListener('keyup', (event) => {
 function addStickyNote(){
   const sticky = document.createElement("div");  /* divを作成 */
   sticky.className = "sticky-note";
+
+   /* データ */
+   const newId = `note_${Date.now()}`; /* 新しいIDを作成 */
+   const newData = {
+   "id" : newId,
+   "x" : "(poX)",
+   "y" : "(posY)",
+   "size" : "1.50",
+   "type" : "note",
+   "attributes" : {
+    "color":"#fff9c4",
+    "text-color":"#000",
+      }
+    };
+    DataList.push(newData); /* データ集に追加 */
  
   sticky.innerHTML = '<textarea placeholder="メモを入力..."></textarea><div class="drag"><span class="material-symbols-outlined" style="font-size:20px; background-color:#fff; cursor:move; ">drag_pan</span></div> ';
 
@@ -192,21 +207,6 @@ function addStickyNote(){
   handle.addEventListener('mousedown', (e) => {
     e.stopPropagation(); // 親（付箋）へのイベント伝達を止める
     isDragging = true;
-   
-   /* データ */
-   const newId = `note_${Date.now()}`; /* 新しいIDを作成 */
-   const newData = {
-    "id" : newID,
-    "x" : "(poX)",
-    "y" : "(posY)",
-    "size" : "1.50",
-    "type" : "note",
-    "attributes" : {
-     "color":"#fff9c4",
-     "text-color":"#000",
-       }
-     };
-     DataList.push(newData); /* データ集に追加 */
    
     /* マウスと付箋の左上の距離を計算 */
     diffX = e.clientX - sticky.offsetLeft * scale;
