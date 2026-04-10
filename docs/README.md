@@ -22,5 +22,5 @@
   
 * **Loading Animation**
    [Sandy Loading](https://lottiefiles.com/free-animation/sandy-loading-o4VygOMtb8)
-  *作者 [Parsa Navaei](https://lottiefiles.com/m7ooeuaby6)
-  *経由 [LottieFiles](https://lottiefiles.com/)
+  * 作者 [Parsa Navaei](https://lottiefiles.com/m7ooeuaby6)
+  * 経由 [LottieFiles](https://lottiefiles.com/)
