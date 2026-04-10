@@ -21,4 +21,4 @@
     * 提供: [Google Fonts](https://fonts.google.com/)
   
 * **Loading Animation**
-   [Sandy Loading](https://lottiefiles.com/free-animation/sandy-loading-o4VygOMtb8) by [Parsa Navaei][https://lottiefiles.com/p/parsa-navaei](https://lottiefiles.com/m7ooeuaby6) via [LottieFiles](https://lottiefiles.com/)
+   [Sandy Loading](https://lottiefiles.com/free-animation/sandy-loading-o4VygOMtb8) by [Parsa Navaei](https://lottiefiles.com/m7ooeuaby6) via [LottieFiles](https://lottiefiles.com/)
