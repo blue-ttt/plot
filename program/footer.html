@@ -10,13 +10,13 @@
    <a class="btn-design"><span class="material-symbols-outlined" style="font-size:25px;">stylus_note</span>今すぐデザイン</a>
   </div>
 <div class="main">
-  <div class="support note">
+  <div class="support card">
     <p style="font-size:20px;">サポート</p>
     <div class="text-link"><a href=" "><span class="material-symbols-outlined">stylus_note</span>About</a></div>
     <div class="text-link"><a href=" "><span class="material-symbols-outlined">stylus_note</span>利用規約</a></div>
     <div class="text-link"><a href=" "><span class="material-symbols-outlined">stylus_note</span>お問い合わせ</a></div>
   </div>
-  <div class="contents note">
+  <div class="contents card">
     <p style="font-size:20px;">コンテンツ</p>
     <div class="text-link"><a href=" "><span class="material-symbols-outlined">stylus_note</span>ギャラリー</a></div>
     <div class="text-link"><a href=" "><span class="material-symbols-outlined">stylus_note</span>チュートリアル</a></div>
@@ -28,10 +28,12 @@
    body{margin:0; }
     .footer{background-color:#FCAF17; }
     .center{ text-align:center; }
-    .btn-design{background-color:#FFF9E6; padding:15px; font-size:20px; color:#FCAF17; border-radius:30px; transition:all 0.3s ease-in-out; display: inline-block; box-shadow:5px 5px #00B16B; }
+    .btn-design{background-color:#FFF9E6; padding:15px; font-size:20px; color:#FCAF17; border-radius:30px; transition:all 0.3s ease-in-out; display:inline-block; box-shadow:5px 5px #00B16B; }
     .btn-design:hover{ transform:translateY(4px); box-shadow:none; }
     
-    .note{ background-color:#FFF9E6; width:200px; margin:5px 10px}
+    .card{ background-color:#FFF9E6; width:200px; margin:5px 10px; transition:all 0.3s ease-in-out; }
+    .card:hover{ transform:translateY(-4px); }
+    
     .main{ display:flex; flex-direction:row; }
   </style>
 </body>
