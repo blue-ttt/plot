@@ -243,9 +243,8 @@ function addStickyNote(){
     target.style.display = "block";/* 表示 */
  });
   /* コンテキストメニューを非表示 */
-  window.addEventListener('mousedown', async (event) => {
+  window.addEventListener('mousedown', (event) => {
     const target = document.querySelector('.ContextMenu');
-    await sleep(100);/* 待ち時間を付ける */
     target.style.display = "none";
  });
   
@@ -258,9 +257,8 @@ function addStickyNote(){
     target.style.display = "flex";
  });
   /* クイック追加メニューを非表示 */
-  window.addEventListener('mousedown', async (event) => {
+  window.addEventListener('mousedown', (event) => {
     const target = document.querySelector('.QuickMenu');
-    await sleep(100);/* 待ち時間を付ける */
     target.style.display = "none";
   });
    
