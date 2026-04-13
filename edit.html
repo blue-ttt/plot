@@ -236,6 +236,12 @@ function addStickyNote(){
   document.addEventListener('contextmenu', (event) => {
     event.preventDefault();  /* デフォルトのメニューが出るのを防ぐ */
     const target = document.querySelector('.ContextMenu');
+   /* マウスの位置にメニューを表示させる */
+    target.style.left = `${event.clientX - 75}px`; /* 150pxの半分を引いて中央に */
+    target.style.top = `${event.clientY - 75}px`;
+   
+    target.style.display = "flex";
+ });
     target.style.display = "block"; /* コンテキストメニューを表示 */
    const cursor = document.getElementById('cursor');
  });
@@ -247,7 +253,7 @@ function addStickyNote(){
   /* クイック追加メニューの表示 */
   window.addEventListener('dblclick', (event) => {
     const target = document.querySelector('.QuickMenu');
-    // マウスの位置にメニューを表示させる（オプション）
+    /* マウスの位置にメニューを表示させる */
     target.style.left = `${event.clientX - 75}px`; /* 150pxの半分を引いて中央に */
     target.style.top = `${event.clientY - 75}px`;
     target.style.display = "flex";
