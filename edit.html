@@ -243,14 +243,14 @@ function addStickyNote(){
     target.style.display = "block";/* 表示 */
  });
   /* コンテキストメニューを非表示 */
-  window.addEventListener('mousedown', (event) => {
+  window.addEventListener('mousedown', async (event) => {
     const target = document.querySelector('.ContextMenu');
     await sleep(100);/* 待ち時間を付ける */
     target.style.display = "none";
  });
   
   /* -クイック追加メニューの表示- */
-  window.addEventListener('dblclick', (event) => {
+  window.addEventListener('dblclick', async (event) => {
     const target = document.querySelector('.QuickMenu');
     /* マウスの位置にメニューを表示させる */
     target.style.left = `${event.clientX - 75}px`; /* 150pxの半分を引いて中央に */
