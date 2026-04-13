@@ -250,7 +250,7 @@ function addStickyNote(){
  });
   
   /* -クイック追加メニューの表示- */
-  window.addEventListener('dblclick', async (event) => {
+  window.addEventListener('dblclick', (event) => {
     const target = document.querySelector('.QuickMenu');
     /* マウスの位置にメニューを表示させる */
     target.style.left = `${event.clientX - 75}px`; /* 150pxの半分を引いて中央に */
@@ -258,7 +258,7 @@ function addStickyNote(){
     target.style.display = "flex";
  });
   /* クイック追加メニューを非表示 */
-  window.addEventListener('mousedown', (event) => {
+  window.addEventListener('mousedown', async (event) => {
     const target = document.querySelector('.QuickMenu');
     await sleep(100);/* 待ち時間を付ける */
     target.style.display = "none";
