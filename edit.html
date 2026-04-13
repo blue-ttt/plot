@@ -240,9 +240,7 @@ function addStickyNote(){
     target.style.left = `${event.clientX - 75}px`; /* 150pxの半分を引いて中央に */
     target.style.top = `${event.clientY - 75}px`;
    
-    target.style.display = "flex";
- });
-    target.style.display = "block"; /* コンテキストメニューを表示 */
+    target.style.display = "flex";/* 表示 */
    const cursor = document.getElementById('cursor');
  });
   /* コンテキストメニューを非表示 */
@@ -256,7 +254,7 @@ function addStickyNote(){
     /* マウスの位置にメニューを表示させる */
     target.style.left = `${event.clientX - 75}px`; /* 150pxの半分を引いて中央に */
     target.style.top = `${event.clientY - 75}px`;
-    target.style.display = "flex";
+    target.style.display = "block";
  });
   /* クイック追加メニューを非表示 */
   window.addEventListener('mousedown', (event) => {
