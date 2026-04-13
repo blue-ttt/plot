@@ -241,11 +241,11 @@ function addStickyNote(){
     target.style.top = `${event.clientY - 75}px`;
    
     target.style.display = "block";/* 表示 */
-   const cursor = document.getElementById('cursor');
  });
   /* コンテキストメニューを非表示 */
   window.addEventListener('mousedown', (event) => {
     const target = document.querySelector('.ContextMenu');
+    await sleep(100);/* 待ち時間を付ける */
     target.style.display = "none";
  });
   
@@ -260,6 +260,7 @@ function addStickyNote(){
   /* クイック追加メニューを非表示 */
   window.addEventListener('mousedown', (event) => {
     const target = document.querySelector('.QuickMenu');
+    await sleep(100);/* 待ち時間を付ける */
     target.style.display = "none";
   });
    
