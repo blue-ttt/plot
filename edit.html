@@ -94,10 +94,10 @@
  <!--- コンテンツヘッダー --->
  <div class="ContentsHeader">
   <ul>
-   <li><button class="c-head-button head-act-comment" data-tooltip="コメント"><span class="material-symbols-outlined">comment</span></button></li>
-   <li><button class="c-head-button head-act-delete" data-tooltip="削除"><span class="material-symbols-outlined">delete</span></button></li>
-   <li><button class="c-head-button head-act-copy&paste" data-tooltip="複製"><span class="material-symbols-outlined">library_add</span></button></li>
-   <li><button class="c-head-button head-act-more" data-tooltip="もっと表示"><span class="material-symbols-outlined">more_horiz</span></button></li>
+   <li><button class="c-head-button c-head-act-comment" data-tooltip="コメント"><span class="material-symbols-outlined">comment</span></button></li>
+   <li><button class="c-head-button c-head-act-delete" data-tooltip="削除"><span class="material-symbols-outlined">delete</span></button></li>
+   <li><button class="c-head-button c-head-act-copy&paste" data-tooltip="複製"><span class="material-symbols-outlined">library_add</span></button></li>
+   <li><button class="c-head-button c-head-act-more" data-tooltip="もっと表示"><span class="material-symbols-outlined">more_horiz</span></button></li>
   </ul>
  </div>
 
@@ -324,6 +324,7 @@ function addStickyNote(){
   .ContentsHeader ul{ list-style:none; display:flex; flex-direction:row; justify-content:center; padding:0px 5px; margin:0; }
   .c-head-button{ width:30px; aspect-ratio:1/1; border-radius:30px; border:none; background:none; padding:0; margin:0; }
   .c-head-button:hover{ background-color:#f5f5f5; }
+  .c-head-act-delete{ collor:#8b0000; }
   
   .sticky-note { position: absolute;/* 自由位置へ */ width: 150px; height: 150px; background-color:#fff9c4; /* 薄い黄色 */ box-shadow:2px 2px 10px rgba(0,0,0,0.2); padding:10px; border-radius:5px; display:flex;  }
   .sticky-note textarea{ width:100%; height:100%; background-color:#ffffff00; border:none; outline:none; margin:0; } /* 付箋の入力欄のところ */
