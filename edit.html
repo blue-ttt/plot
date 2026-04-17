@@ -109,7 +109,7 @@
  </div>
  <!--- 挿入メニュー全て --->
  <div class="add-all-menu">
-  <button class="add-all-menu-cade add-text" data-tooltip="テキストを追加"><span class="material-symbols-outlined">text_increase</span></button>
+  <button class="add-all-menu-cade all-add-text" data-tooltip="テキストを追加"><span class="material-symbols-outlined">text_increase</span></button>
  </div>
 
  <script>
@@ -310,9 +310,9 @@ function addStickyNote(){
   .viewport{ width:100vw; height:100vh; overflow: hidden; /* はみ出た部分は隠す（スクロールバーを出さない）*/ touch-action:none; /* ブラウザ独自のスクロールやズームを無効化する */ }
   
   /* display:none;で最初に非表示 */
-  .mini-study{ display:none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; top:50%; left:50%; transform:translate(-50%, -50%); position: fixed; }
+  .mini-study{ display:none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; top:50%; left:50%; transform:translate(-50%, -50%); position:fixed; }
   .mini-study-close{ top:-600px; }
-  .mini-setting{ display:none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; top:50%; left:50%; transform:translate(-50%, -50%); position: fixed; }
+  .mini-setting{ display:none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; top:50%; left:50%; transform:translate(-50%, -50%); position:fixed; }
   .mini-setting-close{ top:-600px; }
   .loading{ display:none; }
   
@@ -343,6 +343,8 @@ function addStickyNote(){
   .c-head-act-delete{ color:#b70000; }
   .c-head-act-comment{ color:#94841e; }
   .c-head-act-copys{ color:#188c10; }
+
+  .add-all-menu{ position:fixed; background-color:#FFF9E6; width:900px; height:650px; top:50%; left:50%; display:flex; flex-direction:row; flex-wrap:wrap; }
   
   .sticky-note { position: absolute;/* 自由位置へ */ width: 150px; height: 150px; background-color:#fff9c4; /* 薄い黄色 */ box-shadow:2px 2px 10px rgba(0,0,0,0.2); padding:10px; border-radius:5px; display:flex;  }
   .sticky-note textarea{ width:100%; height:100%; background-color:#ffffff00; border:none; outline:none; margin:0; } /* 付箋の入力欄のところ */
