@@ -92,11 +92,11 @@
  </div>
  <!--- クイック挿入メニュー --->
  <div class="QuickMenu">
-   <button class="QuickMenu-add add-text" data-tooltip="テキストを追加"><span class="material-symbols-outlined">text_increase</span></button>
-   <button class="QuickMenu-add add-note" data-tooltip="付箋を追加"><span class="material-symbols-outlined">note_stack_add</span></button>
-   <button class="QuickMenu-add add-pin" data-tooltip="ピンを追加"><span class="material-symbols-outlined">add_location</span></button>
+   <button class="QuickMenu-add Q-add-text add-text" data-tooltip="テキストを追加"><span class="material-symbols-outlined">text_increase</span></button>
+   <button class="QuickMenu-add Q-add-note add-note" data-tooltip="付箋を追加"><span class="material-symbols-outlined">note_stack_add</span></button>
+   <button class="QuickMenu-add Q-add-pin add-pin" data-tooltip="ピンを追加"><span class="material-symbols-outlined">add_location</span></button>
    <button class="QuickMenu-add all-add-Menu" data-tooltip="すべて見る"><span class="material-symbols-outlined">add</span></button>
-   <button class="QuickMenu-add add-material" data-tooltip="素材を追加"><span class="material-symbols-outlined">sticker_add</span></button>
+   <button class="QuickMenu-add Q-add-material add-material" data-tooltip="素材を追加"><span class="material-symbols-outlined">sticker_add</span></button>
  </div>
  <!--- コンテンツヘッダー --->
  <div class="ContentsHeader">
@@ -109,7 +109,7 @@
  </div>
  <!--- 挿入メニュー全て --->
  <div class="add-all-menu">
-  <button class="add-all-menu-cade all-add-text" data-tooltip="テキストを追加"><span class="material-symbols-outlined">text_increase</span></button>
+  <button class="all-add-contents add-text" data-tooltip="テキストを追加"><span class="material-symbols-outlined">text_increase</span></button>
  </div>
 
  <script>
@@ -331,10 +331,10 @@ function addStickyNote(){
   .QuickMenu-add{ background:none; position:absolute; border-radius:50px; margin:0; padding:0; }
   .QuickMenu-add:hover{ background-color:#f5f5f5; }
   .all-add-Menu{ color:#8A8C8E; width:50px; height:50px; border-radius:10px; border:0.7px solid #000; }
-  .add-text{ color:#0000FF; transform:translateY(-50px); width:70px; height:50px; border:none; }
-  .add-pin{ color:#ff0000; transform:translateX(-50px); width:50px; height:70px; border:none; }
-  .add-note{ color:#FCAF17; transform:translateY(50px); width:70px; height:50px; border:none; }
-  .add-material{ color:#3eb370; transform:translateX(50px); width:50px; height:70px; border:none; }
+  .Q-add-text{ color:#0000FF; transform:translateY(-50px); width:70px; height:50px; border:none; }
+  .Q-add-pin{ color:#ff0000; transform:translateX(-50px); width:50px; height:70px; border:none; }
+  .Q-add-note{ color:#FCAF17; transform:translateY(50px); width:70px; height:50px; border:none; }
+  .Q-add-material{ color:#3eb370; transform:translateX(50px); width:50px; height:70px; border:none; }
 
   .ContentsHeader{ background-color:#fff; box-shadow:0px 0px 5px 1px #8A8C8E; width:fit-content; height:35px; padding:0; top:50%; left:50%; position:fixed; border-radius:30px; display:flex; align-items:center; }
   .ContentsHeader ul{ list-style:none; display:flex; flex-direction:row; justify-content:center; padding:0px 5px; margin:0; }
@@ -345,6 +345,7 @@ function addStickyNote(){
   .c-head-act-copys{ color:#188c10; }
 
   .add-all-menu{ position:fixed; background-color:#FFF9E6; width:900px; height:650px; top:50%; left:50%; display:flex; flex-direction:row; flex-wrap:wrap; }
+  .all-add-contents{ width:100px; margin:10px; padding:0; aspect-ratio:9/10; }
   
   .sticky-note { position: absolute;/* 自由位置へ */ width: 150px; height: 150px; background-color:#fff9c4; /* 薄い黄色 */ box-shadow:2px 2px 10px rgba(0,0,0,0.2); padding:10px; border-radius:5px; display:flex;  }
   .sticky-note textarea{ width:100%; height:100%; background-color:#ffffff00; border:none; outline:none; margin:0; } /* 付箋の入力欄のところ */
