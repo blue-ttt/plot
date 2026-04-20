@@ -154,7 +154,8 @@
   if (e.key === 'Enter') {
   e.preventDefault(); // 改行（Enter）の動作を無効化
     }});
-
+  /* 要素追加メニュー */
+   document.querySelector(".add-all-menu-close").addEventListener('click', function() {const target = document.querySelector(".add-all-menu"); target.style.display = "none";});
    /* tool */ 
   const toolButtons = document.querySelectorAll(".toolbar .tools"); /* toolbarのボタンを取得 */ 
 
