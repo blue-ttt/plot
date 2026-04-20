@@ -1,39 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
-body{
-  font-family: "M PLUS Rounded 1c", sans-serif;
-}
-a{
-  font-family: "M PLUS Rounded 1c", sans-serif;
-}
 
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-.text-link a{
-  color:#FCAF17;
-  text-decoration:none
-}
-.text-link a:hover{
-  text-decoration:underline;
-}
-.text-link a:active{
-  text-decoration:underline;
-  background-color:#bdbdbd;
-}
-h1{
-  color:#FCAF17;
-}
-h2{
-  color:#FCAF17;
-}
-h3{
-  color:#FCAF17;
-}
+body{ font-family: "M PLUS Rounded 1c", sans-serif; }
+a{ font-family: "M PLUS Rounded 1c", sans-serif; }
+button{ cursor:pointer; }
+
+.material-symbols-outlined { font-variation-settings:'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 }
+.text-link a{ color:#FCAF17; text-decoration:none }
+.text-link a:hover{ text-decoration:underline; }
+.text-link a:active{ text-decoration:underline; background-color:#bdbdbd;}
+
+h1{ color:#FCAF17;}
+h2{ color:#FCAF17; }
+h3{ color:#FCAF17; }
+
+.btn-close{ width:50px; aspect-ratio:1/1; border-radius:50%; }
+
 /* ツールチップ　*/
 button{position: relative;}
 button[data-tooltip]::after{content: attr(data-tooltip); /* data-tooltipの内容を表示 */ position: absolute; visibility: hidden; color:#fff; font-size:10px; background-color:#00000080; top: 110%; left: 0%; white-space:nowrap; z-index:1000; }
