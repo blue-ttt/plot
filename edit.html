@@ -31,8 +31,8 @@
    <li><button class="set-btn" data-tooltip="設定"><span class="material-symbols-outlined">settings</span></button></li>
    <li><button class="help-btn" data-tooltip="ヘルプ"><span class="material-symbols-outlined">help</span></button></li>
    
-   <li class="right"><button class="new" data-tooltip="サーバーへ変更を反映させる"><span class="material-symbols-outlined">update</span>同期</button></li>
-   <li><button class="share" data-tooltip="アイデアを共有する"><span class="material-symbols-outlined">ios_share</span>共有</button></li>
+   <li class="right"><button class="btn-head-new" data-tooltip="サーバーへ変更を反映させる"><span class="material-symbols-outlined">update</span>同期</button></li>
+   <li><button class="btn-head-share" data-tooltip="アイデアを共有する"><span class="material-symbols-outlined">ios_share</span>共有</button></li>
   </ul>
  </header>
  
@@ -47,7 +47,7 @@
   <iframe src="https://blue-ttt.github.io/plot/setting.html" width="800px" height="100%"></iframe>
  </div>
  <!---読み込みアニメーション---><div class="loading"><lottie-player src="https://blue-ttt.github.io/plot/data/sandy_loading.json" background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></lottie-player></div>
-
+ <!--- 共有の選択画面 --->
  <div class="share">
   <button class="btn-share-circle btn-share-downloadPlot" data-tooltip="再編集可能な形式でダウンロードします"><span class="material-symbols-outlined">file_save</span>書き出し</button>
   <button class="btn-share-circle btn-share-downloadFile" data-tooltip="その場に応じた形式に変換してダウンロードします"><span class="material-symbols-outlined">download</span>ダウンロード</button>
@@ -327,8 +327,8 @@ function addStickyNote(){
   header ul{ display:flex; flex-direction:row; list-style:none; width:100%; align-items:center; margin:0; position:fixed; top:0; padding:0 20px; box-sizing:border-box; }
   header{ background-color:#FCAF17; width:100%; height:50px; align-items:center; position:fixed; z-index:100; }
   button{cursor:pointer;}
-  .new{ font-size:20px; padding:5px; margin-left:10px; width:90px; height:45px; border-radius:10px; }
-  .share{ font-size:20px; padding:5px; margin-left:10px; width:90px; height:45px; border-radius:10px; }
+  .btn-head-new{ font-size:20px; padding:5px; margin-left:10px; width:90px; height:45px; border-radius:10px; }
+  .btn-head-share{ font-size:20px; padding:5px; margin-left:10px; width:90px; height:45px; border-radius:10px; }
   .right{ margin-left:auto; }
   .rogo{ padding:5px; margin:0; }
   .rogo img{ width:30px; height:auto; aspect-ratio:1/1; }
@@ -356,6 +356,9 @@ function addStickyNote(){
   .mini-setting{ display:none; background-color:#fff; z-index:50; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; top:50%; left:50%; transform:translate(-50%, -50%); position:fixed; }
   .mini-setting-close{ top:-600px; }
   .loading{ display:none; }
+
+  .share{ position:fixed; background-color:#fff; box-shadow:0px 0px 5px 1px #8A8C8E; width:200px; height:auto; border-radius:10px; padding:0; margin:0; }
+  .btn-share-circle{ width:95%; height:30px; padding0; margin:0; border-radius:50%; border:1px solid #000; background:none; }
   
   .ai-btn button{ color:#fff; background-color:#FCAF17; border-radius:30px; aspect-ratio:1/1; marigin:5px; padding:10px; width:50px; bottom: 20px;/* 下から20pxの位置 */ right: 20px;/* 右から20pxの位置 */ position:fixed;/* 画面に固定 */ z-index:100; }
 
