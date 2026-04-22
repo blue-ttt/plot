@@ -50,7 +50,7 @@
  <!--- 共有の選択画面 --->
  <div class="share">
   <div class="share-circles">
-   <button class="btn-share-circle btn-share-downloadPlot" data-tooltip="再編集可能な形式でダウンロードします"><span class="material-symbols-outlined">file_save</span></button><p style="margin:0; padding:0;">書き出し</p>
+   <div class="share-CircleAndText"><button class="btn-share-circle btn-share-downloadPlot" data-tooltip="再編集可能な形式でダウンロードします"><span class="material-symbols-outlined">file_save</span></button><p style="margin:0; padding:0;">書き出し</p></div>
    <button class="btn-share-circle btn-share-downloadFile" data-tooltip="その場に応じた形式に変換してダウンロードします"><span class="material-symbols-outlined">download</span>ダウンロード</button>
    <button class="btn-share-circle btn-share-WePlot" data-tooltip="共有ページWePlotへアイデアを投稿しましょう！"><span class="material-symbols-outlined">share</span>WePlot</button>
   </div>
@@ -363,6 +363,7 @@ function addStickyNote(){
   .share-circles{ display:flex; flex-direction:row; flex-wrap:wrap; }
   .btn-share-circle{ width:40px; height:40px; aspect-ratio:1/1; padding0; margin:0; border-radius:50%; border:1px solid #000; background:none; }
   .btn-share-circle:hover{ background-color:#f5f5f5; }
+  .share-CircleAndText{ display:flex; flex-direction:column; align-items:center; }
   
   .ai-btn button{ color:#fff; background-color:#FCAF17; border-radius:30px; aspect-ratio:1/1; marigin:5px; padding:10px; width:50px; bottom: 20px;/* 下から20pxの位置 */ right: 20px;/* 右から20pxの位置 */ position:fixed;/* 画面に固定 */ z-index:100; }
 
