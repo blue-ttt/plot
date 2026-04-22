@@ -20,9 +20,10 @@ docs ───── 構成
 
 data    ───── 画像、その他のファイルをここに
 
-program  ── fetch.js : 共通パーツ(navなど)をフェッチする
+program  ── fetch.js : 共通パーツ(navなど)をフェッチする。適用コード<script src="https://blue-ttt.github.io/plot/program/fetch.js"></script>
          ├─ navi.html : メニュー画面に当たる部分
          ├─ footer.html : フッター画面の部分
+         ├─ i18n.js : ユーザーが使い言語をhtmlから選び、表示させる。適用コード<script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>
 
 <edit.htmlのコンテンツのレイヤー構成>
 z-indexの数値
