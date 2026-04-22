@@ -1,8 +1,8 @@
+window.addEventListener('DOMContentLoaded', () => { /* ページが完全に読み込んでから */
 const language = navigator.language;
 const elements = document.querySelectorAll(".i18n");
 
-if(language.startsWith('ja'))
-{
+if(language.startsWith('ja')) {
  elements.forEach((el) => {
     const text = el.textContent;
     if (text.includes("|")) {
@@ -19,5 +19,7 @@ else
       const parts = text.split("|");
       el.textContent = parts[1]; // 後ろ側の英語を表示
     }
-  })
-}
+  });
+};
+ 
+});
