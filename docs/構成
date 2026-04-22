@@ -16,14 +16,13 @@ edit.html     ── plotの編集画面 : jsなどと連携。ヘッダーや�
 
 docs ───── 構成
        ├── テーマ
-
-css     ────── cssなどのスタイル系をここに
+       ├─ README.md : githubを見たときに表示される説明
 
 data    ───── 画像、その他のファイルをここに
 
 program  ── fetch.js : 共通パーツ(navなど)をフェッチする
          ├─ navi.html : メニュー画面に当たる部分
-         ├─ README.md : githubを見たときに表示される説明
+         ├─ footer.html : フッター画面の部分
 
 <edit.htmlのコンテンツのレイヤー構成>
 z-indexの数値
