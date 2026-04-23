@@ -34,7 +34,7 @@
    <li><button class="help-btn" data-tooltip="ヘルプ"><span class="material-symbols-outlined">help</span></button></li>
    
    <li class="right"><button class="btn-head-new" data-tooltip="サーバーへ変更を反映させる"><span class="material-symbols-outlined">update</span>同期</button></li>
-   <li><button class="btn-head-share" data-tooltip="アイデアを共有する"><span class="material-symbols-outlined">ios_share</span>共有</button></li>
+   <li><button class="btn-head-share" data-tooltip="アイデアを共有する" onclick="ShareDisplay();"><span class="material-symbols-outlined">ios_share</span>共有</button></li>
   </ul>
  </header>
  
@@ -187,6 +187,11 @@
    
   });
    document.querySelector(".edit-note").addEventListener('click', addStickyNote);
+
+  function ShareDisplay(){
+   const target = document.querySelector('.share');
+   target.style.display = "block";
+  }
   
     /* mode */ 
   const modeButtons = document.querySelectorAll(".mode-board button"); /* modeのボタンを取得 */ 
