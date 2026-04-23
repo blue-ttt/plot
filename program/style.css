@@ -14,7 +14,8 @@ h1{ color:#FCAF17;}
 h2{ color:#FCAF17; }
 h3{ color:#FCAF17; }
 
-.btn-close{ width:50px; aspect-ratio:1/1; border-radius:50%; }
+.btn-close{ width:50px; aspect-ratio:1/1; border-radius:50%; background:none; border:none; }
+.btn-close:hover{ background-color:#f5f5f5; }
 
 /* ツールチップ　*/
 button{position: relative;}
