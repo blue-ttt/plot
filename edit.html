@@ -41,7 +41,7 @@
  <div class="ai-btn"><button data-tooltip="AI分析"><span class="material-symbols-outlined">smart_toy</span></button></div>
  
  <div class="mini-study">
-  <button class="mini-study-close btn-close" data-tooltip="閉じる"><span class="material-symbols-outlined">close</span></button>
+  <button class="mini-study-close btn-close" data-tooltip="閉じる" onclick="StudyClose();"><span class="material-symbols-outlined">close</span></button>
   <iframe src="https://blue-ttt.github.io/plot/study/index" width="800px" height="100%"></iframe>
  </div>
  <div class="mini-setting">
@@ -161,9 +161,6 @@
    /* header */ 
   document.querySelector(".rogo").addEventListener('click', function() { window.open("https://blue-ttt.github.io/plot/index.html", "_blank"); }); /* ホームへ移動 */
   
-  document.querySelector(".help-btn").addEventListener('click', function() {const target = document.querySelector(".mini-study"); target.style.display = "block";}); /* ？ボタンが押されたらhelpを表示 */
-  document.querySelector(".mini-study-close").addEventListener('click', function() {const target = document.querySelector(".mini-study"); target.style.display = "none";}); /* ×ボタンが押されたらhelpを非表示 */
-
   /* 題名入力欄の部分 */
   const titleEdit = document.querySelector('.title-edit');titleEdit.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
@@ -200,6 +197,14 @@
   }
   function SettingClose(){ /* 設定閉じる */
    const target = document.querySelector('.mini-setting');
+   target.style.display = "none";
+  }
+  function StudyClose(){ /* ヘルプ */
+   const target = document.querySelector(".mini-study");
+   target.style.display = "block";
+  }
+  function StudyClose(){ /* ヘルプ閉じる */
+   const target = document.querySelector(".mini-study");
    target.style.display = "none";
   }
   
