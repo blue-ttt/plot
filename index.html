@@ -1,32 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>plot 誰もが小さなアイディアを大きな創造に</title>
-  <link rel="stylesheet" href="program/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>plot 誰もが小さなアイディアを大きな創造に</title>
+  <link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/style.css">
+  <script src="https://blue-ttt.github.io/plot/program/fetch.js"></script>
+  <script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>
 </head>
 
 <body>
  <div class="home">
   <nav><div id="navi"></div></nav>
  <main>
-   <h1>ホーム</h1>
+   <h1>ホーム-プロット</h1>
+   <div class="imgcursor">
+    <div class="imgcursor-imgs">
+      <div class="imgcursor-contents"><a href="https://blue-ttt.github.io/plot/program/footer"><img src="https://blue-ttt.github.io/plot/data/plot-character.png"></a></div>
+    </div>
+     
+   </div>
   
  </main>
+   <footer>
+    <div id="footer"></div>
+   </footer>
  </div>
  <style>
-    .home{
-      display:grid;
-      grid-template-columns:70px 1fr;
-    }
-    h1{
-      text-align:center;
-    }
+  .home{ display:grid; grid-template-columns:70px 1fr; }
+  h1{ text-align:center; }
     
-    @media(max-width:768px){
-      
-      .home{ grid-template-columns:1fr; }
-      nav{ bottom:40px; width: 100%; height:40px; position: fixed; }
+  @media(max-width:768px){
+    .home{ grid-template-columns:1fr; }
+    nav{ bottom:40px; width: 100%; height:40px; position: fixed; }
     }
   </style>
-    <script src="https://blue-ttt.github.io/plot/program/fetch.js"></script>
 </body>
+</html>
