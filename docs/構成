@@ -15,7 +15,7 @@ edit.html     ── plotの編集画面 : jsなどと連携。ヘッダーや�
 <内部ページ>
 
 docs ───── 構成
-       ├── テーマ
+       ├── テーマ : テーマ色
        ├─ README.md : githubを見たときに表示される説明
 
 data    ───── 画像、その他のファイルをここに
@@ -24,6 +24,11 @@ program  ── fetch.js : 共通パーツ(navなど)をフェッチする。適
          ├─ navi.html : メニュー画面に当たる部分
          ├─ footer.html : フッター画面の部分
          ├─ i18n.js : ユーザーが使い言語をhtmlから選び、表示させる。適用コード<script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>
+         ├─ style.css : サイト全体の要素のcss。適用コード<link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/style.css">
+         ├─ 🗂️core : 編集画面のプログラム
+            ├─ function.js : 関数群。適用コード<script src="https://blue-ttt.github.io/plot/program/core/function.js"></script>
+            ├─ menu.js : クイック追加メニューなどのプログラム。適用コード<script src="https://blue-ttt.github.io/plot/program/core/menu.js"></script>
+            ├─ style.css : 編集画面内の要素のcss。適用コード<link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/core/style.css">
 
 <edit.htmlのコンテンツのレイヤー構成>
 z-indexの数値
