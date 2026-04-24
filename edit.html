@@ -8,6 +8,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
  <script src="https://blue-ttt.github.io/plot/program/core/function.js"></script>
+ <script scr="https://blue-ttt.github.io/plot/program/core/menu.js"></script>
 </head>
 
 <script>
@@ -292,35 +293,6 @@ function addStickyNote(){
   });
  } /* 付箋コードここまで */
 
-/* -ボードメニューの表示- */
-  document.addEventListener('contextmenu', (event) => {
-    event.preventDefault();  /* デフォルトのメニューが出るのを防ぐ */
-    const target = document.querySelector('.BoardMenu');
-   /* マウスの位置にメニューを表示させる */
-    target.style.left = `${event.clientX - 75}px`; /* 150pxの半分を引いて中央に */
-    target.style.top = `${event.clientY - 75}px`;
-   
-    target.style.display = "block";/* 表示 */
- });
-  /* コンテキストメニューを非表示 */
-  window.addEventListener('mousedown', (event) => {
-    const target = document.querySelector('.BoardMenu');
-    target.style.display = "none";
- });
-  
-  /* -クイック追加メニューの表示- */
-  window.addEventListener('dblclick', (event) => {
-    const target = document.querySelector('.QuickMenu');
-    /* マウスの位置にメニューを表示させる */
-    target.style.left = `${event.clientX - 75}px`; /* 150pxの半分を引いて中央に */
-    target.style.top = `${event.clientY - 75}px`;
-    target.style.display = "flex";
- });
-  /* クイック追加メニューを非表示 */
-  window.addEventListener('mousedown', (event) => {
-    const target = document.querySelector('.QuickMenu');
-    target.style.display = "none";
-  });
   /* 要素追加メニューの表示 */
   document.querySelector(".all-add-Menu").addEventListener('click', function() {const target = document.querySelector(".add-all-menu"); target.style.display = "inline-block";});
    
