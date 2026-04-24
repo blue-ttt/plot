@@ -195,24 +195,24 @@
   function SettingDisplay(){ /* 設定 */
    const target = document.querySelector('.mini-setting');
    target.style.display = "block";
-  }
+  };
   function SettingClose(){ /* 設定閉じる */
    const target = document.querySelector('.mini-setting');
    target.style.display = "none";
-  }
+  };
   function HelpDisplay(){ /* ヘルプ */
    const target = document.querySelector(".mini-study");
    target.style.display = "block";
    const target = document.querySelector(".overlay");
    target.style.display = "block";
-  }
+  };
   function StudyClose(){ /* ヘルプ閉じる */
    const target = document.querySelector(".mini-study");
    target.style.display = "none";
    
-   target = document.querySelector(".overlay");
-   target.style.display = "none";
-  }
+   const target2 = document.querySelector(".overlay");
+   target2.style.display = "none";
+  };
   
     /* mode */ 
   const modeButtons = document.querySelectorAll(".mode-board button"); /* modeのボタンを取得 */ 
@@ -258,7 +258,6 @@ window.addEventListener('keyup', (event) => {
   if (keys["ArrowLeft"])  { posX += 10; }
   if (keys["ArrowUp"])    { posY += 10; }
   if (keys["ArrowDown"])  { posY -= 10; }
-
 
 
   content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`; /* 座標の書き換え */
