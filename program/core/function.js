@@ -10,10 +10,12 @@
   function SettingDisplay(){ /* 設定 */
    const target = document.querySelector('.mini-setting');
    target.style.display = "block";
+   OverlayIsDisplay();
   };
   function SettingClose(){ /* 設定閉じる */
    const target = document.querySelector('.mini-setting');
    target.style.display = "none";
+   OverlayIsNone();
   };
   function HelpDisplay(){ /* ヘルプ */
    const target = document.querySelector(".mini-study");
