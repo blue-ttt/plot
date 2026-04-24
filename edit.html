@@ -6,6 +6,7 @@
  <meta chareset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+ <script src="https://blue-ttt.github.io/plot/program/core/function.js"></script>
 </head>
 
 <script>
@@ -183,41 +184,6 @@
   });
    document.querySelector(".edit-note").addEventListener('click', addStickyNote);
   
-// --- ボタンの関数 ---
-  function ShareDisplay(){ /* 共有 */
-   const target = document.querySelector('.share');
-   target.style.display = "block";
-  };
-  function ShareClose(){ /* 共有閉じる */
-   const target = document.querySelector('.share');
-   target.style.display = "none";
-  };
-  function SettingDisplay(){ /* 設定 */
-   const target = document.querySelector('.mini-setting');
-   target.style.display = "block";
-  };
-  function SettingClose(){ /* 設定閉じる */
-   const target = document.querySelector('.mini-setting');
-   target.style.display = "none";
-  };
-  function HelpDisplay(){ /* ヘルプ */
-   const target = document.querySelector(".mini-study");
-   target.style.display = "block";
-   OverlayIsDisplay();
-  };
-  function StudyClose(){ /* ヘルプ閉じる */
-   const target = document.querySelector(".mini-study");
-   target.style.display = "none";
-   OverlayIsNone();
-  };
-  function OverlayIsDisplay(){
-   const target = document.querySelector(".overlay");
-   target.style.display = "block";
-  };
-  function OverlayIsNone(){
-   const target = document.querySelector(".overlay");
-   target.style.display = "none";
-  };
     /* mode */ 
   const modeButtons = document.querySelectorAll(".mode-board button"); /* modeのボタンを取得 */ 
 
