@@ -3,6 +3,7 @@
 <head>
  <title>編集 plotコンテンツ</title>
  <link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/style.css">
+ <link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/core/style.css">
  <meta chareset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -324,93 +325,5 @@ function addStickyNote(){
   document.querySelector(".all-add-Menu").addEventListener('click', function() {const target = document.querySelector(".add-all-menu"); target.style.display = "inline-block";});
    
  </script>
- 
- <style>
-  body{background-color:#fff; margin:0; display: grid; grid-template-rows: 50px 1fr; }
-  header ul{ display:flex; flex-direction:row; list-style:none; width:100%; align-items:center; margin:0; position:fixed; top:0; padding:0 20px; box-sizing:border-box; }
-  header{ background-color:#FCAF17; width:100%; height:50px; align-items:center; position:fixed; z-index:100; }
-  button{cursor:pointer;}
-  .btn-head-new{ font-size:20px; padding:5px; margin-left:10px; width:90px; height:45px; border-radius:10px; }
-  .btn-head-share{ font-size:20px; padding:5px; margin-left:10px; width:90px; height:45px; border-radius:10px; }
-  .right{ margin-left:auto; }
-  .rogo{ padding:5px; margin:0; }
-  .rogo img{ width:30px; height:auto; aspect-ratio:1/1; }
-  .btn-close{ width:50px; aspect-ratio:1/1; border-radius:50%; }
-  .overlay{ width:100vw; height:100vh; background-color:#00000080; position:fixed; z-index:290; display:none; }
-  
-  .toolbar{ margin:0; padding:0; width:45px; height:500px; background-color:#FFF9E6; position:fixed; top:100px; left:15px; border-radius:20px; box-shadow:1px 1px 5px 1px #8A8C8E; z-index:100; }
-  .toolbar ul{ margin:0; display:flex; flex-direction:column; list-style:none; padding:0;}
-  .toolbar button{ background-color:#fff; color:#000; }
-  .toolbar button.active{ background-color:#FCAF17; color:#fff; }
-  .tools{ margin-top:10px; border-radius:30px; aspect-ratio:1/1; }
-
-  .mode-board{ margin:0; padding:0; position:fixed;  z-index:100; bottom:20px; left:40px; width:200px; height:45px; background-color:#FFF9E6; border-radius:20px; box-shadow:1px 1px 5px 1px #8A8C8E; }
-  .mode-board ul{ list-style:none; display:flex; flex-direction:row; }
-  .mode{ margin:0; margin-left:5px; margin-right:5px; border-radius:30px; aspect-ratio:1/1; bottom:20px; }
-  .mode-board button{ background-color:#fff; color:#000; margin:0; padding:5px;}
-  .mode-board button.active{ background-color:#FCAF17; color:#fff; }
-
-
-  .canvas{ width:3000px; height:3000px; transform-origin:0 0;  }
-  .viewport{ width:100vw; height:100vh; overflow: hidden; /* はみ出た部分は隠す（スクロールバーを出さない）*/ touch-action:none; /* ブラウザ独自のスクロールやズームを無効化する */ }
-  
-  /* display:none;で最初に非表示 */
-  .mini-study{ display:none; background-color:#fff; z-index:300; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; top:50%; left:50%; transform:translate(-50%, -50%); position:fixed; }
-  .mini-study-close{ top:-600px; }
-  .mini-setting{ display:none; background-color:#fff; z-index:300; width:900px; height:650px; box-shadow:0px 0px 10px 1px #8A8C8E; text-align:center; margin:auto; top:50%; left:50%; transform:translate(-50%, -50%); position:fixed; }
-  .mini-setting-close{ top:-600px; }
-  .loading{ display:none; }
-
-  .share{ position:fixed; background-color:#fff; box-shadow:0px 0px 5px 1px #8A8C8E; width:300px; height:auto; border-radius:10px; padding:0; margin:0; top:70px; left:300px; z-index:300; display:none; }
-  .share-circles{ display:flex; flex-direction:row; flex-wrap:wrap; }
-  .btn-share-circle{ width:50px; height:50px; aspect-ratio:1/1; padding0; margin:0 20; border-radius:50%; border:1px solid #000; background:none; }
-  .btn-share-circle:hover{ background-color:#f5f5f5; }
-  .share-CircleAndText{ display:flex; flex-direction:column; align-items:center; padding:0; margin:0 auto; }
-  .btn-share-card{ width:100%; height:40px; padding:0; margin:5px 0; border:none; background:none; }
-  .btn-share-card:hover{ background-color:#f5f5f5; }
-  
-  .ai-btn button{ color:#fff; background-color:#FCAF17; border-radius:30px; aspect-ratio:1/1; marigin:5px; padding:10px; width:50px; bottom: 20px;/* 下から20pxの位置 */ right: 20px;/* 右から20pxの位置 */ position:fixed;/* 画面に固定 */ z-index:100; }
-
-  .ContextMenu{  position:fixed; background-color:#fff; box-shadow:0px 0px 5px 1px #8A8C8E; width:200px; height:auto; border-radius:20px; padding:0; margin:0; display:none; }
-  .ContextMenu ul{ list-style:none; }
-  .ContextMenu-act{ width:100%; height:30px; padding:2px; margin:0; }
-  
-  .BoardMenu{ position:fixed; background-color:#fff; box-shadow:0px 0px 5px 1px #8A8C8E; width:200px; height:auto; border-radius:10px; padding:0; margin:0; display:none; }
-  .BoardMenu ul{ list-style:none; padding:0; }
-  .BoardMenu hr{ width:80%; padding:0; margin:0; color:#8A8C8E; margin:auto; }
-  .BoardMenu-act{ width:95%; height:30px; padding0; margin:0; border-radius:10px; border:none; background:none; }
-  .BoardMenu-act:hover{ background-color:#f5f5f5; }
-
-  .QuickMenu{ position:fixed; background-color:#fff; display:none; justify-content:center; align-items:center; box-shadow:0px 0px 5px 1px #8A8C8E; width:150px; border-radius:50%; aspect-ratio:1/1; left:500px; top:100px; display:none; }
-  .QuickMenu-add{ background:none; position:absolute; border-radius:50px; margin:0; padding:0; }
-  .QuickMenu-add:hover{ background-color:#f5f5f5; }
-  .all-add-Menu{ color:#8A8C8E; width:50px; height:50px; border-radius:10px; border:0.7px solid #000; }
-  .Q-add-text{ color:#0000FF; transform:translateY(-50px); width:70px; height:50px; border:none; }
-  .Q-add-pin{ color:#ff0000; transform:translateX(-50px); width:50px; height:70px; border:none; }
-  .Q-add-note{ color:#FCAF17; transform:translateY(50px); width:70px; height:50px; border:none; }
-  .Q-add-material{ color:#3eb370; transform:translateX(50px); width:50px; height:70px; border:none; }
-
-  .ContentsHeader{ background-color:#fff; box-shadow:0px 0px 5px 1px #8A8C8E; width:fit-content; height:35px; padding:0; top:50%; left:50%; position:fixed; border-radius:30px; display:flex; align-items:center; }
-  .ContentsHeader ul{ list-style:none; display:flex; flex-direction:row; justify-content:center; padding:0px 5px; margin:0; }
-  .c-head-button{ width:30px; aspect-ratio:1/1; border-radius:30px; border:none; background:none; padding:0; margin:0; }
-  .c-head-button:hover{ background-color:#f5f5f5; }
-  .c-head-act-delete{ color:#b70000; }
-  .c-head-act-comment{ color:#94841e; }
-  .c-head-act-copys{ color:#188c10; }
-
-  .add-all-menu{ position:fixed; background-color:#FFF9E6; width:900px; height:650px; top:50%; left:50%; transform:translate(-50%, -50%); display:inline-block; overflow-y:auto;/*スクロール*/ -webkit-overflow-scrolling:touch;/*滑らかに*/ display:none; }
-  .all-add-contents{ width:100px; height:130px; margin:10px; padding:0; aspect-ratio:9/10; }
-  .add-all-menu-close{ top:20px; left:20px; width:50px; height:50px; padding:0; margin:0; }
-  .add-all-menu-card{ display:flex; flex-wrap:wrap; }
-  .all-add-contents{ border:none; background:none; border-radius:20px; }
-  .all-add-contents:hover{ background-color:#f5f5f5; }
-  .add-all-menu .material-symbols-outlined{ font-size:40px; }
-  
-  .sticky-note { position: absolute;/* 自由位置へ */ width: 150px; height: 150px; background-color:#fff9c4; /* 薄い黄色 */ box-shadow:2px 2px 10px rgba(0,0,0,0.2); padding:10px; border-radius:5px; display:flex;  }
-  .sticky-note textarea{ width:100%; height:100%; background-color:#ffffff00; border:none; outline:none; margin:0; } /* 付箋の入力欄のところ */
-  .title-edit{ width:200px; height:30px; white-space:nowrap;/*折り返しを防止*/ overflow:hidden;/*はみ出た部分を隠す*/ min-width:200px;/*空の時も最小値200pxより小さくならない*/ color:#fff; }
-  
-  @media(max-width:768px){  }
-  </style>
 </body>
 </html>
