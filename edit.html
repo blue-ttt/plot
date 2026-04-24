@@ -203,9 +203,13 @@
   function HelpDisplay(){ /* ヘルプ */
    const target = document.querySelector(".mini-study");
    target.style.display = "block";
+   const target = document.querySelector(".overlay");
+   target.style.display = "block";
   }
   function StudyClose(){ /* ヘルプ閉じる */
    const target = document.querySelector(".mini-study");
+   target.style.display = "none";
+   const target = document.querySelector(".overlay");
    target.style.display = "none";
   }
   
@@ -362,7 +366,7 @@ function addStickyNote(){
   .rogo{ padding:5px; margin:0; }
   .rogo img{ width:30px; height:auto; aspect-ratio:1/1; }
   .btn-close{ width:50px; aspect-ratio:1/1; border-radius:50%; }
-  .overlay{ width:100vw; height:100vh; background-color:#00000080; position:fixed; z-index:290; }
+  .overlay{ width:100vw; height:100vh; background-color:#00000080; position:fixed; z-index:290; display:none; }
   
   .toolbar{ margin:0; padding:0; width:45px; height:500px; background-color:#FFF9E6; position:fixed; top:100px; left:15px; border-radius:20px; box-shadow:1px 1px 5px 1px #8A8C8E; z-index:100; }
   .toolbar ul{ margin:0; display:flex; flex-direction:column; list-style:none; padding:0;}
