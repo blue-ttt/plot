@@ -203,18 +203,21 @@
   function HelpDisplay(){ /* ヘルプ */
    const target = document.querySelector(".mini-study");
    target.style.display = "block";
-   
-   const target2 = document.querySelector(".overlay");
-   target2.style.display = "block";
+   OverlayIsDisplay();
   };
   function StudyClose(){ /* ヘルプ閉じる */
    const target = document.querySelector(".mini-study");
    target.style.display = "none";
-   
-   const target2 = document.querySelector(".overlay");
+   OverlayIsNone();
+  };
+  function OverlayIsDisplay(){
+   const target = document.querySelector(".overlay");
+   target2.style.display = "block";
+  };
+  function OverlayIsNone(){
+   const target = document.querySelector(".overlay");
    target2.style.display = "none";
   };
-  
     /* mode */ 
   const modeButtons = document.querySelectorAll(".mode-board button"); /* modeのボタンを取得 */ 
 
