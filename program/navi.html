@@ -19,66 +19,20 @@
 </nav>
 </div>
 <style>
-  .contents{
-    display:grid;
-    grid-template-columns:200px 1fr;
-  }
-  .navi{
-    background-color:#fff9ed;
-    list-style:none; 
-    display:inline-block;
-    width:70px;
-    height:100vh;
-    text-align:center;
-    border-radius:30px;
-    position:fixed; 
-  }
-  a{
-    text-decoration:none;
-    font-size:10px;
-    color:#FCAF17;
-  }
-  .item{
-   display:flex;
-   flex-direction:column;  /* 縦に並べる */
-   align-items:center;
-   padding:2px;
-   background-color:#fff9ed;
-   width:100%;
-   margin-top:10px
-   border-radius:10px;
-  }
-  .item:hover{
-    background-color:#e0dbbf;
-    border-radius:10px;
-  }
-  .material-symbols-outlined{
-    font-size:50px;
-    color:#FCAF17;
-  }
-  .add .material-symbols-outlined {
-  font-variation-settings: 'FILL' 1;
-}
-  .add{
-    border-radius:40px;
-    color:#fff;
-    aspect-ratio:1/1;
-    font-size:20px;
-    width:55px;
-  }
+  .contents{ display:grid; grid-template-columns:200px 1fr; }
+  .navi{ background-color:#fff9ed; list-style:none;  display:inline-block; width:70px; height:100vh; text-align:center; border-radius:30px; position:fixed; }
+  a{ text-decoration:none; font-size:10px; color:#FCAF17; }
+  .item{ display:flex; flex-direction:column;  /* 縦に並べる */ align-items:center; padding:2px; background-color:#fff9ed; width:100%; margin-top:10px; border-radius:10px; }
+  .item:hover{background-color:#e0dbbf; border-radius:10px; }
+  
+  .material-symbols-outlined{ font-size:50px; color:#FCAF17; }
+  
+  .add .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
+  .add{ border-radius:40px; color:#fff; aspect-ratio:1/1; font-size:20px; width:55px; }
+  
   @media(max-width:768px){
-    .navi{
-        display:flex;
-        flex-direction:row;
-         position:fixed;
-      }
-    .contents{
-        display:flex;
-        align-items:flex-end;
-        height:100vh;
-      }
-     nav {
-     margin-top: auto;      /* ナビゲーションを一番下へ */
-    }
+    .navi{ display:flex; flex-direction:row; position:fixed; }
+    .contents{ display:flex; align-items:flex-end; height:100vh; }
+     nav { margin-top:auto; /* ナビゲーションを一番下へ */}
   }
 </style>
