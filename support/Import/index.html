@@ -13,11 +13,13 @@
     <!--- アップロード部分(本物は隠して、labelで関連つけたのでcssを指定) --->
     <label class="file-upload">
       <input type="file" accept=".png">
-      ファイルを選択
+      <span class="material-symbols-outlined upload-rogo">upload</span>
+      <p style="font-size:50px;">ファイルを選択</p>
     </label>
 
     <style>
-      .file-upload{ display:flex; width:500px; height:200px; margin:0; padding:0; background-color:#FCAF17; color:#fff; }
+      .file-upload{ display:flex; width:500px; height:200px; margin:0; padding:0; background-color:#FCAF17; color:#fff; border-radius:10%; }
+      .upload-rogo{ border-radius:10%; width:30px; height:30px; padding:0; margin:0; }
       input[type="file"]{ display:none; }
     </style>
   </body>
