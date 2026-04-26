@@ -26,12 +26,13 @@
   </div>
   
    <footer>
-    <a href="" data-tooltip="ページ上へ戻る" style="position:fixed; right:30px; bottom:30px; z-index:240;"><img src="https://blue-ttt.github.io/plot/data/plot-BackToTop.png" alt="ページ上に戻る" style="width:100px; height:auto;"></a>
+    <a href="" data-tooltip="ページ上へ戻る" class="back-to-top"><img src="https://blue-ttt.github.io/plot/data/plot-BackToTop.png" alt="ページ上に戻る" style="width:100px; height:auto;"></a>
     <div id="footer"></div>
    </footer>
  <style>
    body{ padding-left:70px;/* navの分開ける */ }
    h1{ text-align:center; }
+   .back-to-top{ position:fixed; right:30px; bottom:30px; z-index:240; }
 
    .imgcursor-contents img{ width:300px; height:auto; padding:0; margin:5px; }
    .imgcursor-imgs{ display:flex; flex-direction:row; transition:all 0.5s ease-in-out; overflow:hidden; }
@@ -42,6 +43,7 @@
   @media(max-width:768px){
     body{ padding-left:0; padding-bottom:50px;/*navの左余白を消し,下に作る*/ }
     nav{ bottom:40px; width:100vw; height:50px; position: fixed; }
+    .back-to-top{ position:fixed; right:10px; bottom:35px; z-index:240; }
     }
   </style>
 </body>
