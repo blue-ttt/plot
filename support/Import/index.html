@@ -8,6 +8,7 @@
     <script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>
   </head>
   <body>
+    <button onclick="window.history.back();">戻る</button>
     <h1>plotをインポート</h1>
     <p>デバイスに保存されたplotをMyPlotに保存し、再編集可能な形に変換します。</p>
     <!--- アップロード部分(本物は隠して、labelで関連つけたのでcssを指定) --->
@@ -26,7 +27,7 @@
     </ul>
 
     <style>
-      .file-upload{ display:flex; max-width:500px; max-height:200px; margin:10px; padding:20px; background-color:#fff; color:#FCAF17; cursor:pointer; border:2px solid #FCAF17; border-radius:10px; transition:all 0.3s ease; }
+      .file-upload{ display:flex; max-width:500px; height:200px; margin:10px; padding:20px; background-color:#fff; color:#FCAF17; cursor:pointer; border:2px solid #FCAF17; border-radius:10px; transition:all 0.3s ease; }
       .file-upload:hover{ background-color:#FFF9E6; }
       .upload-rogo{ display:flex; border-radius:10px; width:70px; height:70px; padding:0; margin:auto; font-size:40px; background-color:#FCAF17; color:#FFF9E6; align-items:center; justify-content:center; }
       .upload-file-texts{ display:flex; flex-direction:column; align-items:center; justify-content:center; margin:auto; padding:0; }
