@@ -1,3 +1,5 @@
+function i18nStart(){
+ 
 window.addEventListener('DOMContentLoaded', () => { /* ページが完全に読み込んでから */
 const language = navigator.language;
 const elements = document.querySelectorAll(".i18n");
@@ -23,3 +25,4 @@ else
 };
  
 });
+};
