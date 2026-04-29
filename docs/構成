@@ -23,7 +23,7 @@ data    ───── 画像、その他のファイルをここに
 program  ── fetch.js : 共通パーツ(navなど)をフェッチする。適用コード<script src="https://blue-ttt.github.io/plot/program/fetch.js"></script>
          ├─ navi.html : メニュー画面に当たる部分
          ├─ footer.html : フッター画面の部分
-         ├─ i18n.js : ユーザーが使い言語をhtmlから選び、表示させる。< >に class="i18n" をつける。適用コード<script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>
+         ├─ i18n.js : ユーザーが使い言語をhtmlから選び、表示させる。< >に class="i18n" をつける。適用コード<script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>とfetch.jsを入れてない場合は i18nStart(); と関数で呼び出す
          ├─ style.css : サイト全体の要素のcss。適用コード<link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/style.css">
          ├─ 🗂️core : 編集画面のプログラム
             ├─ function.js : 関数群。適用コード<script src="https://blue-ttt.github.io/plot/program/core/function.js"></script>
