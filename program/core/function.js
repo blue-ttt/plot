@@ -27,11 +27,11 @@
    target.style.display = "none";
    OverlayIsNone();
   };
- function addMenuDisplay{
+ function addMenuDisplay(){
    const target = document.querySelector(".all-add-Menu");
    target.style.display = "block";
  };
- function addMenuClose{
+ function addMenuClose(){
    const target = document.querySelector(".all-add-Menu");
    target.style.display = "none";
  };
