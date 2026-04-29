@@ -1,7 +1,7 @@
 function i18nStart(){
  
 const language = navigator.language;
-const elements = document.querySelectorAll(".i18n");
+const elements = document.querySelectorAll(".i18n, [data-tooltip]");
 
 if(language.startsWith('ja')) {
  elements.forEach((el) => {
