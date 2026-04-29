@@ -27,6 +27,14 @@
    target.style.display = "none";
    OverlayIsNone();
   };
+ function addMenuDisplay{
+   const target = document.querySelector(".all-add-Menu");
+   target.style.display = "block";
+ }
+ function addMenuClose{
+   const target = document.querySelector(".all-add-Menu");
+   target.style.display = "none";
+ }
 // --- オーバーレイの関数 ---
   function OverlayIsDisplay(){
    const target = document.querySelector(".overlay");
