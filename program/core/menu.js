@@ -24,6 +24,9 @@
  });
   /* クイック追加メニューを非表示 */
   window.addEventListener('mousedown', (event) => {
+    if (e.target.closest('.all-add-Menu')) {
+    return; 
+    }
     const target = document.querySelector('.QuickMenu');
     target.style.display = "none";
   });
