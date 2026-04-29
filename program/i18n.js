@@ -10,14 +10,14 @@ if(language.startsWith('ja')) {
       const parts = text.split("|");
       el.textContent = parts[0]; /* 前側の日本語を表示 */
     }
- 
+ // ツールチップ
  const tooltipText = el.getAttribute("data-tooltip"); //要素（el）の data-tooltip 属性の中身を読み取る
  if (tooltipText && tooltipText.includes("|")) { // data-tooltip が設定されているか？文字列の中に | が含まれているか？をチェック
   const parts = tooltipText.split("|");
   el.setAttribute("data-tooltip", parts[0]);
  }
   
-  }) //elements.forEach((el)ここまで
+  }); //elements.forEach((el)ここまで
  
 }
 else
@@ -28,7 +28,13 @@ else
       const parts = text.split("|");
       el.textContent = parts[1]; /* 後ろ側の英語を表示 */
     }
-  });
+    // ツールチップ
+ const tooltipText = el.getAttribute("data-tooltip"); //要素（el）の data-tooltip 属性の中身を読み取る
+ if (tooltipText && tooltipText.includes("|")) { // data-tooltip が設定されているか？文字列の中に | が含まれているか？をチェック
+  const parts = tooltipText.split("|");
+  el.setAttribute("data-tooltip", parts[1]);
+ }
+  }); //elements.forEach((el)ここまで
 };
  
 };
