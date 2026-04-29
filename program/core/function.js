@@ -30,6 +30,7 @@
  function addMenuDisplay(){ /* 要素追加画面 */
    const target = document.querySelector(".add-all-menu");
    target.style.display = "block";
+   OverlayIsNone();
  };
  function addMenuClose(){　/* 要素追加画面閉じる */
    const target = document.querySelector(".add-all-menu");
