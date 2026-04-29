@@ -5,8 +5,9 @@ body{ font-family: "M PLUS Rounded 1c", sans-serif; }
 a{ font-family: "M PLUS Rounded 1c", sans-serif; }
 button{ cursor:pointer; }
 
-.material-symbols-outlined { font-variation-settings:'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 }
-.text-link a{ color:#FCAF17; text-decoration:none display:flex; flex-direction:row; align-items:center; justify-content:center; }
+.material-symbols-outlined { font-variation-settings:'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.text-link{ display:flex; flex-direction:row; align-items:center; justify-content:center; }
+.text-link a{ color:#FCAF17; text-decoration:none; }
 .text-link a:hover{ text-decoration:underline; }
 .text-link a:active{ text-decoration:underline; background-color:#bdbdbd;}
 
