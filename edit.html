@@ -118,7 +118,7 @@
    <button class="QuickMenu-add Q-add-text add-text" data-tooltip="テキストを追加"><span class="material-symbols-outlined">text_increase</span></button>
    <button class="QuickMenu-add Q-add-note add-note" data-tooltip="付箋を追加"><span class="material-symbols-outlined">note_stack_add</span></button>
    <button class="QuickMenu-add Q-add-pin add-pin" data-tooltip="ピンを追加"><span class="material-symbols-outlined">add_location</span></button>
-   <button class="QuickMenu-add all-add-Menu" data-tooltip="すべて見る"><span class="material-symbols-outlined">add</span></button>
+   <button class="QuickMenu-add all-add-Menu" data-tooltip="すべて見る" onclick="addMenuDisplay();"><span class="material-symbols-outlined">add</span></button>
    <button class="QuickMenu-add Q-add-material add-material" data-tooltip="素材を追加"><span class="material-symbols-outlined">sticker_add</span></button>
  </div>
  <!--- コンテンツヘッダー --->
@@ -293,9 +293,6 @@ function addStickyNote(){
     sticky.style.zIndex = 10;
   });
  } /* 付箋コードここまで */
-
-  /* 要素追加メニューの表示 */
-  document.querySelector(".all-add-Menu").addEventListener('click', function() {const target = document.querySelector(".add-all-menu"); target.style.display = "inline-block";});
    
  </script>
 </body>
