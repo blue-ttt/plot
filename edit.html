@@ -132,7 +132,7 @@
  </div>
  <!--- 挿入メニュー全て --->
  <div class="add-all-menu">
-  <button class="add-all-menu-close btn-close" data-tooltip="閉じる"><span class="material-symbols-outlined">close</span></button>
+  <button class="add-all-menu-close btn-close" data-tooltip="閉じる" onclick="addMenuClose();"><span class="material-symbols-outlined">close</span></button>
   <div style="text-align:center; width:100%; display:block;"><h1>要素を追加</h1></div>
   <br>
   <div class="add-all-menu-card">
@@ -171,8 +171,7 @@
   if (e.key === 'Enter') {
   e.preventDefault(); // 改行（Enter）の動作を無効化
     }});
-  /* 要素追加メニュー */
-   document.querySelector(".add-all-menu-close").addEventListener('click', function() {const target = document.querySelector(".add-all-menu"); target.style.display = "none";});
+
    /* tool */ 
   const toolButtons = document.querySelectorAll(".toolbar .tools"); /* toolbarのボタンを取得 */ 
 
