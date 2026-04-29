@@ -27,11 +27,11 @@
    target.style.display = "none";
    OverlayIsNone();
   };
- function addMenuDisplay(){
+ function addMenuDisplay(){ /* 要素追加画面 */
    const target = document.querySelector(".all-add-Menu");
    target.style.display = "block";
  };
- function addMenuClose(){
+ function addMenuClose(){　/* 要素追加画面閉じる */
    const target = document.querySelector(".all-add-Menu");
    target.style.display = "none";
  };
