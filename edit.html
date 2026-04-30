@@ -65,6 +65,7 @@
   <button class="btn-share-card btn-share-webCode"><span class="material-symbols-outlined">code_xml</span>Webに埋め込む</button>
   <button class="btn-share-card btn-share-otherDevice"><span class="material-symbols-outlined">mobile_cast</span>スマホへ送信</button>
  </div>
+ 
  <div class="toolbar">
   <ul>
    <li><button class="tools edit-move" data-tooltip="操作する" ><script>nowtool = "edit";</script><span class="material-symbols-outlined">arrow_selector_tool</span></button></li>
@@ -86,12 +87,14 @@
   </ul>
  </div>
  <div class="overlay"></div><!--- 一時コンテンツを強調させるため画面全体をオーバーレイ --->
- 
+
+ <!--- 画面全体 --->
   <div id="viewport" class="viewport">
    <div id="canvas" class="canvas">
        <div style="position:absolute; top:500px; left:500px;">中心の目印</div>
    </div>
   </div>
+ 
   <!--- コンテンツメニュー --->
  <div class="ContextMenu">
   <ul>
@@ -159,6 +162,12 @@
   <button class="all-add-contents add-pieChart"><span class="material-symbols-outlined" style="color:green; font-variation-settings:'FILL' 1;">pie_chart</span><br><p>円グラフ</p></button>
   <button class="all-add-contents add-barChart"><span class="material-symbols-outlined" style="color:green; font-variation-settings:'FILL' 1;">bar_chart_4_bars</span><br><p>棒グラフ</p></button>
   
+ </div>
+ <!--- 要素　(メモ・素材とか) --->
+ <!--- 付箋 --->
+ <div class="sticky-note">
+  <textarea placeholder="メモを入力..."></textarea>
+  <div class="drag"><span class="material-symbols-outlined" style="font-size:20px; background-color:#fff; cursor:move; ">drag_pan</span></div>
  </div>
 
  <script>
