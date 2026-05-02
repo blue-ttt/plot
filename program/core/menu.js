@@ -8,9 +8,14 @@
    
     target.style.display = "block";/* 表示 */
  });
-  /* コンテキストメニューを非表示 */
+  /* ボードメニューを非表示 */
   window.addEventListener('mousedown', (event) => {
     const target = document.querySelector('.BoardMenu');
+
+    // もしクリックした場所がボードメニューの中身であれば、何もしない
+    if (event.target.closest('.BoardMenu')) {
+    return; // ここで処理を終了
+     }
     target.style.display = "none";
  });
   
@@ -28,7 +33,7 @@
   
     // もしクリックした場所がクイックメニューの中身であれば、何もしない
     if (event.target.closest('.QuickMenu')) {
-    return; // ここで処理を終了（＝非表示にしない）
+    return; // ここで処理を終了
      }
     target.style.display = "none";
   });
