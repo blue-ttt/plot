@@ -20,7 +20,7 @@
   nav{ z-index:250; }
   .navi{ background-color:#fff9ed; padding:0; margin:0; list-style:none;  display:inline-block; width:70px; height:100%; text-align:center; position:fixed; }
   .navi a{ text-decoration:none; font-size:10px; color:#FCAF17; margin:0; padding:0;}
-  .navi .item{ display:flex; flex-direction:column;  /* 縦に並べる */ align-items:center; padding:0; background-color:#fff9ed; width:100%; margin:20px 0; border-radius:10px; }
+  .navi .item{ display:flex; flex-direction:column;  /* 縦に並べる */ align-items:center; padding:0; background-color:#fff9ed; transition:all 0.2s ease; width:100%; margin:20px 0; border-radius:10px; }
   .navi .item:hover{background-color:#e0dbbf; border-radius:10px; }
   
   .navi .material-symbols-outlined{ font-size:50px; color:#FCAF17; }
@@ -29,7 +29,7 @@
   .add{ border-radius:40px; color:#fff; aspect-ratio:1/1; font-size:20px; width:55px; }
   
   @media(max-width:768px){
-    .navi{ display:flex; flex-direction:row; position:fixed; background-color:#fff9ed; height:40px; width:100vw; }
+    .navi{ display:flex; flex-direction:row; position:fixed; background-color:#fff9ed; height:70px; width:100vw; }
      nav { margin-top:auto;/* ナビゲーションを一番下へ */ width:100vw; }
   }
 </style>
