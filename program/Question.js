@@ -1,5 +1,5 @@
 function YesOrNo(title , text , yesName , noName){
-  const html = `
+  const html =  return`
   <div class="QuestionCade">
     <h2>${title}</h2>
     <p>${text}</p>
@@ -7,9 +7,11 @@ function YesOrNo(title , text , yesName , noName){
     <button>${noName}</button>
   </div>
   `;
+  const YesOrNo = document.getElementById('YesOrNo');/* <div id="YesOrNo"></div>に表示 */
 }
+
 function doDelete(){
-  const html = `
+  const html = return`
   <div class="QuestionCade">
     <h2>削除しますか？</h2>
     <h3>警告</h3>
