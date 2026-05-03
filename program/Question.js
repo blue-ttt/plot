@@ -1,7 +1,5 @@
-window.addEventListener('DOMContentLoaded', () => {
-  
 function YesOrNo(title , text , yesName , noName){
-  const html =  return`
+  const html =  `
   <div class="QuestionCade">
     <h2>${title}</h2>
     <p>${text}</p>
@@ -11,4 +9,3 @@ function YesOrNo(title , text , yesName , noName){
   `;
   const YesOrNo = document.getElementById('QuestionYesOrNo');/* <div id="YesOrNo"></div>に表示 */
 }
-});
