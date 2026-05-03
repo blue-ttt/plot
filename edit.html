@@ -43,7 +43,7 @@
   </ul>
  </header>
  
- <div class="ai-btn"><button data-tooltip="AI分析"><span class="material-symbols-outlined">smart_toy</span></button></div>
+ <div class="ai-btn"><button data-tooltip="AI分析" onclick="YesOrNo("実行しますか？" , "取り消せません" , "実行" , "キャンセル");"><span class="material-symbols-outlined">smart_toy</span></button></div>
  
  <div class="mini-study">
   <button class="mini-study-close btn-close i18n" data-tooltip="閉じる | close" onclick="StudyClose();"><span class="material-symbols-outlined">close</span></button>
@@ -310,7 +310,5 @@ function addStickyNote(){
  <script>
   /* 言語のやつの関数 */
   i18nStart();
-  
-  YesOrNo("実行しますか？" , "取り消せません" , "実行" , "キャンセル");
  </script>
 </html>
