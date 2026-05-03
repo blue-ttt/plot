@@ -22,6 +22,8 @@
   let diffY = 0;
  /* データリスト */
  let DataList = [];
+
+ YesOrNo("実行しますか？" , "取り消せません" , "実行" , "キャンセル");
 </script>
 
 <body>
@@ -87,6 +89,7 @@
   </ul>
  </div>
  <div class="overlay"></div><!--- 一時コンテンツを強調させるため画面全体をオーバーレイ --->
+ <div id="QuestionYesOrNo"></div><!--- はい/いいえ のユーザーアクション --->
 
  <!--- 画面全体 --->
   <div id="viewport" class="viewport">
