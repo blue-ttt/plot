@@ -3,8 +3,8 @@ function YesOrNo(title , text , yesName , noName){
   <div class="QuestionCade">
     <h2>${title}</h2>
     <p>${text}</p>
-    <button>${yesName}</button>
-    <button>${noName}</button>
+    <button class="btn-QuestionDo">${yesName}</button>
+    <button class="btn-QuestionCancel">${noName}</button>
   </div>
   `;
   const YesOrNo = document.getElementById('YesOrNo');/* <div id="YesOrNo"></div>に表示 */
