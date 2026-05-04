@@ -7,6 +7,6 @@ function YesOrNo(title , text , yesName , noName){
     <button class="btn-QuestionCancel">${noName}</button>
   </div>
   `;
-  const YesOrNo = document.getElementById('QuestionYesOrNo');/* <div id="YesOrNo"></div>に表示 */
-  targetElement.innerHTML = html;
+  const YesOrNoData = document.getElementById('QuestionYesOrNo');/* <div id="YesOrNo"></div>に表示 */
+  YesOrNoData.innerHTML = html;
 }
