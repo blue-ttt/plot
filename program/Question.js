@@ -4,7 +4,7 @@ function YesOrNo(title , text , yesName , noName){
     <h2>${title}</h2>
     <p>${text}</p>
     <button class="btn-QuestionDo">${yesName}</button>
-    <button class="btn-QuestionCancel">${noName}</button>
+    <button class="btn-QuestionCancel" onclick="const css = document.querySelector('.QuestionCade'); css.style.display = 'none';">${noName}</button>
   </div>
   `;
   const YesOrNoData = document.getElementById('QuestionYesOrNo');/* <div id="YesOrNo"></div>に表示 */
