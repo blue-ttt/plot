@@ -5,12 +5,13 @@
 </head>
 <body>
   <h1>ギャラリー</h1>
-  <button class="gallery-cade" data-tooltip="ランダムでプロットを表示!"><span class="material-symbols-outlined gallery-icon">star_shine</span><span>サプライズ</span></button>
+  <button class="gallery-cade" data-tooltip="ランダムでプロットを表示!"><span class="material-symbols-outlined gallery-icon">star_shine</span><span class="gallery-card-title">サプライズ</span></button>
 
   <style>
     .gallery-cade{ display:flex; flex-direction:column; justify-content:center; align-items:center; padding:5px; margin:20px; border:none; background:none; color:#000; border-radius:10px; width:150px; height:150px; cursor:pointer; transition:all 0.2s ease; }
     .gallery-cade:hover{ background-color:#FCAF17; color:#fff; }
-    .gallery-cade:hover .gallery-icon{ background-color:#fff; color:#FCAF17; }
+    .gallery-cade:hover .gallery-icon{ background-color:#fff; color:#FCAF17; transform:translateY(-5px); }
+    .gallery-cade:hover .gallery-card-title{ transform:translateY(-5px); }
     .gallery-icon{ display:flex; border-radius:50%; background-color:#FCAF17; color:#fff; width:50px; height:50px; margin:0; padding:0; justify-content:center; align-items:center; transition:all 0.2s ease; }
   </style>
 </body>
