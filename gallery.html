@@ -11,7 +11,7 @@
 <body>
   <script>
     const GalleryData = [
-      { title: パーティ会場, info: パーティ会場のレイアウトを設計しましょう, id: G-0001, color: #EF4123, icon: celebration, },
+      { title: パーティ会場, info: パーティ会場のレイアウトを設計しましょう, id: G_0001, color: #EF4123, icon: celebration, },
     ]
   </script>
   <div id="navi"></div>
@@ -22,6 +22,7 @@
   <h3 style="padding:0; margin:10px 5px;">おすすめ</h3>
   <div id="AllGallery"></div>
 
+  
   <div id="footer"></div>
   <style>
     .gallery-cade{ display:flex; flex-direction:column; justify-content:center; align-items:center; padding:5px; margin:20px; border:none; background:none; color:#000; border-radius:10px; width:150px; height:170px; cursor:pointer; transition:all 0.3s ease-out; }
@@ -34,8 +35,8 @@
     .gallery-icon{ display:flex; border-radius:50%; background-color:#FCAF17; color:#fff; width:50px; height:50px; margin:0; padding:0; justify-content:center; align-items:center; transition:all 0.3s ease-out; }
   </style>
   <script>
-    function SearchGallery (InputContent){
-      
+    function SearchGallery (G_SearchFilter){
+      const searchResult = GalleryData.filter(変数名.includes('G_SearchFilter'));
     }
   </script>
 </body>
