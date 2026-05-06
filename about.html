@@ -9,17 +9,21 @@
 <body>
 
 <div class="title">
- <span class="title1">思いつき</span><span class="title2">を</span><span class="title3">創造へ</span>
+ <span class="title-idea"><span>小さな</span><span class="title1">思いつき</span></span>
+ <span class="title2">を</span>
+ <span class="title-souzou"><span>大きな</span><span class="title3">創造へ</span></span>
 </div>
 
- <footer ><div id="footer"></div></footer>
+ <footer><div id="footer"></div></footer>
  
  <style>
   
-  .title{  }
+  .title{ padding:0; margin:20px; display:flex; flex-direction:row; }
   .title1{ color:#F067A6; font-size:50px; }
   .title2{ color:#000; font-size:30px; }
   .title3{ font-size:50px; background:linear-gradient(to right, #4facfe 0%, #00f2fe 100%); -webkit-background-clip:text; background-clip:text;/*文字へ切り抜く*/ color:transparent; }
+  .title-idea{ display:flex; flex-direction:column; }
+  .title-souzou{ display:flex; flex-direction:column; }
   
   .startbutton{
    display: inline-block;
