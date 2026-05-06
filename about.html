@@ -11,7 +11,7 @@
 <body>
  <header>
   <div class="header">
-   <img　src="https://blue-ttt.github.io/plot/data/ploticon-outline.png" style="width:30px; height:30px;"><span>plot</span>
+   <img src="https://blue-ttt.github.io/plot/data/ploticon-outline.png" style="width:30px; height:30px;"><span>plot</span>
    <a class="head-infolink" href=" ">特徴</a>
    <a class="head-infolink" href=" ">使い方</a>
    <a class="head-makebtn" href=" ">今すぐ作成</a>
@@ -40,53 +40,6 @@
   .title3{ font-size:50px; padding:0; margin:0; background:linear-gradient(to right, #4facfe 0%, #00f2fe 100%); -webkit-background-clip:text; background-clip:text;/*文字へ切り抜く*/ color:transparent; }
   .title-idea{ display:flex; flex-direction:column; }
   .title-souzou{ display:flex; flex-direction:column; }
-  
-  .startbutton{
-   display: inline-block;
-   color:#fff;
-   background-color:#FCAF17;
-   width:100%;
-   padding:20px;
-   text-decoration:none;
-   border-radius:30px;
-   margin:5px;
-   font-size:30px;
-   box-shadow:1px 1px 5px 2px #a38103;
-  }
-  
-  .aboutbutton{
-   display: inline-block;
-   color:#fff;
-   background-color:#FFD400;
-   width:100%;
-   padding:20px;
-   text-decoration:none;
-   border-radius:30px;
-   margin:5px;
-  }
-  
-  /* 動くアニメーションの中身を定義 */
- @keyframes softFloat {
-  0% {
-    transform:scale(1);     
-    box-shadow:0px 0px 5px 2px #FFD400; /* 普通 */
-  }
-  50% {
-    transform:scale(1.1);    /* 変化 */
-    box-shadow:0px 0px 10px 2px #FFD400; 
-   }
-  100% {
-    transform:scale(1);       /* 普通 */
-    box-shadow:0px 0px 5px 2px #FFD400;
-   }
- }
-
-  /* 動くボタンのスタイル */
-  .move-animation {
-   animation: softFloat 3s ease-in-out infinite; /* 3秒かけて、滑らかに、無限に繰り返す */
-   }
-  
-  .startbutton:hover{ transition:all 0.3s ease; color:#fff; background-color:#fcd238; box-shadow:1px 5px 10px 2px #a38103; transform:translateY(-4px); }
   
  </style>
  <script>
