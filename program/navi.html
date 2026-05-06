@@ -17,6 +17,7 @@
   </ul>
 </nav>
 <style>
+  body{ padding:0; padding-left:70px; margin:0; }
   nav{ z-index:250; }
   .navi{ background-color:#fff9ed; padding:0; margin:0; list-style:none;  display:inline-block; width:70px; height:100%; text-align:center; position:fixed; }
   .navi a{ text-decoration:none; font-size:10px; color:#FCAF17; margin:0; padding:0;}
@@ -29,6 +30,7 @@
   .add{ border-radius:40px; color:#fff; aspect-ratio:1/1; font-size:20px; width:55px; }
   
   @media(max-width:768px){
+    body{ padding:0; margin:0; }
     .navi{ display:flex; margin:0; padding:0; flex-direction:row; position:fixed; background-color:#fff9ed; height:90px; width:100vw; }
     .navi .item{ margin:0; padding:0; }
      nav { margin-top:auto;/* ナビゲーションを一番下へ */ width:100vw; }
