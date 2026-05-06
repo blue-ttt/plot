@@ -39,10 +39,15 @@ z-indexの数値
 plotの要素：0~200 (レイヤー設定では200が上限)
 
 <ギャラリーのリスト構成>
-[ title: タイトル, info: 本文, id: IDコード, color: アクセントカラー, icon: google iconの名前, ]
+[ title: タイトル, info: 本文, id: IDコード, color: アクセントカラー, icon: google iconの名前, tag: 種類, start: おすすめ, ]
 
 ・IDコード
     G_0001 など、G_ と それぞれ違う4ケタの数字
+・tag
+    tagにはplotの種類がくる。
+    <種類> 空白:originality ホワイトボード:whiteboard ノート:notebook 掲示板:bulletin_board 思考ツール:thinking_tools 空間デザイン：spatial_design フローチャート:flowchart ロードマップ:roadmap
+・start
+    startには初期画面で「おすすめ」に表示するかどうか、表示するなら'おすすめ'　しないならスペース。
 
 <アカウント>
 任意で作成可能
