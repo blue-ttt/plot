@@ -12,7 +12,7 @@
   <script>
     const GalleryData = [
       { title: "パーティ会場", info: "パーティ会場のレイアウトを設計しましょう", id: "G_0001", color: "#EF4123", icon: "celebration", tag: "spatial_design", },
-      { title: "フィッシュボーン", info: "なぜ？と思ったら骨を増やし、根本的な原因を解決しましょう", id: "G_0002", color: "pet_supplies", icon: "pet_supplies", tag: "thinking_tools", },
+      { title: "フィッシュボーン", info: "なぜ？と思ったら骨を増やし、根本的な原因を解決しましょう", id: "G_0002", color: "#6495ED", icon: "pet_supplies", tag: "thinking_tools", },
     ]
   </script>
   <div id="navi"></div>
@@ -21,9 +21,7 @@
   <button class="gallery-cade"><span class="material-symbols-outlined gallery-icon">star_shine</span><span class="gallery-card-title">サプライズ</span><span class="gallery-card-info">plotギャラリーからランダムで選びます！</span></button>
   
   <h3 style="padding:0; margin:10px 5px;">おすすめ</h3>
-  <div class="gallery_cades">
-    <div id="AllGallery"></div>
-  </div>
+    <div class="gallery_cades" id="AllGallery"></div>
   
   <div id="footer"></div>
   <style>
@@ -33,8 +31,8 @@
     .gallery-cade:hover{ color:#fff; }
     .gallery-card-title{ transition:all 0.3s ease-out; font-size:17px; color:#fff; }
     .gallery-cade:hover .gallery-card-title{ transform:translateY(-20px); color:#fff; }
-    .gallery-card-info{ display:none; color:#fff; transition:all 0.3s ease-out; font-size:12px; }
-    .gallery-cade:hover .gallery-card-info{ display:flex; justify-content:center; align-items:center; transform:translateY(-5px); }
+    .gallery-card-info{ display:none; color:var(--color); transition:all 0.3s ease-out; font-size:12px; }
+    .gallery-cade:hover .gallery-card-info{ display:flex; justify-content:center; align-items:center; color:#fff; transform:translateY(-5px); }
     /* 下はgoogleアイコンが含まれていて,flexだと位置計算が優先されるので,gridを使う */
     .gallery-icon{ display:grid; place-items: center; border-radius:50%; background-color:#fff; color:var(--color); width:50px; height:50px; margin:0; padding:0; transition:all 0.3s ease-out; }
     .gallery-cade:hover .gallery-icon{ background-color:#fff; color:var(--color); transform:translateY(-20px) scale(1.1) rotate(-20deg); }
