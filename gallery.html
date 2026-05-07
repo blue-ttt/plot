@@ -37,6 +37,7 @@
     /* 下はgoogleアイコンが含まれていて,flexだと位置計算が優先されるので,gridを使う */
     .gallery-icon{ display:grid; place-items: center; border-radius:50%; background-color:#fff; color:var(--color); width:50px; height:50px; margin:0; padding:0; transition:all 0.4s ease-out; }
     .gallery-cade:hover .gallery-icon{ background-color:#fff; color:var(--color); transform:translateY(-20px) scale(1.1) rotate(-20deg); }
+    
     /* --- カジュアル部分 --- */
     .c-gallery-cade{ display:flex; flex-direction:column; justify-content:center; align-items:center; padding:5px; margin:20px; border:none; background-color:#FCAF17; color:#fff; border-radius:10px; width:200px; height:170px; cursor:pointer; transition:all 0.4s ease-out; }
     .c-gallery-cade:hover{ color:#fff; }
@@ -46,8 +47,8 @@
     .c-gallery-card-info{ display:none; color:#FCAF17; transition:all 0.4s ease-out; font-size:12px; }
     .c-gallery-cade:hover .gallery-card-info{ display:flex; justify-content:center; align-items:center; color:#fff; transform:translateY(-5px); }
     /* 下はgoogleアイコンが含まれていて,flexだと位置計算が優先されるので,gridを使う */
-    .gallery-icon{ display:grid; place-items: center; border-radius:50%; background-color:#fff; color:#FCAF17; width:50px; height:50px; margin:0; padding:0; transition:all 0.4s ease-out; }
-    .gallery-cade:hover .gallery-icon{ background-color:#fff; color:#FCAF17; transform:translateY(-20px) scale(1.1) rotate(-20deg); }
+    .c-gallery-icon{ display:grid; place-items: center; border-radius:50%; background-color:#fff; color:#FCAF17; width:50px; height:50px; margin:0; padding:0; transition:all 0.4s ease-out; }
+    .c-gallery-cade:hover .gallery-icon{ background-color:#fff; color:#FCAF17; transform:translateY(-20px) scale(1.1) rotate(-20deg); }
   </style>
   <script>
     function SearchGallery (G_SearchFilter){
