@@ -30,12 +30,12 @@
     
     .gallery-cade{ display:flex; flex-direction:column; justify-content:center; align-items:center; padding:5px; margin:20px; border:none; background-color:var(--color); color:#fff; border-radius:10px; width:150px; height:170px; cursor:pointer; transition:all 0.3s ease-out; }
     .gallery-cade:hover{ color:#fff; }
-    .gallery-cade:hover .gallery-icon{ background-color:#fff; color:var(--color); transform:translateY(-20px); }
     .gallery-card-title{ transition:all 0.3s ease-out; font-size:17px; color:#fff; }
     .gallery-cade:hover .gallery-card-title{ transform:translateY(-20px); color:#fff; }
     .gallery-card-info{ display:none; color:#fff; transition:all 0.3s ease-out; font-size:12px; }
     .gallery-cade:hover .gallery-card-info{ display:flex; justify-content:center; align-items:center; transform:translateY(-5px); }
     .gallery-icon{ display:flex; border-radius:50%; background-color:#fff; color:var(--color); width:50px; height:50px; margin:0; padding:0; justify-content:center; align-items:center; transition:all 0.3s ease-out; }
+    .gallery-cade:hover .gallery-icon{ background-color:#fff; color:var(--color); transform:translateY(-20px) scale(1.01) rotate(-5deg); }
   </style>
   <script>
     function SearchGallery (G_SearchFilter){
