@@ -36,8 +36,15 @@
   </style>
   <script>
     function SearchGallery (G_SearchFilter){
-      const searchResult = GalleryData.filter(item => GalleryData.includes('G_SearchFilter'));
-      return searchResult;
+      const searchResult = GalleryData.filter(item => 
+        item.name.includes(G_SearchFilter));
+      const gallery_html = `
+        
+        
+      `;
+      
+      const input_contents_gallery = document.getElementById('AllGallery');
+      input_contents_gallery.innerHTML = gallery_html;
     }
     
   </script>
