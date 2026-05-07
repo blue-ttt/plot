@@ -11,7 +11,7 @@
 <body>
   <script>
     const GalleryData = [
-      { title: パーティ会場, info: パーティ会場のレイアウトを設計しましょう, id: G_0001, color: #EF4123, icon: celebration, tag: spatial_design, start: おすすめ, },
+      { title: "パーティ会場", info: "パーティ会場のレイアウトを設計しましょう", id: "G_0001", color: "#EF4123", icon: "celebration", tag: "spatial_design", start: "おすすめ", },
     ]
   </script>
   <div id="navi"></div>
@@ -20,11 +20,14 @@
   <button class="gallery-cade"><span class="material-symbols-outlined gallery-icon">star_shine</span><span class="gallery-card-title">サプライズ</span><span class="gallery-card-info">plotギャラリーからランダムで選びます！</span></button>
   
   <h3 style="padding:0; margin:10px 5px;">おすすめ</h3>
-  <div id="AllGallery"></div>
-
+  <div class="gallery_cades">
+    <div id="AllGallery"></div>
+  </div>
   
   <div id="footer"></div>
   <style>
+    .gallery_cades{ display:flex; flex-direction:row; flex-wrap:wrap; }
+    
     .gallery-cade{ display:flex; flex-direction:column; justify-content:center; align-items:center; padding:5px; margin:20px; border:none; background:none; color:#000; border-radius:10px; width:150px; height:170px; cursor:pointer; transition:all 0.3s ease-out; }
     .gallery-cade:hover{ background-color:#FCAF17; color:#fff; }
     .gallery-cade:hover .gallery-icon{ background-color:#fff; color:#FCAF17; transform:translateY(-20px); }
@@ -50,6 +53,8 @@
       const input_contents_gallery = document.getElementById('AllGallery');
       input_contents_gallery.innerHTML = gallery_html;
     };
+
+    SearchGallery("パーティ会場");
   </script>
 </body>
 </html>
