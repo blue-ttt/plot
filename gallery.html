@@ -38,15 +38,20 @@
     function SearchGallery (G_SearchFilter){
       const searchResult = GalleryData.filter(item => 
         item.name.includes(G_SearchFilter));
+      
       const gallery_html = `
-        
-        
+        <button class="gallery-cade">
+          <span class="material-symbols-outlined gallery-icon">${item.icon}</span>
+          <span class="gallery-card-title">${item.title}</span>
+          <span class="gallery-card-info">${item.info}</span>
+        </button>
       `;
       
       const input_contents_gallery = document.getElementById('AllGallery');
       input_contents_gallery.innerHTML = gallery_html;
-    }
-    
+    };
+
+    SearchGallery(おすすめ);
   </script>
 </body>
 </html>
