@@ -12,16 +12,16 @@
 <body>
   <script>
     const GalleryData = [
-      { title: "パーティ会場", info: "素敵なパーティ会場のレイアウトを設計しましょう", id: "G_0001", color: "#EF4123", icon: "celebration", tag: "spatial_design", },
-      { title: "フィッシュボーン", info: "なぜ？と思ったら骨を増やし、根本的な原因を解決しましょう", id: "G_0002", color: "#6495ED", icon: "pet_supplies", tag: "thinking_tools", },
-      { title: "相関図", info: "人物と人物の関係の全体像をまとめましょう", id: "G_0003", color: "#6F51A1", icon: "groups", tag: "bulletin_board", },
-      { title: "作文", info: "書くことを明確にし、完璧な作文を作りましょう", id: "G_0004", color: "#2DCFBB", icon: "format_image_left", tag: "thinking_tools", },
-      { title: "方眼ノート", info: "図や文字の書きやすい方眼で、アイデアをまとめましょう", id: "G_0005", color: "#20B5C1", icon: "grid_on", tag: "notebook", },
-      { title: "掲示板", info: "情報を付けて付けて 繋げて繋げて 整理しましょう", id: "G_0006", color: "#976F3A", icon: "format_image_left", tag: "bulletin_board", },
-      { title: "ロードマップ", info: "目標は大きく！そして達成するためにやる事を具体化しましょう", id: "G_0007", color: "#FFC100", icon: "route", tag: "roadmap", },
-      { title: "ホワイトボード", info: "枠のない空間で発想を広げていきましょう", id: "G_0008", color: "#97C6FF", icon: "jamboard_kiosk", tag: "whiteboard", },
-      { title: "黒板(緑)", info: "制限のない授業を始めましょう", id: "G_0009", color: "#126C0A", icon: "rectangle", tag: "whiteboard", },
-      { title: "ミーティングノート", info: "会議でのアイデアや決定事項を記録しましょう", id: "G_0010", color: "#f77a36", icon: "co_present", tag: "notebook", },
+      { title: "パーティ会場", info: "素敵なパーティ会場のレイアウトを設計しましょう", other: "空間デザイン", id: "G_0001", color: "#EF4123", icon: "celebration", tag: "spatial_design", },
+      { title: "フィッシュボーン", info: "なぜ？と思ったら骨を増やし、根本的な原因を解決しましょう", other: "思考ツール", id: "G_0002", color: "#6495ED", icon: "pet_supplies", tag: "thinking_tools", },
+      { title: "相関図", info: "人物と人物の関係の全体像をまとめましょう", other: "関係性", id: "G_0003", color: "#6F51A1", icon: "groups", tag: "bulletin_board", },
+      { title: "作文", info: "書くことを明確にし、完璧な作文を作りましょう", other: "文章 国語 フレーズ", id: "G_0004", color: "#2DCFBB", icon: "format_image_left", tag: "thinking_tools", },
+      { title: "方眼ノート", info: "図や文字の書きやすい方眼で、アイデアをまとめましょう", other: "四角", id: "G_0005", color: "#20B5C1", icon: "grid_on", tag: "notebook", },
+      { title: "掲示板", info: "情報を付けて付けて 繋げて繋げて 整理しましょう", other: "ボード", id: "G_0006", color: "#976F3A", icon: "format_image_left", tag: "bulletin_board", },
+      { title: "ロードマップ", info: "目標は大きく！そして達成するためにやる事を具体化しましょう", other: "目標に向けて todo", id: "G_0007", color: "#FFC100", icon: "route", tag: "roadmap", },
+      { title: "ホワイトボード", info: "枠のない空間で発想を広げていきましょう", other: "", id: "G_0008", color: "#97C6FF", icon: "jamboard_kiosk", tag: "whiteboard", },
+      { title: "黒板(緑)", info: "制限のない授業を始めましょう", other: "学校", id: "G_0009", color: "#126C0A", icon: "rectangle", tag: "whiteboard", },
+      { title: "ミーティングノート", info: "会議でのアイデアや決定事項を記録しましょう", other: "ビジネス タスク", id: "G_0010", color: "#f77a36", icon: "co_present", tag: "notebook", },
     ]
   </script>
   <div id="navi"></div>
@@ -72,7 +72,8 @@
       const searchResult = GalleryData.filter(item => 
         item.title.includes(G_SearchFilter) ||
         item.info.includes(G_SearchFilter) ||
-        item.tag.includes(G_SearchFilter)
+        item.tag.includes(G_SearchFilter) ||
+        item.other.includes(G_SearchFilter)
          );
       
       const gallery_html = searchResult.map(item => `
