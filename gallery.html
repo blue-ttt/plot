@@ -27,7 +27,7 @@
   <div id="navi"></div>
   <h1 style="padding:0; margin:10px 5px;">ギャラリー</h1>
   <div class="Gallery_Cades">
-    <button class="c-gallery-cade" style="--gallery_cadeTop_color:#FCAF17;"><span class="material-symbols-outlined c-gallery-icon">star_shine</span><span class="c-gallery-card-title">サプライズ</span><span class="c-gallery-card-info">plotギャラリーからランダムで選びます！</span></button>
+    <button class="c-gallery-cade" style="--gallery_cadeTop_color:#FCAF17;"><span class="material-symbols-outlined c-gallery-icon">star_shine</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">サプライズ</span><span class="c-gallery-card-info">plotギャラリーからランダムで選びます！</span></div></button>
     <button class="c-gallery-cade" style="--gallery_cadeTop_color:#C77EB5;"><span class="material-symbols-outlined c-gallery-icon">psychology_alt</span><span class="c-gallery-card-title">思考ツール</span><span class="c-gallery-card-info">課題に向けて思考力を超人並みに引き出すツール！</span></button>
   </div>
   
@@ -53,9 +53,10 @@
     .gallery-cade:hover .gallery-icon{ background-color:#fff; color:var(--color); transform:translateY(-20px) scale(1.1) rotate(-20deg); }
     
     /* --- トップ部分 --- */
-    .c-gallery-cade{ display:flex; flex-direction:column; justify-content:center; align-items:center; padding:5px; margin:20px; border:none; background-color:var(--gallery_cadeTop_color); color:#fff; border-radius:10px; width:200px; height:170px; cursor:pointer; transition:all 0.4s ease-out; }
+    .c-gallery-cade{ display:flex; flex-direction:row; justify-content:center; align-items:center; padding:5px; margin:20px; border:none; background-color:var(--gallery_cadeTop_color); color:#fff; border-radius:10px; width:200px; height:170px; cursor:pointer; transition:all 0.4s ease-out; }
     .c-gallery-cade:hover{ color:#fff; }
     .c-gallery-cade:active{ box-shadow:0px 0px 5px 1px #8A8C8E; transform:scale(1.1); }
+    .c-gallery-cade-text{ display:flex; flex-direction:column; }
     .c-gallery-card-title{ transition:all 0.4s ease-out; font-size:17px; color:#fff; }
     .c-gallery-cade:hover .c-gallery-card-title{ transform:translateY(-20px); color:#fff; }
     .c-gallery-card-info{ display:none; color:#FCAF17; transition:all 0.4s ease-out; font-size:12px; }
