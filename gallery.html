@@ -53,16 +53,16 @@
     .gallery-cade:hover .gallery-icon{ background-color:#fff; color:var(--color); transform:translateY(-20px) scale(1.1) rotate(-20deg); }
     
     /* --- トップ部分 --- */
-    .c-gallery-cade{ display:flex; flex-direction:row; align-items:center; padding:5px; margin:20px; border:none; background-color:var(--gallery_cadeTop_color); color:#fff; border-radius:10px; width:250px; height:120px; cursor:pointer; transition:all 0.4s ease-out; }
-    .c-gallery-cade:hover{ color:#fff; }
+    .c-gallery-cade{ display:flex; flex-direction:row; align-items:center; padding:5px; margin:20px; border:none; background-color:#fff; color:#fff; border:1px solid var(--gallery_cadeTop_color); border-radius:10px; width:250px; height:120px; cursor:pointer; transition:all 0.4s ease-out; }
+    .c-gallery-cade:hover{ color:#fff; background-color:var(--gallery_cadeTop_color); }
     .c-gallery-cade:active{ box-shadow:0px 0px 5px 1px #8A8C8E; transform:scale(1.1); }
     .c-gallery-cade-text{ display:flex; flex-direction:column; }
-    .c-gallery-card-title{ transition:all 0.4s ease-out; font-size:17px; color:#fff; }
+    .c-gallery-card-title{ transition:all 0.4s ease-out; font-size:17px; color:var(--gallery_cadeTop_color); }
     .c-gallery-cade:hover .c-gallery-card-title{ transform:translateY(-20px); color:#fff; }
     .c-gallery-card-info{ display:none; color:#FCAF17; transition:all 0.4s ease-out; font-size:12px; }
-    .c-gallery-cade:hover .c-gallery-card-info{ display:flex; justify-content:center; align-items:center; color:#fff; transform:translateY(-5px); }
+    .c-gallery-cade:hover .c-gallery-card-info{ display:flex; align-items:center; color:#fff; transform:translateY(-5px); }
     /* 下はgoogleアイコンが含まれていて,flexだと位置計算が優先されるので,gridを使う */
-    .c-gallery-icon{ display:grid; place-items:center; border-radius:50%; background-color:#fff; color:var(--gallery_cadeTop_color); width:50px; height:50px; aspect-ratio:1/1; margin:3px; padding:0; transition:all 0.4s ease-out; }
+    .c-gallery-icon{ display:grid; place-items:center; border-radius:50%; background-color:var(--gallery_cadeTop_color); color:#fff; border:1px solid var(--gallery_cadeTop_color); width:50px; height:50px; aspect-ratio:1/1; margin:3px; padding:0; transition:all 0.4s ease-out; }
     .c-gallery-cade:hover .c-gallery-icon{ background-color:#fff; color:var(--gallery_cadeTop_color); transform:translateY(-20px) scale(1.1) rotate(-20deg); }
   </style>
   <script>
