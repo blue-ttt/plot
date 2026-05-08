@@ -30,7 +30,7 @@
   <div class="Gallery_Cades">
     <button class="c-gallery-cade" style="--gallery_cadeTop_color:#FCAF17;"><span class="material-symbols-outlined c-gallery-icon">star_shine</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">サプライズ！</span><span class="c-gallery-card-info">plotギャラリーからランダムで選びます！</span></div></button>
     <button class="c-gallery-cade" style="--gallery_cadeTop_color:#C77EB5;"><span class="material-symbols-outlined c-gallery-icon">psychology_alt</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">思考ツール</span><span class="c-gallery-card-info">課題に向けて思考力を大いに引き出すツールです</span></div></button>
-    <button class="c-gallery-cade" style="--gallery_cadeTop_color:#6495ED;"><span class="material-symbols-outlined c-gallery-icon">collections_bookmark</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">ノート</span><span class="c-gallery-card-info">端のない膨大なノートで知識やアイデアを広げましょう</span></div></button>
+    <button class="c-gallery-cade" style="--gallery_cadeTop_color:#6495ED;"><span class="material-symbols-outlined c-gallery-icon">menu_book</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">ノート</span><span class="c-gallery-card-info">端のない膨大なノートで知識やアイデアを広げましょう</span></div></button>
   </div>
   
   <h3 style="padding:0; margin:10px 5px;">おすすめ</h3>
@@ -70,7 +70,10 @@
   <script>
     function SearchGallery (G_SearchFilter){
       const searchResult = GalleryData.filter(item => 
-        item.title.includes(G_SearchFilter));
+        item.title.includes(G_SearchFilter) ||
+        item.info.includes(G_SearchFilter) ||
+        item.tag.includes(G_SearchFilter)
+         );
       
       const gallery_html = searchResult.map(item => `
         <button class="gallery-cade" style="--color:${item.color}">
