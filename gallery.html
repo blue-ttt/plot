@@ -36,6 +36,12 @@
   <h3 style="padding:0; margin:10px 5px;">おすすめ</h3>
   <input type="search" placeholder="ギャラリーを検索..." name="SearchGallery_text" class="SearchGallery_Text" oninput="SearchGallery(this.value);">
     <div class="Gallery_Cades" id="AllGallery"></div>
+
+  <div class="not_found">
+    <img src="https://blue-ttt.github.io/plot/data/404.png" style="height:auto; width:200px;">
+    <h2>ギャラリーが見つかりません</h2>
+    <p>入力内容を変えてみて下さい</p>
+  </div>
   
   <div id="footer"></div>
   <style>
@@ -75,6 +81,17 @@
         item.tag.includes(G_SearchFilter) ||
         item.other.includes(G_SearchFilter)
          );
+      // 検索結果があるか ないか
+      const search_there_any = searchResult.length > 0;
+      if (search_there_any){
+        
+      } else {
+        search_not_found();
+      }
+      search_not_found(){
+        const message = document.querySelector('.not_found');
+        
+      };
       
       const gallery_html = searchResult.map(item => `
         <button class="gallery-cade" style="--color:${item.color}">
