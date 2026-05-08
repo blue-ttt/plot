@@ -26,17 +26,18 @@
   </script>
   <div id="navi"></div>
   <h1 style="padding:0; margin:10px 5px;">ギャラリー</h1>
-  <input type="search" placeholder="ギャラリーを検索..." name="SearchGallery_text" class="SearchGallery_Text" oninput="SearchGallery(this.value);">
   
   <h3 style="padding:0; margin:10px 5px;">カジュアル</h3>
   <button class="c-gallery-cade"><span class="material-symbols-outlined c-gallery-icon">star_shine</span><span class="c-gallery-card-title">サプライズ</span><span class="c-gallery-card-info">plotギャラリーからランダムで選びます！</span></button>
   
   <h3 style="padding:0; margin:10px 5px;">おすすめ</h3>
+  <input type="search" placeholder="ギャラリーを検索..." name="SearchGallery_text" class="SearchGallery_Text" oninput="SearchGallery(this.value);">
     <div class="Gallery_Cades" id="AllGallery"></div>
   
   <div id="footer"></div>
   <style>
-    .SearchGallery_Text{ display:flex; justify-content:flex-end; }
+    .SearchGallery_Text{ display:flex; justify-content:flex-end; width:200px; height:40px; border-radius:20px; }
+    
     .Gallery_Cades{ display:flex; flex-direction:row; justify-content:center; flex-wrap:wrap; }
     
     .gallery-cade{ display:flex; flex-direction:column; justify-content:center; align-items:center; padding:5px; margin:20px; border:none; background-color:var(--color); color:#fff; border-radius:10px; width:200px; height:170px; cursor:pointer; transition:all 0.4s ease-out; }
