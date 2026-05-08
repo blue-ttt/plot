@@ -26,9 +26,10 @@
   </script>
   <div id="navi"></div>
   <h1 style="padding:0; margin:10px 5px;">ギャラリー</h1>
-
-  <button class="c-gallery-cade" style="--gallery_cadeTop_color:#FCAF17;"><span class="material-symbols-outlined c-gallery-icon">star_shine</span><span class="c-gallery-card-title">サプライズ</span><span class="c-gallery-card-info">plotギャラリーからランダムで選びます！</span></button>
-  <button class="c-gallery-cade" style="--gallery_cadeTop_color:#C77EB5;"><span class="material-symbols-outlined c-gallery-icon">psychology_alt</span><span class="c-gallery-card-title">思考ツール</span><span class="c-gallery-card-info">課題に向けて思考力を超人並みに引き出すツール！</span></button>
+  <div class="Gallery_Cades">
+    <button class="c-gallery-cade" style="--gallery_cadeTop_color:#FCAF17;"><span class="material-symbols-outlined c-gallery-icon">star_shine</span><span class="c-gallery-card-title">サプライズ</span><span class="c-gallery-card-info">plotギャラリーからランダムで選びます！</span></button>
+    <button class="c-gallery-cade" style="--gallery_cadeTop_color:#C77EB5;"><span class="material-symbols-outlined c-gallery-icon">psychology_alt</span><span class="c-gallery-card-title">思考ツール</span><span class="c-gallery-card-info">課題に向けて思考力を超人並みに引き出すツール！</span></button>
+  </div>
   
   <h3 style="padding:0; margin:10px 5px;">おすすめ</h3>
   <input type="search" placeholder="ギャラリーを検索..." name="SearchGallery_text" class="SearchGallery_Text" oninput="SearchGallery(this.value);">
@@ -60,7 +61,7 @@
     .c-gallery-card-info{ display:none; color:#FCAF17; transition:all 0.4s ease-out; font-size:12px; }
     .c-gallery-cade:hover .c-gallery-card-info{ display:flex; justify-content:center; align-items:center; color:#fff; transform:translateY(-5px); }
     /* 下はgoogleアイコンが含まれていて,flexだと位置計算が優先されるので,gridを使う */
-    .c-gallery-icon{ display:grid; place-items: center; border-radius:50%; background-color:#fff; color:#FCAF17; width:50px; height:50px; margin:3px; padding:0; transition:all 0.4s ease-out; }
+    .c-gallery-icon{ display:grid; place-items: center; border-radius:50%; background-color:#fff; color:var(--gallery_cadeTop_color); width:50px; height:50px; margin:3px; padding:0; transition:all 0.4s ease-out; }
     .c-gallery-cade:hover .c-gallery-icon{ background-color:#fff; color:#FCAF17; transform:translateY(-20px) scale(1.1) rotate(-20deg); }
   </style>
   <script>
