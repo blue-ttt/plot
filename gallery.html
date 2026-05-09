@@ -46,6 +46,7 @@
   <div id="footer"></div>
   <style>
     .SearchGallery_Text{ display:flex; justify-content:flex-end; width:300px; height:40px; border-radius:20px; border:1px solid #000; padding:3px 5px; margin:3px; }
+    .not_found{ flex-direction:column; padding:0; margin:10px; }
     
     .Gallery_Cades{ display:flex; flex-direction:row; justify-content:center; flex-wrap:wrap; }
     
@@ -88,7 +89,6 @@
         message.style.display = "none";
       } else {
         message.style.display = "flex";
-        message.style.flex-direction = "column";
       }
       
       const gallery_html = searchResult.map(item => `
