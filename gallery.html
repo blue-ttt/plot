@@ -83,16 +83,12 @@
          );
       // 検索結果があるか ないか
       const search_there_any = searchResult.length > 0;
+      const message = document.querySelector('.not_found');
       if (search_there_any){
-        
+        message.style.display = "none";
       } else {
-        search_not_found();
-      }
-      function search_not_found(){
-        const message = document.querySelector('.not_found');
         message.style.display = "flex";
-        
-      };
+      }
       
       const gallery_html = searchResult.map(item => `
         <button class="gallery-cade" style="--color:${item.color}">
