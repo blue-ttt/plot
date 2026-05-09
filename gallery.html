@@ -37,7 +37,7 @@
   <input type="search" placeholder="ギャラリーを検索..." name="SearchGallery_text" class="SearchGallery_Text" oninput="SearchGallery(this.value);">
     <div class="Gallery_Cades" id="AllGallery"></div>
 
-  <div class="not_found">
+  <div class="not_found" style="display:none;">
     <img src="https://blue-ttt.github.io/plot/data/404.png" style="height:auto; width:200px;">
     <h2>ギャラリーが見つかりません</h2>
     <p>入力内容を変えてみて下さい</p>
@@ -88,7 +88,7 @@
       } else {
         search_not_found();
       }
-      search_not_found(){
+      function search_not_found(){
         const message = document.querySelector('.not_found');
         
       };
