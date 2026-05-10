@@ -34,7 +34,7 @@
   <div id="navi"></div>
   <h1 style="padding:0; margin:15px 5px;">ギャラリー</h1>
   <h3 style="padding:0; margin:10px 5px;">コレクション</h3>
-  <div class="Gallery_Cades">
+  <div class="gallery_collection">
     <button class="c-gallery-cade" style="--gallery_cadeTop_color:#FCAF17;"><span class="material-symbols-outlined c-gallery-icon">star_shine</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">サプライズ！</span><span class="c-gallery-card-info">plotギャラリーからランダムで選びます！</span></div></button>
     <button class="c-gallery-cade" style="--gallery_cadeTop_color:#C77EB5;"><span class="material-symbols-outlined c-gallery-icon">psychology_alt</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">思考ツール</span><span class="c-gallery-card-info">課題に向けて思考力を大いに引き出すツールです</span></div></button>
     <button class="c-gallery-cade" style="--gallery_cadeTop_color:#6495ED;"><span class="material-symbols-outlined c-gallery-icon">menu_book</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">ノート</span><span class="c-gallery-card-info">端のない膨大なノートで知識やアイデアを広げましょう</span></div></button>
@@ -65,12 +65,13 @@
   
   <div id="footer"></div>
   <style>
-    .SearchGallery_Text{ display:flex; justify-content:flex-end; width:300px; height:40px; border-radius:20px; border:1px solid #000; padding:3px 5px; margin:0 5px; }
+    .SearchGallery_Text{ display:flex; justify-content:flex-end; width:300px; height:40px; background-color:#fff; border-radius:20px; border:1px solid #000; padding:3px 5px; margin:0 5px; }
     .not_found{ flex-direction:column; padding:0; margin:10px; }
     .search_and_filter{ display:flex; flex-direction:row; padding:0; margin:3px; }
-    .search_and_filter_type{ width:150px; height:40px; padding:0; margin:0 5px; border-radius:20px; border:1px solid #000; }
+    .search_and_filter_type{ width:130px; height:40px; padding:0; margin:0 5px; border-radius:20px; border:1px solid #000; background-color:#fff; }
     
     .Gallery_Cades{ display:flex; flex-direction:row; justify-content:center; flex-wrap:wrap; }
+    .gallery_collection{ display:flex; flex-direction:row; justify-content:center; overflow-x:auto; }
     
     .gallery-cade{ display:flex; flex-direction:column; justify-content:center; align-items:center; padding:5px; margin:20px; border:none; background-color:var(--color); color:#fff; border-radius:10px; width:200px; height:170px; cursor:pointer; transition:all 0.4s ease-out; }
     .gallery-cade:hover{ color:#fff; }
