@@ -139,6 +139,7 @@
     function cade_info (title, info, id,){
       const cade_info_html = `
         <div class="CadeInfoPage">
+          <button class="cade-info-close btn-close i18n" data-tooltip="閉じる | close" onclick="CadeInfoClose();"><span class="material-symbols-outlined">close</span></button>
           <h2>${title}</h2>
           <p>${info}</p>
           <button class="btn-cade_info_edit">編集</button>
