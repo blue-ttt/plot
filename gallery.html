@@ -136,12 +136,15 @@
    //初期ページ(全て表示)
     SearchGallery("");
     
-    function cade_info (title, info, id,){
+    function cade_info (title, info, id, HowToUse){
       const cade_info_html = `
         <div class="CadeInfoPage">
           <button class="cade-info-close btn-close i18n" data-tooltip="閉じる | close" onclick="CadeInfoClose();"><span class="material-symbols-outlined">close</span></button>
           <h2>${title}</h2>
+          <b>概要</b>
           <p>${info}</p>
+          <b>使い方</b>
+          <p>${HowToUse}</p>
           <button class="btn-cade_info_edit">編集</button>
         </div>
       `
@@ -160,7 +163,8 @@
       const cade_info = document.querySelector('.CadeInfoPage')
       cade_info.style.display = 'none';
     }
-    
+
+    i18nStart(); // 言語変換
   </script>
 </body>
 </html>
