@@ -57,6 +57,8 @@
   </div>
   
     <div class="Gallery_Cades" id="AllGallery"></div>
+  
+    <div id="gallery_cade_info"></div>
 
   <div class="not_found" style="display:none;">
     <img src="https://blue-ttt.github.io/plot/data/404.png" style="height:auto; width:200px;">
@@ -116,7 +118,7 @@
       }
       
       const gallery_html = searchResult.map(item => `
-        <button class="gallery-cade" style="--color:${item.color}">
+        <button class="gallery-cade" onclick="cade_info(${item.title} ,${item.info} ,${item.id},);" style="--color:${item.color}">
           <span class="material-symbols-outlined gallery-icon">${item.icon}</span>
           <span class="gallery-card-title">${item.title}</span>
           <span class="gallery-card-info">${item.info}</span>
@@ -128,6 +130,19 @@
     };
    //初期ページ(全て表示)
     SearchGallery("");
+    
+    function cade_info (title, info, id,){
+      const cade_info_html = `
+        <div class="CadeInfoPage">
+          <h2>${title}</h2>
+          <p>${info}</p>
+          <button>編集</button>
+        </div>
+      `
+      const input_cade_info_html = document.getElementById('gallery_cade_info');
+      input_cade_info_html.innerHTML = cade_info_html
+    };
+    
   </script>
 </body>
 </html>
