@@ -12,7 +12,7 @@
 <body>
   <script>
     const GalleryData = [
-      { title: "パーティ会場", info: "素敵なパーティ会場のレイアウトを設計しましょう", other: "お祝い 空間デザイン", id: "G_0001", color: "#EF4123", icon: "celebration", tag: "spatial_design", },
+      { title: "パーティ会場", info: "素敵なパーティ会場のレイアウトを設計しましょう", HowToUse: "1. 会場の枠を調整 / 2. 素材やテキスト、メモで設計", other: "お祝い 空間デザイン", id: "G_0001", color: "#EF4123", icon: "celebration", tag: "spatial_design", },
       { title: "フィッシュボーン", info: "なぜ？と思ったら骨を増やし、根本的な原因を解決しましょう", other: "魚 さかな 思考ツール", id: "G_0002", color: "#6495ED", icon: "pet_supplies", tag: "thinking_tools", },
       { title: "相関図", info: "人物と人物の関係の全体像をまとめましょう", other: "関係性", id: "G_0003", color: "#6F51A1", icon: "groups", tag: "bulletin_board", },
       { title: "作文", info: "書くことを明確にし、完璧な作文を作りましょう", other: "文章 国語 フレーズ", id: "G_0004", color: "#2DCFBB", icon: "format_image_left", tag: "thinking_tools", },
@@ -123,7 +123,7 @@
       }
       
       const gallery_html = searchResult.map(item => `
-        <button class="gallery-cade" onclick="cade_info('${item.title}' ,'${item.info}' ,'${item.id}',);" style="--color:${item.color}">
+        <button class="gallery-cade" onclick="cade_info('${item.title}' ,'${item.info}' ,'${item.id}', '${item.HowToUse}');" style="--color:${item.color}">
           <span class="material-symbols-outlined gallery-icon">${item.icon}</span>
           <span class="gallery-card-title">${item.title}</span>
           <span class="gallery-card-info">${item.info}</span>
