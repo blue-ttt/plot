@@ -118,7 +118,7 @@
       }
       
       const gallery_html = searchResult.map(item => `
-        <button class="gallery-cade" onclick="cade_info(${item.title} ,${item.info} ,${item.id},);" style="--color:${item.color}">
+        <button class="gallery-cade" onclick="cade_info('${item.title}' ,'${item.info}' ,'${item.id}',);" style="--color:${item.color}">
           <span class="material-symbols-outlined gallery-icon">${item.icon}</span>
           <span class="gallery-card-title">${item.title}</span>
           <span class="gallery-card-info">${item.info}</span>
