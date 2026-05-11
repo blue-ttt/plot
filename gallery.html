@@ -57,7 +57,7 @@
   </div>
   
     <div class="Gallery_Cades" id="AllGallery"></div>
-  
+    <div class="g-overlay" style="width:100vw; height:100vh; background-color:#00000080; position:fixed; display:none;"></div>
     <div id="gallery_cade_info"></div>
 
   <div class="not_found" style="display:none;">
@@ -99,6 +99,11 @@
     /* 下はgoogleアイコンが含まれていて,flexだと位置計算が優先されるので,gridを使う */
     .c-gallery-icon{ display:grid; place-items:center; border-radius:50%; background-color:var(--gallery_cadeTop_color); color:#fff; border:1px solid var(--gallery_cadeTop_color); width:50px; height:50px; aspect-ratio:1/1; margin:3px; padding:0; transition:all 0.3s ease-out; }
     .c-gallery-cade:hover .c-gallery-icon{ background-color:#fff; color:var(--gallery_cadeTop_color); transform:rotate(-20deg); }
+    
+    /* 詳細ページ */
+    .CadeInfoPage{ background-color:#fff; position:fixed; border-radius:30px; width:80vw; height:80vh; padding:10px; margin:0; }
+    .btn-cade_info_edit{ width:50%; height:30px; background-color:#FCAF17; color:#fff; border-radius:8px; }
+    
   </style>
   <script>
     function SearchGallery (G_SearchFilter){
@@ -136,11 +141,17 @@
         <div class="CadeInfoPage">
           <h2>${title}</h2>
           <p>${info}</p>
-          <button>編集</button>
+          <button class="btn-cade_info_edit">編集</button>
         </div>
       `
+      gallery_overlay();
       const input_cade_info_html = document.getElementById('gallery_cade_info');
       input_cade_info_html.innerHTML = cade_info_html
+    };
+    
+    function gallery_overlay(){
+      const overlay = document.querySelector('g-overlay')
+      overlay.style.display = flex;
     };
     
   </script>
