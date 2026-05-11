@@ -42,9 +42,10 @@
   
   <div class="search_and_filter">
     <input type="search" placeholder="キーワードで検索" name="SearchGallery_text" class="SearchGallery_Text" oninput="SearchGallery(this.value);">
-    
+
+    <label><p>種類</p>
     <select class="search_and_filter_type" oninput="SearchGallery(this.value);">
-      <option value="">種類を選択</option>
+      <option value="">全て</option>
       <option value="board">ボード</option>
       <option value="notebook">ノート</option>
       <option value="thinking_tools">思考ツール</option>
@@ -52,6 +53,7 @@
       <option value="flowchart">フローチャート</option>
       <option value="roadmap">ロードマップ</option>
     </select>
+    </label>
   </div>
   
   <h3 style="padding:0; margin:10px 5px;">おすすめ</h3>
