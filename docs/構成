@@ -45,7 +45,7 @@ plotの要素：0~200 (レイヤー設定では200が上限)
     G_0001 など、G_ と それぞれ違う4ケタの数字
 ・tag
     tagにはplotの種類がくる。
-    <種類> 空白:originality ボード(ホワイト、掲示板など):board ノート:notebook 思考ツール:thinking_tools 空間デザイン：spatial_design フローチャート:flowchart ロードマップ:roadmap
+    <種類> 空白:originality ボード(ホワイト、掲示板など):board ノート:notebook 思考ツール:thinking_tools 空間デザイン：spatial_design フローチャート:flowchart ロードマップ:roadmap　回路・技術:technology
 ・start
     startには初期画面で「おすすめ」に表示するかどうか、表示するなら'おすすめ'　しないならスペース。
 
