@@ -38,7 +38,7 @@
    <li><button class="set-btn" data-tooltip="設定" onclick="SettingDisplay();"><span class="material-symbols-outlined">settings</span></button></li>
    <li><button class="help-btn" data-tooltip="ヘルプ" onclick="HelpDisplay();"><span class="material-symbols-outlined">help</span></button></li>
    
-   <li><button class="btn-head-share i18n" data-tooltip="アイデアを共有する | Share your ideas" onclick="ShareDisplay();"><span class="material-symbols-outlined">ios_share</span>共有</button></li>
+   <li><button class="btn-head-share right i18n" data-tooltip="アイデアを共有する | Share your ideas" onclick="ShareDisplay();"><span class="material-symbols-outlined">ios_share</span>共有</button></li>
   </ul>
  </header>
  
@@ -80,11 +80,9 @@
   </ul>
  </div>
  <div class="mode-board">
-  <ul>
-   <li><button class="mode mode-see" data-tooltip="操作"><span class="material-symbols-outlined">arrow_selector_tool</span></button></li>
-   <li><button class="mode mode-edit" data-tooltip="編集"><span class="material-symbols-outlined">edit_square</span></button></li>
-   <li><button class="mode mode-matting" data-tooltip="マッチング"><span class="material-symbols-outlined">diagonal_line</span></button></li>
-  </ul>
+   <button class="mode mode-see" data-tooltip="操作"><span class="material-symbols-outlined">arrow_selector_tool</span></button>
+   <button class="mode mode-edit" data-tooltip="編集"><span class="material-symbols-outlined">edit_square</span></button>
+   <button class="mode mode-matting" data-tooltip="マッチング"><span class="material-symbols-outlined">diagonal_line</span></button>
  </div>
  <div class="overlay"></div><!--- 一時コンテンツを強調させるため画面全体をオーバーレイ --->
  <div id="QuestionYesOrNo"></div><!--- はい/いいえ のユーザーアクション --->
