@@ -9,11 +9,10 @@
   .btn-close{ width:50px; aspect-ratio:1/1; border-radius:50%; }
   .overlay{ width:100vw; height:100vh; background-color:#00000080; position:fixed; z-index:290; display:none; }
   
-  .toolbar{ margin:0; padding:0; width:45px; height:500px; background-color:#FFF9E6; position:fixed; top:100px; left:15px; border-radius:20px; box-shadow:1px 1px 5px 1px #8A8C8E; z-index:100; }
+  .toolbar{ margin:0; padding:0; width:45px; height:max-content; background-color:#FFF9E6; position:fixed; top:100px; left:15px; border-radius:20px; box-shadow:1px 1px 5px 1px #8A8C8E; z-index:100; }
   .toolbar ul{ margin:0; display:flex; flex-direction:column; list-style:none; padding:0;}
-  .toolbar button{ background-color:#fff; color:#000; border:1px solid #000; }
   .toolbar button.active{ background-color:#FCAF17; color:#fff; }
-  .tools{ margin-top:10px; border-radius:30px; aspect-ratio:1/1; }
+  .tools{ margin:10px 0; border-radius:50%; background-color:#fff; color:#000; border:1px solid #000;  }
 
   .mode-board{ margin:0; padding:0; display:flex; flex-direction:row; position:fixed; z-index:100; bottom:20px; left:40px; width:max-content; height:45px; background-color:#FFF9E6; border-radius:20px; box-shadow:1px 1px 5px 1px #8A8C8E; }
   .mode{ margin:0 3px; border-radius:50%; border:1px solid #000; width:40px; height:40px; padding:0; background-color:#fff; color:#000; }
