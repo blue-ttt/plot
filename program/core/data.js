@@ -48,4 +48,6 @@ function edit_update () {
         
     });
 };
+window.onload = function() {
 edit_update();
+};
