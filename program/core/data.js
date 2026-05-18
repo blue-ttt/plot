@@ -38,12 +38,10 @@ function edit_update () {
         let input_material_html_data = ''; /* ifの前に変数を作っとく(if内だとinnerHTMLが見つけられないから) */
         if (item.type === 'note'){
            input_material_html_data = `
-             <div class="sticky-note">
+             <div class="sticky-note" style="background-color:${item.attrs.color} ">
                   <textarea placeholder="メモを入力..." maxlength="200"></textarea>
              </div>
         `;
-            let styleCss docment.querySelector('.sticky-note');
-            styleCss.style.background-color = item.attrs.color;
         };
 
         const input_material_html = document.getElementById('plot_body');
