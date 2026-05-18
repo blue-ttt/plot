@@ -33,6 +33,17 @@ function edit_update () {
         console.log(item.x);
         console.log(item.y);
         console.log(item.type);
+
+        if (item.type === 'note'){
+        const input_material_html_data = `
+             <div class="sticky-note">
+                  <textarea placeholder="メモを入力..." maxlength="200"></textarea>
+             </div>
+            
+        `;};
+
+        const input_material_html = document.getElementById('plot_body');
+        material_html.innerHTML = input_material_html_data;
         
     });
 };
