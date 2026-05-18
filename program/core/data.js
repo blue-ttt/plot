@@ -7,7 +7,7 @@ let PlotStyleType = localStorage.getItem('recently_plot_style_type');
 let plot_edit_data_head = {
     info: 'This_data_is_the_work_of_a_Plot_user', type: PlotStyleType,
 };
-  
+  // 見た目の部分
 let plot_edit_data_body = [
     {
         id: '10036',
@@ -27,5 +27,9 @@ let plot_edit_data_body = [
 // --- 編集画面への反映 ---
 
 function edit_update () {
-    plot_edit_data_body.filter()
+    plot_edit_data_body.forEach(item => {
+
+        console.log(item.id);
+        
+    });
 };
