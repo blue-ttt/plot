@@ -42,7 +42,7 @@ function edit_update () {
                   <textarea placeholder="メモを入力..." maxlength="200"></textarea>
              </div>
         `;
-            const styleCss docment.querySelector('.sticky-note');
+            let styleCss docment.querySelector('.sticky-note');
             styleCss.style.background-color = item.attrs.color;
         };
 
