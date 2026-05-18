@@ -30,6 +30,9 @@ function edit_update () {
     plot_edit_data_body.forEach(item => {
 
         console.log(item.id);
+        console.log(item.x);
+        console.log(item.y);
+        console.log(item.type);
         
     });
 };
