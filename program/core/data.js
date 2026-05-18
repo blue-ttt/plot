@@ -33,3 +33,4 @@ function edit_update () {
         
     });
 };
+edit_update();
