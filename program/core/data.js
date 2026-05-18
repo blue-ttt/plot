@@ -33,6 +33,7 @@ function edit_update () {
         console.log(item.x);
         console.log(item.y);
         console.log(item.type);
+        console.log(item.color);
         
         let input_material_html_data = ''; /* ifの前に変数を作っとく(if内だとinnerHTMLが見つけられないから) */
         if (item.type === 'note'){
@@ -40,7 +41,8 @@ function edit_update () {
              <div class="sticky-note">
                   <textarea placeholder="メモを入力..." maxlength="200"></textarea>
              </div>
-            
+            const styleCss docment.querySelector('.sticky-note');
+            styleCss.style.background-color = item.color;
         `;};
 
         const input_material_html = document.getElementById('plot_body');
