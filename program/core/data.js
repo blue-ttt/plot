@@ -41,9 +41,10 @@ function edit_update () {
              <div class="sticky-note">
                   <textarea placeholder="メモを入力..." maxlength="200"></textarea>
              </div>
+        `;
             const styleCss docment.querySelector('.sticky-note');
             styleCss.style.background-color = item.attrs.color;
-        `;};
+        };
 
         const input_material_html = document.getElementById('plot_body');
         input_material_html.innerHTML = input_material_html_data;
