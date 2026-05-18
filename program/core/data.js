@@ -25,3 +25,7 @@ let plot_edit_data_body = [
 ];
 
 // --- 編集画面への反映 ---
+
+function edit_update () {
+    plot_edit_data_body.filter()
+};
