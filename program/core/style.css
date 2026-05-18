@@ -78,7 +78,7 @@
   .btn-drag:hover{ background-color:#f5f5f5; }
   .btn-drag:active{ background-color:#FCAF17; color:#fff; }
   
-  .sticky-note { position:absolute; left:30%; top:50%; width:max-content; height:max-content; display:flex; background-color:#fff9c4;  box-shadow:2px 2px 10px #8A8C8E; border-radius:5px; padding:10px; }
+  .sticky-note { position:absolute; left:30%; top:50%; width:max-content; height:max-content; display:flex; box-shadow:2px 2px 10px #8A8C8E; border-radius:5px; padding:10px; }
   .sticky-note textarea{ width:150px; height:150px; background-color:#00000000; border:none; outline:none; overflow:auto; resize:both;/*縦横変更可能*/ margin:0; padding:0; } /* 付箋の入力欄のところ */
   .title-edit{ width:200px; height:30px; white-space:nowrap;/*折り返しを防止*/ overflow:hidden;/*はみ出た部分を隠す*/ min-width:200px;/*空の時も最小値200pxより小さくならない*/ color:#fff; }
   
