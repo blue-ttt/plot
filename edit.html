@@ -30,7 +30,7 @@
 <body>
  <header>
   <ul>
-   <li><div class="rogo"><img src="https://blue-ttt.github.io/plot/data/rogo.png"></div></li>
+   <li><div class="rogo"><img src="https://blue-ttt.github.io/plot/data/plot-icon.png"></div></li>
    <!---　題名入力欄 --->
    <li><div class="title-edit i18n" contenteditable="true" role="textbox" aria-label="題名の入力エリア">
     無題のプロット | Untitled plot
@@ -119,10 +119,15 @@
         color: "#824d11",
         type: "dot",
       }
+      // 中心の画像
+    imageOptions{
+      image: "https://blue-ttt.github.io/plot/data/plot-icon.png",
+       imageOptions.margin: "3px",
+       imageOptions.imageSizeFactor: "0.3",
+      }
     });
   share_QRcode_data.append(document.getElementById('QRcode_share'));
  </script>
-
  <!--- 画面全体 --->
   <div id="viewport" class="viewport">
    <div id="canvas" class="canvas">
