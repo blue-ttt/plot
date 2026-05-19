@@ -18,7 +18,7 @@
   .mode{ margin:0 3px; border-radius:50%; border:1px solid #000; width:40px; height:40px; padding:0; background-color:#fff; color:#000; }
   .mode-board button.active{ background-color:#FCAF17; color:#fff; }
 
-  .shareQRcode{ position:fixed; top:calc(50% - 50px); left:calc(50% - 50px); padding:0; margin:0; }
+  .shareQRcode{ position:fixed; top:calc(50% - 300px); left:calc(50% - 300px); padding:0; margin:0; z-index:300; }
 
   .canvas{ width:3000px; height:3000px; transform-origin:0 0; z-index:-1; }
   .viewport{ width:100vw; height:100vh; z-index:-1; overflow:hidden; /* はみ出た部分は隠す（スクロールバーを出さない）*/ touch-action:none; /* ブラウザ独自のスクロールやズームを無効化する */ }
