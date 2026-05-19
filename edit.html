@@ -91,11 +91,13 @@
  <div class="overlay"></div><!--- 一時コンテンツを強調させるため画面全体をオーバーレイ --->
  <div id="QuestionYesOrNo"></div><!--- はい/いいえ のユーザーアクション --->
  <div id="plot_body"></div><!--- 画面上の要素 --->
- 
- <div id="QRcode_share" class="shareQRcode"></div><!--- 共有用QRコード --->
+
+ <div class="cade_QRcode_share">
+  <div id="QRcode_share" class="shareQRcode"></div><!--- 共有用QRコード --->
+ </div>
  <script>
    const share_QRcode_data = new QRCodeStyling({
-    width: 300, height: 300, type: "svg", data: "https://github.com",
+    width: 300, height: 300, type: "svg", data: "https://blue-ttt.github.io/plot/edit",
 
       image: "https://blue-ttt.github.io/plot/data/plot-icon.png",
     
