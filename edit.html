@@ -12,6 +12,7 @@
  <script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>
  <script src="https://blue-ttt.github.io/plot/program/Question.js"></script>
  <script src="https://blue-ttt.github.io/plot/program/core/data.js"></script>
+ <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script><!---qrコード--->
 </head>
 
 <script>
@@ -90,6 +91,37 @@
  <div class="overlay"></div><!--- 一時コンテンツを強調させるため画面全体をオーバーレイ --->
  <div id="QuestionYesOrNo"></div><!--- はい/いいえ のユーザーアクション --->
  <div id="plot_body"></div><!--- 画面上の要素 --->
+ 
+ <div id="QRcode_share"></div><!--- 共有用QRコード --->
+ <script>
+   const share_QRcode_data = new QRCodeStyling({
+      width: 300,
+      height: 300,
+      type: "svg",
+      data: "https://github.com",
+    
+      // ドット（ドット絵部分）のデザイン
+      dotsOptions: {
+        color: "#824d11",
+        type: "rounded",
+      },
+      // 背景のデザイン
+      backgroundOptions: {
+        color: "#f1faee",
+      },
+      // 四隅にある大きな四角（切り出しシンボル）の外枠
+      cornersSquareOptions: {
+        color: "#e63946",
+        type: "extra-rounded",
+      },
+      // 切り出しシンボルの中の四角
+      cornersDotOptions: {
+        color: "#1d3557",
+        type: "dot",
+      }
+    });
+  qrCode.append(document.getElementById('share_QRcode_data'));
+ </script>
 
  <!--- 画面全体 --->
   <div id="viewport" class="viewport">
