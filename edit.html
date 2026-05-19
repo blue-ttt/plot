@@ -99,6 +99,8 @@
       height: 300,
       type: "svg",
       data: "https://github.com",
+
+      image: "https://blue-ttt.github.io/plot/data/plot-icon.png",
     
       // ドット（ドット絵部分）のデザイン
       dotsOptions: {
@@ -118,13 +120,12 @@
       cornersDotOptions: {
         color: "#824d11",
         type: "dot",
-      }
+      },
       // 中心の画像
-    imageOptions{
-      image: "https://blue-ttt.github.io/plot/data/plot-icon.png",
-       imageOptions.margin: "3px",
+    imageOptions:{
+       margin: 3,
        imageOptions.imageSizeFactor: "0.3",
-      }
+      },
     });
   share_QRcode_data.append(document.getElementById('QRcode_share'));
  </script>
