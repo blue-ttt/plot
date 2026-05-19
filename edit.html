@@ -95,38 +95,20 @@
  <div id="QRcode_share" class="shareQRcode"></div><!--- 共有用QRコード --->
  <script>
    const share_QRcode_data = new QRCodeStyling({
-      width: 300,
-      height: 300,
-      type: "svg",
-      data: "https://github.com",
+    width: 300, height: 300, type: "svg", data: "https://github.com",
 
       image: "https://blue-ttt.github.io/plot/data/plot-icon.png",
     
       // ドット（ドット絵部分）のデザイン
-      dotsOptions: {
-        color: "#824d11",
-        type: "rounded",
-      },
+      dotsOptions: { color: "#824d11", type: "rounded", },
       // 背景のデザイン
-      backgroundOptions: {
-        color: "#f1faee",
-      },
+      backgroundOptions: { color: "#fff", },
       // 四隅にある大きな四角（切り出しシンボル）の外枠
-      cornersSquareOptions: {
-        color: "#824d11",
-        type: "extra-rounded",
-      },
+      cornersSquareOptions: { color: "#824d11", type: "extra-rounded", },
       // 切り出しシンボルの中の四角
-      cornersDotOptions: {
-        color: "#824d11",
-        type: "dot",
-      },
+      cornersDotOptions: { color: "#824d11", type: "dot", },
       // 中心の画像
-    imageOptions: {
-         hideBackgroundDots: true, // これを入れると中央のロゴの背景ドットが消える
-         margin: 3,
-         imageSizeFactor: 0.3
-      }
+    imageOptions: { hideBackgroundDots: true,/*これを入れると中央のロゴの背景ドットが消える*/ margin: 3, imageSizeFactor: 0.2 }
     });
   share_QRcode_data.append(document.getElementById('QRcode_share'));
  </script>
