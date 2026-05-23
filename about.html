@@ -30,8 +30,8 @@
  <div>
   <h1 class="index index1">これまでにない<b>アイデア</b>を作る</h1>
   <div class="index1_cade_board">
-   <div class="index1_cade" style="width:40%; background-color:#F75252; box-shadow:0px 0px 10px 2px #FF8181;"><span class="material-symbols-outlined" style="color:#F75252;">fullscreen</span><b>無限なスペース</b><p>端のないノートやボードでアイデアを無限に広げましょう</p></div>
-   <div class="index1_cade" style="width:60%; background-color:#F8AB21; box-shadow:0px 0px 10px 2px #FFBB41;"><span class="material-symbols-outlined" style="color:#F8AB21;">fullscreen</span><b>豊富なツール</b><p>ボードやノートだけでなく、人気の思考ツールや2D空間デザイン、目標作りなど簡単に書き込めます</p></div>
+   <div class="index1_cade" style="width:40%; background-color:#F75252; box-shadow:0px 0px 10px 2px #FF8181; --shadowColor:#FF8181;"><span class="material-symbols-outlined" style="color:#F75252;">fullscreen</span><b>無限なスペース</b><p>端のないノートやボードでアイデアを無限に広げましょう</p></div>
+   <div class="index1_cade" style="width:60%; background-color:#F8AB21; box-shadow:0px 0px 10px 2px #FFBB41; --shadowColor:#FFBB41;"><span class="material-symbols-outlined" style="color:#F8AB21;">fullscreen</span><b>豊富なツール</b><p>ボードやノートだけでなく、人気の思考ツールや2D空間デザイン、目標作りなど簡単に書き込めます</p></div>
   </div>
  </div>
  
@@ -57,15 +57,16 @@
   .index1_cade_board{ padding:20px; display:flex; flex-direction:row; }
   
   .index1{ position:sticky; top:0px; }
-  .index1_cade{ display:flex; flex-direction:column; align-items:center; justify-content:center; padding:10px; margin:15px; border-radius:20px; height:max-width; color:#fff; border:1px solid #fff; }
+  .index1_cade{ display:flex; flex-direction:column; align-items:center; justify-content:center; padding:10px; margin:15px; border-radius:20px; height:max-width; color:#fff; border:1px solid #fff; transition:all 0.2s ease-in-out; }
   .index1_cade b{ font-size:40px; }
   .index1_cade p{ font-size:20px; }
   .index1_cade .material-symbols-outlined{ background-color:#fff; font-size:50px; padding:5px; margin:0; border-radius:50%; }
+  .index_1cade:hover{ transform:translateY(-3); box-shadow:2px 0px 10px 2px var(--shadowColor);  }
 
   @media(max-width:768px){
    .index{ background-color:#fff; padding:5px; margin:0; }
    .index1_cade{ width:90% !important; }
-   .index1_cade_board{ padding:5px; }
+   .index1_cade_board{ padding:10px; }
   }
  </style>
  <script>
