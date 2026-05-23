@@ -18,7 +18,7 @@
   .mode{ margin:0 3px; border-radius:50%; border:1px solid #000; width:40px; height:40px; padding:0; background-color:#fff; color:#000; }
   .mode-board button.active{ background-color:#FCAF17; color:#fff; }
 
-  .cade_QRcode_share{ position:fixed; top:calc(50% - 150px); left:calc(50% - 150px); }
+  .cade_QRcode_share{ position:fixed; top:calc(50% - 150px); left:calc(50% - 150px); margin:0; padding:5px; border-radius:10px; width:max-content; height:max-content; box-shadow:0px 0px 5px 2px #8A8C8E; }
   .shareQRcode{ position:absolute; top:calc(50% - 150px); left:calc(50% - 150px); padding:0; margin:0; z-index:300; }
   .QRcode_share_decoration{ width:50px; height:50px; margin:0; padding:0; position:absolute; border:3px solid #FCAF17; border-radius:50%; }
 
