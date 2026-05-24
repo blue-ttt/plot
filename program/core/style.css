@@ -24,7 +24,7 @@
 
   .QRcode_share_decoration_animation_1{ animation:QRcode_share_decoration_animation_No1 3s ease infinite; }
 
-  .@keyframes QRcode_share_decoration_animation_No1{
+  @keyframes QRcode_share_decoration_animation_No1{
     0%{transform:scale(1)}
     100%{transform:scale(1.2)}
   }
