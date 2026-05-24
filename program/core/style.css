@@ -32,8 +32,18 @@
   }
   @keyframes QRcode_share_decoration_animation_No2{
     0%{transform:translateY(-0px);}
-    50%{transform:translateY(-10px);}
+    50%{transform:translateY(-20px);}
     100%{transform:translateY(-0px);}
+  }
+  @keyframes QRcode_share_decoration_animation_No3{
+    0%{transform:translateY(-0px) translateX(-0px);}
+    50%{transform:translateY(-20px) translateX(-8px);}
+    100%{transform:translateY(-0px) translateX(-0px);}
+  }
+  @keyframes QRcode_share_decoration_animation_No4{
+    0%{transform:translateY(0px) translateX(0px);}
+    50%{transform:translateY(20px) translateX(8px);}
+    100%{transform:translateY(0px) translateX(0px);}
   }
 
   .canvas{ width:3000px; height:3000px; transform-origin:0 0; z-index:-1; }
