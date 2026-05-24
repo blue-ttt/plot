@@ -7,17 +7,21 @@
 </head>
 
 <body>
-  
-  <h1>設定へようこそ</h1>
-  <button><span class="material-symbols-outlined">home</span>一般</button>
-  <button><span class="material-symbols-outlined">home</span>スタイル</button>
-  <button><span class="material-symbols-outlined">home</span>キーボード</button>
-  <button><span class="material-symbols-outlined">home</span>アプリ版</button>
+  <div class="WelcomeToSetting setting-cade">
+    <span class="material-symbols-outlined">settings</span>
+    <h1>設定へようこそ</h1>
+  </div>
+  <button class="setting-cade"><span class="material-symbols-outlined">home</span>一般</button>
+  <button class="setting-cade"><span class="material-symbols-outlined">home</span>スタイル</button>
+  <button class="setting-cade"><span class="material-symbols-outlined">home</span>キーボード</button>
+  <button class="setting-cade"><span class="material-symbols-outlined">home</span>アプリ版</button>
 <div class="setting-page">
-  
+  <p>設定</p>
 </div>
 <style>
-  body{ background-color:#FAE1B0; }
-  .setting-page{ background-color:#fff; border-radius:20px; padding:10px 10px; margin:0; width:90%; }
+  body{ background-color:#fdefd4; }
+  .setting-cade{ background-color:#fff; border-radius:20px; box-shadow:0px 0px 20px 1px #C0C0C0; }
+  .setting-page{ padding:30px 20px; margin:0; width:90%; }
+  .WelcomeToSetting .material-symbols-outlined{ background-color:#FCAF17; border-radius:10px; width:50px; height:50px; padding:0; margin:5px; }
 </style>
 </body>
