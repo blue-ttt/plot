@@ -33,8 +33,7 @@
     ]
   </script>
   <div id="navi"></div>
-  <h1 style="padding:0; margin:15px 5px;">ギャラリー</h1>
-  <h3 style="padding:0; margin:10px 5px;">コレクション</h3>
+  <h1 style="padding:20px 10px; margin:0;">ギャラリー</h1>
   <div class="gallery_collection">
     <button class="c-gallery-cade" style="--gallery_cadeTop_color:#FCAF17;"><span class="material-symbols-outlined c-gallery-icon">star_shine</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">サプライズ！</span><span class="c-gallery-card-info">plotギャラリーからランダムで選びます！</span></div></button>
     <button class="c-gallery-cade" style="--gallery_cadeTop_color:#C77EB5;"><span class="material-symbols-outlined c-gallery-icon">psychology_alt</span><div class="c-gallery-cade-text"><span class="c-gallery-card-title">思考ツール</span><span class="c-gallery-card-info">課題に向けて思考力を大いに引き出すツールです</span></div></button>
@@ -103,8 +102,10 @@
     
     /* 詳細ページ */
     .CadeInfoPage{ display:flex; flex-direction:column; background-color:#fff; position:fixed; border-radius:25px; width:80vw; height:80vh; padding:10px; margin:0; z-index:300; top:50%; left:50%; transform:translate(-50%, -50%);}
-    .btn-cade_info_edit{ max-width:320px; width:90%; height:50px; background-color:#FCAF17; color:#fff; border-radius:8px; border:none; padding:2px; margin:auto; }
+    .btn-cade_info_edit{ max-width:320px; width:90%; height:50px; background-color:#FCAF17; color:#fff; border-radius:8px; border:none; padding:2px; margin:5px; }
+    .btn-cade_info_share{ max-width:120px; width:90%; height:50px; background-color:#fff; color:#000; border-radius:8px; border:none; padding:2px; margin:5px }
     .cade_info_img{ border-radius:20px; width:90%; max-width:320px; padding:0; margin:0; }
+    .btn-cade-buttonarea{ display:flex; flex-direction:row; align-items:center; justify-content:center; padding:0; margin:5px auto; }
     
   </style>
   <script>
@@ -154,7 +155,11 @@
               <img src="${img}" class="cade_info_img">
             </div>
           </div>
-          <button class="btn-cade_info_edit">編集</button>
+          <div class="btn-cade-buttonarea">
+            <button class="btn-cade_info_edit">編集</button>
+            <button class="btn-cade_info_share">共有</button>
+          </div>
+          
         </div>
       `
       gallery_overlay();
