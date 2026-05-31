@@ -92,7 +92,7 @@
  <div id="QuestionYesOrNo"></div><!--- はい/いいえ のユーザーアクション --->
  <div id="plot_body"></div><!--- 画面上の要素 --->
 
- <div class="cade_QRcode_share">
+ <div class="cade_QRcode_share" style="display:none;">
   <button class="share-QRcode-close btn-close i18n" data-tooltip="閉じる | close" onclick="StudyClose();"><span class="material-symbols-outlined">close</span></button>
   <div class="QRcode-share-QRandDecoration">
    <div id="QRcode_share" class="shareQRcode"></div><!--- 共有用QRコード --->
@@ -105,9 +105,7 @@
  <script>
    const share_QRcode_data = new QRCodeStyling({
     width: 300, height: 300, type: "svg", data: "https://blue-ttt.github.io/plot/edit",
-
       image: "https://blue-ttt.github.io/plot/data/plot-icon.png",
-    
       // ドット（ドット絵部分）のデザイン
       dotsOptions: { color: "#824d11", type: "rounded", },
       // 背景のデザイン
