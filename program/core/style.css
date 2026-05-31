@@ -23,6 +23,9 @@
   .QRcode_share_decoration{ width:50px; height:50px; margin:0; padding:0; position:absolute; border:3px solid #FCAF17; border-radius:50%; }
 
   .QRcode_share_decoration_animation_1{ animation:QRcode_share_decoration_animation_No1 3s ease infinite; }
+  .QRcode_share_decoration_animation_2{ animation:QRcode_share_decoration_animation_No2 3s ease infinite; }
+  .QRcode_share_decoration_animation_3{ animation:QRcode_share_decoration_animation_No3 3s ease infinite; }
+  .QRcode_share_decoration_animation_4{ animation:QRcode_share_decoration_animation_No4 3s ease infinite; }
 
   @keyframes QRcode_share_decoration_animation_No1{
     0%{transform:scale(1);}
