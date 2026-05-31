@@ -25,5 +25,5 @@
   * 作者 [Parsa Navaei](https://lottiefiles.com/m7ooeuaby6)
   * 経由 [LottieFiles](https://lottiefiles.com/)
  
-  * 　**qr-code-styling**
-  *   作成したplotのQRで共有機能で使用しています
+* **qr-code-styling**
+  *作成したplotのQRで共有機能で使用しています
