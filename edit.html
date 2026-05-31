@@ -94,10 +94,12 @@
 
  <div class="cade_QRcode_share">
   <button class="share-QRcode-close btn-close i18n" data-tooltip="閉じる | close" onclick="StudyClose();"><span class="material-symbols-outlined">close</span></button>
-  <div id="QRcode_share" class="shareQRcode"></div><!--- 共有用QRコード --->
-  <div class="QRcode_share_decoration QRcode_share_decoration_animation_1"></div>
-  <div class="QRcode_share_decoration QRcode_share_decoration_animation_2"></div>
-  <div class="QRcode_share_decoration QRcode_share_decoration_animation_3"></div>
+  <div class="QRcode-share-QRandDecoration">
+   <div id="QRcode_share" class="shareQRcode"></div><!--- 共有用QRコード --->
+   <div class="QRcode_share_decoration QRcode_share_decoration_animation_1" style="right:10px; bottom:10px;"></div>
+   <div class="QRcode_share_decoration QRcode_share_decoration_animation_2" style="top:70px; left:5px;"></div>
+   <div class="QRcode_share_decoration QRcode_share_decoration_animation_3" style="bottom:10px; left:10px;"></div>
+  </div>
  </div>
  <script>
    const share_QRcode_data = new QRCodeStyling({
