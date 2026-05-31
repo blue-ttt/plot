@@ -26,4 +26,4 @@
   * 経由 [LottieFiles](https://lottiefiles.com/)
  
 * **qr-code-styling**
-  *作成したplotのQRで共有機能で使用しています
+  * 作成したplotのQRで共有機能で使用しています。
