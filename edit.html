@@ -204,8 +204,19 @@
  
  <!--- 要素を移動ボタン --->
  <button class="btn-drag"><span class="material-symbols-outlined">drag_pan</span></button>
+ 
  <div class="list-add-contents">
   <input type="search" name="list-add-contents-search" placeholder="素材を検索..." style="padding:5px; margin:5px; border-radius:20px; width:90%; height:40px; border:1px solid #000;">
+  <div id="all-material-cards"></div>
+  <script>
+   function MaterialGallery (material_SearchFilter){
+      const searchResult = GalleryData.filter(item => 
+        item.name.includes(material_SearchFilter) ||
+         );
+    const gallery_html = searchResult.map(item => `
+        <svg src="${item.name}">
+      `).join('');
+  </script>
  </div>
 
 <style>
