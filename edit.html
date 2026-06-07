@@ -213,9 +213,12 @@
       const searchResult = GalleryData.filter(item => 
         item.name.includes(material_SearchFilter)
          );
-    const gallery_html = searchResult.map(item => `
+    const materialCade_html = searchResult.map(item => `
         <svg src="${item.name}">
       `).join('');
+    
+    const input_contents_material = document.getElementById('all-material-cards');
+      input_contents_material.innerHTML = materialCade_html;
    };
     MaterialSearch();
   </script>
