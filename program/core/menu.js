@@ -6,7 +6,7 @@
     target.style.left = `${event.clientX - 75}px`; /* 150pxの半分を引いて中央に */
     target.style.top = `${event.clientY - 75}px`;
    
-    target.style.display = "block";/* 表示 */
+    target.style.display = "flex";/* 表示 */
  });
   /* ボードメニューを非表示 */
   window.addEventListener('mousedown', (event) => {
