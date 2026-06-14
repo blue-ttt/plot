@@ -214,7 +214,7 @@
         item.name.includes(material_SearchFilter)
          );
     const materialCade_html = searchResult.map(item => `
-        <img src="${item.img}"></img>
+        <img class="plot-material-card" src="${item.img}"></img>
       `).join('');
     
     const input_contents_material = document.getElementById('all-material-cards');
