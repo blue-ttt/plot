@@ -211,7 +211,7 @@
   <script>
    function MaterialSearch (material_SearchFilter){
       const searchResult = plot_MaterialDecoration_data.filter(item => 
-        item.name.includes(material_SearchFilter)
+        item.other_name.includes(material_SearchFilter)
          );
     const materialCade_html = searchResult.map(item => `
         <img class="plot-material-card" src="${item.img}"></img>
