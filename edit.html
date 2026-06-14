@@ -13,7 +13,7 @@
  <script src="https://blue-ttt.github.io/plot/program/Question.js"></script>
  <script src="https://blue-ttt.github.io/plot/program/core/data.js"></script>
  <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script><!---qrコード--->
- <script src="https://blue-ttt.github.io/plot/data/material-data/data.js"><!---素材のデータ--->
+ <script src="https://blue-ttt.github.io/plot/data/material-data/data.js"></script><!---素材のデータ--->
 </head>
 
 <script>
@@ -214,13 +214,13 @@
         item.name.includes(material_SearchFilter)
          );
     const materialCade_html = searchResult.map(item => `
-        <svg src="${item.name}">
+        <img src="${item.img}"></img>
       `).join('');
     
     const input_contents_material = document.getElementById('all-material-cards');
       input_contents_material.innerHTML = materialCade_html;
    };
-    MaterialSearch();
+    MaterialSearch("");
   </script>
  </div>
 
