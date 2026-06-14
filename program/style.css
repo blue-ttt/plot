@@ -9,9 +9,9 @@ button{ cursor:pointer; }
 .text-link a{ color:#FCAF17; text-decoration:none; }
 .text-link a:hover{ text-decoration:underline; }
 .text-link a:active{ text-decoration:underline; background-color:#bdbdbd;}
-a .text-link{ color:#FCAF17; text-decoration:none; }
-a .text-link:hover{ text-decoration:underline; }
-a .text-link:active{ text-decoration:underline; background-color:#bdbdbd;}
+a.text-link{ color:#FCAF17; text-decoration:none; }
+a.text-link:hover{ text-decoration:underline; }
+a.text-link:active{ text-decoration:underline; background-color:#bdbdbd;}
 
 h1{ color:#FCAF17;}
 h2{ color:#FCAF17; }
