@@ -205,8 +205,10 @@
  <!--- 要素を移動ボタン ---><button class="btn-drag"><span class="material-symbols-outlined">drag_pan</span></button>
  
  <div class="list-add-contents">
-  <input type="search" name="list-add-contents-search" placeholder="素材を検索..." oninput="MaterialSearch(this.value);" style="padding:5px; margin:5px; border-radius:20px; width:90%; height:40px; border:1px solid #000;">
+  <input type="search" name="list-add-contents-search" placeholder="素材を検索..." oninput="MaterialSearch(this.value);" class="material-search-bar" style="padding:5px; margin:5px; border-radius:20px; width:90%; height:40px; border:1px solid #000;">
+  <div class="all-material-cards">
   <div id="all-material-cards"></div>
+  </div>
   <script>
    function MaterialSearch (material_SearchFilter){
       const searchResult = plot_MaterialDecoration_data.filter(item => 
