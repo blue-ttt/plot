@@ -210,7 +210,7 @@
   <div id="all-material-cards"></div>
   <script>
    function MaterialSearch (material_SearchFilter){
-      const searchResult = GalleryData.filter(item => 
+      const searchResult = plot_MaterialDecoration_data.filter(item => 
         item.name.includes(material_SearchFilter)
          );
     const materialCade_html = searchResult.map(item => `
