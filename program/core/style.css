@@ -103,7 +103,7 @@ button{cursor:pointer;}
 .all-add-contents:hover{ background-color:#f5f5f5; }
 .add-all-menu .material-symbols-outlined{ font-size:40px; }
 
-.plot-material-card{ width:100px; background-color:#f5f5f5; border-radius:10px; transition:all 0.2s ease; }
+.plot-material-card{ width:100px; background-color:#f5f5f5; border-radius:10px; transition:all 0.2s ease; padding:0; margin:4px; }
 .plot-material-card:hover{ background-color:#e3e1e1; }
 .material-search-bar{ padding:5px; margin:5px; border-radius:20px; width:90%; height:40px; border:1px solid #000; }
 .all-material-cards{ display:flex; justify-content:center; align-items:flex-start; flex-wrap:wrap; padding:10px 5px; margin:0; }
