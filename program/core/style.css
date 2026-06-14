@@ -104,7 +104,7 @@ button{cursor:pointer;}
 .add-all-menu .material-symbols-outlined{ font-size:40px; }
 
 .plot-material-card{ width:100px; background-color:#f5f5f5; border-radius:10px; transition:all 0.2s ease; }
-.plot-material-card:hover{ background-color:#d6d6d6; }
+.plot-material-card:hover{ background-color:#e3e1e1; }
 
 .list-add-contents{ padding:5px; margin:0; position:fixed; display:flex; flex-direction:column; width:400px; height:90vh; border-radius:20px; background-color:#fff; box-shadow:0px 0px 5px 1px #8A8C8E; top:30px; right:5px; z-index:300; }
 
