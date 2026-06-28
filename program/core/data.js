@@ -44,7 +44,7 @@ function edit_update () {
         `;
         };
 
-        const input_material_html = document.getElementById('plot_body');
+        const input_material_html = document.getElementById('canvas');
         input_material_html.innerHTML = input_material_html_data;
         
     });
