@@ -33,7 +33,7 @@ function edit_update () {
     
     plot_edit_data_body.forEach(item => {
 
-        console.log('ID:${item.id}, X座標:${item.x}, Y座標:${item.y},color:${item.attrs.color}');
+        console.log(`ID:${item.id}, X座標:${item.x}, Y座標:${item.y},color:${item.attrs.color}`);
         
         let input_material_html_data = ''; /* ifの前に変数を作っとく(if内だとinnerHTMLが見つけられないから) */
         if (item.type === 'note'){
