@@ -11,8 +11,8 @@ let plot_edit_data_head = {
 let plot_edit_data_body = [
     {
         id: '10036',
-        x:  '1500',
-        y: '1500',
+        x:  '500',
+        y: '500',
         size: '1.0',
         type: 'note',
         attrs: {
