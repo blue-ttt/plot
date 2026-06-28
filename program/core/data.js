@@ -44,12 +44,12 @@ function edit_update () {
             
             // 付箋のhtmlを上のに流し込む
             noteWrapper.innerHTML = `
-                <div class="sticky-note" style="background-color:${item.attrs.color}; width:${item.attrs.width}; height:${item.attrs.width};">
+                <div class="sticky-note" style="background-color:${item.attrs.color}; width:${item.attrs.width}; height:${item.attrs.height};">
                   <textarea placeholder="メモを入力..." maxlength="200" name="note" style="color:${item.attrs.text_color};"></textarea>
                  </div>
         `;
             const noteElement = noteWrapper.querySelector('.sticky-note');
-            noteElement.style.transform = `translate(${item.x}px,${item.y}px,)`;
+            noteElement.style.transform = `translate(${item.x}px,${item.y}px)`;
 
             canvas.appendChild(noteElement);/* #canvasに「追加」する(innerHTMLだと全て上書きしてしまうから) */
         };
