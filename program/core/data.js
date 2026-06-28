@@ -27,13 +27,13 @@ let plot_edit_data_body = [
 // --- 編集画面への反映 ---
 
 function edit_update () {
+
+    //キャンバスを空にする(重複しないように)
+    canvas.innerHTML = '';
+    
     plot_edit_data_body.forEach(item => {
 
-        console.log(item.id);
-        console.log(item.x);
-        console.log(item.y);
-        console.log(item.type);
-        console.log(item.attrs.color);
+        console.log('ID:${item.id}, X座標:${item.x}, Y座標:${item.y},color:${item.attrs.color}');
         
         let input_material_html_data = ''; /* ifの前に変数を作っとく(if内だとinnerHTMLが見つけられないから) */
         if (item.type === 'note'){
