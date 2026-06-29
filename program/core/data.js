@@ -23,15 +23,18 @@ let plot_edit_data_body = [
         }
     }
 ];
-
+localStorage.setItem('save_plot_edit_data', plot_edit_data_body);/* ? */
 // --- 編集画面への反映 ---
 
 function edit_update () {
 
+    let upload_now_plot_body = localStorage.getItem('save_plot_edit_data');/* ? */
+    
+
     //キャンバスを空にする(重複しないように)
     canvas.innerHTML = '';
     
-    plot_edit_data_body.forEach(item => {
+    upload_now_plot_body.forEach(item => {
 
         console.log(`ID:${item.id}, X座標:${item.x}, Y座標:${item.y},color:${item.attrs.color}`);
         
@@ -54,6 +57,7 @@ function edit_update () {
             canvas.appendChild(noteElement);/* #canvasに「追加」する(innerHTMLだと全て上書きしてしまうから) */
         };
     });
+    localStorage.setItem('save_plot_edit_data', plot_edit_data_body);/* ? */
 };
 window.onload = function() {
 edit_update();
