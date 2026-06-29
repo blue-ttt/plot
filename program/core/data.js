@@ -36,7 +36,7 @@ function edit_update () {
     //キャンバスを空にする(重複しないように)
     canvas.innerHTML = '';
     
-    upload_now_plot_body.forEach(item => {
+    upload_save_data_body.forEach(item => {
 
         console.log(`ID:${item.id}, X座標:${item.x}, Y座標:${item.y},color:${item.attrs.color}`);
         
