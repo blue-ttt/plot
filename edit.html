@@ -15,7 +15,6 @@
  <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script><!---qrコード--->
  <script src="https://blue-ttt.github.io/plot/data/material-data/data.js"></script><!---素材のデータ--->
 </head>
-
 <script>
  /* 最初に変数を設定（エラー防止） */
   let nowmode = 0;
@@ -83,6 +82,7 @@
  </div>
  
  <div class="toolbar">
+  <div class="toolbar-choose-area">
    <button class="tools edit-move" data-tooltip="操作する" ><script>nowtool = "edit";</script><span class="material-symbols-outlined">arrow_selector_tool</span></button>
    <button class="tools edit-write" data-tooltip="筆記用具で描く"><span class="material-symbols-outlined">ink_pen</span></button>
    <button class="tools edit-delete" data-tooltip="消しゴムで消す"><span class="material-symbols-outlined">ink_eraser</span></button>
@@ -92,6 +92,15 @@
    <button class="tools edit-text" data-tooltip="テキストを追加"><span class="material-symbols-outlined">insert_text</span></button>
    <button class="tools edit-graph" data-tooltip="グラフを追加"><span class="material-symbols-outlined">add_chart</span></button>
    <button class="tools edit-file" data-tooltip="ファイルをアップロード"><span class="material-symbols-outlined">upload</span></button>
+  </div>
+  <hr>
+  <div class="toolbar-OnOff-area">
+   <button class="tools edit
+   <button class="tools edit-ruler" data-tooltip="定規"><span class="material-symbols-outlined">straighten</span></button>
+  </div>
+  <hr>
+  <button class="tools edit-undo" data-tooltip="元に戻す"><span class="material-symbols-outlined">undo</span></button>
+
  </div>
  <div class="mode-board">
    <button class="mode mode-see" data-tooltip="操作"><span class="material-symbols-outlined">arrow_selector_tool</span></button>
