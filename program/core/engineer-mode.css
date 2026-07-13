@@ -1,0 +1,5 @@
+/* ひらめきモードの時のスタイル */
+.PlotMode-idea .engineer-tools{ display:none !important; }
+
+/* くみたてモードの時のスタイル */
+.PlotMode-engineer .only-idea-tools{ display:none !important; }

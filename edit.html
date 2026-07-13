@@ -2,18 +2,23 @@
 <html lang="ja">
 <head>
  <title>編集 plotコンテンツ</title>
- <link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/style.css">
- <link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/core/style.css">
+ <link rel="stylesheet" href="program/style.css">
+ <link rel="stylesheet" href="program/core/style.css">
+ <link rel="stylesheet" href="program/core/engineer-mode.css">
  <meta chareset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
 
- <script src="https://blue-ttt.github.io/plot/program/core/function.js"></script>
- <script src="https://blue-ttt.github.io/plot/program/core/menu.js"></script>
- <script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>
- <script src="https://blue-ttt.github.io/plot/program/Question.js"></script>
- <script src="https://blue-ttt.github.io/plot/program/core/data.js"></script>
+ <script src="program/core/function.js"></script>
+ <script src="program/core/menu.js"></script>
+ <script src="program/i18n.js"></script>
+ <script src="program/Question.js"></script>
+ <script src="program/core/data.js"></script>
  <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script><!---qrコード--->
- <script src="https://blue-ttt.github.io/plot/data/material-data/data.js"></script><!---素材のデータ--->
+ <script src="data/material-data/data.js"></script><!---素材のデータ--->
+
+ <style>
+ .loading-edit-page{ width:100vw; height:100vh; background-color:#fff; color:#000; z-index:300; position:fixed; }
+</style>
 </head>
 <script>
  /* 最初に変数を設定（エラー防止） */
@@ -26,7 +31,10 @@
  /* データリスト */
  let DataList = [];
 </script>
-<body>
+<body class="PlotMode-idea"><!--- ここのclassでplotのモードを指定(cssで表示非表示が変わる) --->
+  <div class="loading-edit-page">
+    <p>プロットを準備中です...</p>
+  </div>
  <header>
   <ul>
    <li><div class="rogo"><img src="https://blue-ttt.github.io/plot/data/plot-icon.png"></div></li>
@@ -34,17 +42,19 @@
    <li><div class="title-edit i18n" contenteditable="true" role="textbox" aria-label="題名の入力エリア">
     無題のプロット | Untitled plot
    </div></li>
-   
-   <li><button data-tooltip="ファイル"><span class="material-symbols-outlined">folder</span></button></li>
-   <li><button class="set-btn" data-tooltip="操作モードを変更" onclick="ModeSettingDisplay();"><span class="material-symbols-outlined">モード設定</span></button></li>
-   <li><button class="help-btn" data-tooltip="ヘルプ" onclick="HelpDisplay();"><span class="material-symbols-outlined">help</span></button></li>
-   
-   <li class="right"><button class="btn-head-share i18n" data-tooltip="アイデアを共有する | Share your ideas" onclick="ShareDisplay();"><span class="material-symbols-outlined">ios_share</span>共有</button></li>
+   <hr>
+   <li><button data-tooltip="取り消し" class="header-undo-btn header-undoAndredo-btn"><span class="material-symbols-outlined">undo</span></button></li>
+   <li><button data-tooltip="やり直し" class="header-redo-btn header-undoAndredo-btn"><span class="material-symbols-outlined">redo</span></button></li>
+   <hr>
+   <div class="right"></div>
+   <li><button class="header-btn engineer-tools" data-tooltip="拡張機能"><span class="material-symbols-outlined">extension</span></button></li>
+   <li><button class="header-btn engineer-tools" data-tooltip="ブランチ"><span class="material-symbols-outlined">fork_right</span></button></li>
+   <li><button class="header-help-btn header-btn" data-tooltip="ヘルプ" onclick="HelpDisplay();"><span class="material-symbols-outlined">help</span></button></li>
+   <li><button class="btn-head-share i18n" data-tooltip="アイデアを共有する | Share your ideas" onclick="ShareDisplay();"><span class="material-symbols-outlined">ios_share</span>共有</button></li>
+   <li><button class="header-btn engineer-tools" data-tooltip="ファイル設定"><span class="material-symbols-outlined">settings_screen</span></button></li>
   </ul>
  </header>
- <div class="loading-edit-page">
-  <p>プロットを準備中です...</p>
- </div>
+
  <div class="ai-btn"><button data-tooltip="AI分析" onclick="OverlayIsDisplay(); YesOrNo('実行しますか？' , '取り消せません' , '実行' , 'キャンセル');"><span class="material-symbols-outlined">smart_toy</span></button></div>
  
  <div class="mini-study">
@@ -73,12 +83,6 @@
   <button class="btn-share-card btn-share-webCode"><span class="material-symbols-outlined">code_xml</span>Webに埋め込む</button>
   <button class="btn-share-card btn-share-otherDevice"><span class="material-symbols-outlined">mobile_cast</span>スマホへ送信</button>
  </div>
-
- <div class="edit-viewmode-setting">
-  <h2>編集モード</h2>
-  <label><input type="radio" name="edit-viewmode-plotting"><img src=""><p>プロッティング モード</p></label>
-  <label><input type="radio" name="edit-viewmode-engineer"><img src=""><p>エンジニア モード</p></label>
- </div>
  
  <div class="toolbar">
   <div class="toolbar-choose-area">
@@ -94,17 +98,15 @@
   </div>
   <hr>
   <div class="toolbar-OnOff-area">
-   <button class="tools edit
    <button class="tools edit-ruler" data-tooltip="定規"><span class="material-symbols-outlined">straighten</span></button>
   </div>
-  <hr>
-  <button class="tools edit-undo" data-tooltip="元に戻す"><span class="material-symbols-outlined">undo</span></button>
-
+  
  </div>
  <div class="mode-board">
-   <button class="mode mode-see" data-tooltip="操作"><span class="material-symbols-outlined">arrow_selector_tool</span></button>
-   <button class="mode mode-edit" data-tooltip="編集"><span class="material-symbols-outlined">edit_square</span></button>
-   <button class="mode mode-matting" data-tooltip="マッチング"><span class="material-symbols-outlined">diagonal_line</span></button>
+   <button class="mode mode-see" onclick="changeMode('see');" data-tooltip="操作"><span class="material-symbols-outlined">arrow_selector_tool</span></button>
+   <button class="mode mode-edit" onclick="changeMode('idea');" data-tooltip="ひらめき"><span class="material-symbols-outlined">edit_square</span></button>
+   <button class="mode mode-engineer" onclick="changeMode('engineer');" data-tooltip="くみたて"><span class="material-symbols-outlined">construction</span></button>
+   <button class="mode mode-report" onclick="changeMode('report');" data-tooltip="レポート"><span class="material-symbols-outlined">article</span></button>
  </div>
  <div class="overlay"></div><!--- 一時コンテンツを強調させるため画面全体をオーバーレイ --->
  <div id="QuestionYesOrNo"></div><!--- はい/いいえ のユーザーアクション --->
@@ -233,12 +235,17 @@
     MaterialSearch("");
   </script>
  </div>
+<!--- ⚙️くみたて(エンジニア)モードでの追加要素 -->
+<div class="under-toolbar engineer-tools">
+  <div class="mini-hint-text" id="mini-hint-textarea"></div>
+  <div class="right"></div>
+  <button class="undertool-fullscreen under-tools"><span class="material-symbols-outlined">fullscreen</span></button>
+</div>
 
-<style>
- .loading-edit-page{ width:100vw; height:100vh; background-color:#fff; color:#000; z-index:300; position:fixed; }
-</style>
+
  <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  // 読み込み中画面
+  window.addEventListener('load', () => {
    const afterLoading = document.querySelector('.loading-edit-page');
    afterLoading.style.display = 'none';
   });
@@ -251,31 +258,63 @@
   e.preventDefault(); // 改行（Enter）の動作を無効化
     }});
 
-   /* tool */ 
-  const toolButtons = document.querySelectorAll(".toolbar .tools"); /* toolbarのボタンを取得 */ 
-
-  toolButtons.forEach(button => {
+  // toolbarのボタンを押したときの処理
+   // toolbar-アクティブエリア
+   const toolButtons_activearea = document.querySelectorAll(".toolbar-choose-area .tools"); /* toolbarのtoolbar-choose-areaのボタンを取得 */ 
+   // 
+   const toolButtons_OnOffarea = document.querySelectorAll(".toolbar-OnOff-area .tools");
+  
+  toolButtons_activearea.forEach(button => {
   button.addEventListener('click', function() {
-   toolButtons.forEach(btn => btn.classList.remove('active')); /* リセット（他のボタンには色がついているから） */ 
-   this.classList.add('active'); /* activeを実行  */
+   toolButtons_activearea.forEach(btn => btn.classList.remove('nowTools')); /* リセット（他のボタンには色がついているから） */ 
+   this.classList.add('nowTools'); /* activeを実行  */
     });
-   toolButtons[0].classList.add('active'); /* 初期のtoolが「操作」だから */
+   toolButtons_activearea[0].classList.add('nowTools'); /* 初期のtoolが「操作」だから */
    nowtool = "move";
    
   });
+
+  // <昔のもの>ボタンが押されたら付箋を追加(今後加工する)
    document.querySelector(".edit-note").addEventListener('click', addStickyNote);
-  
-    /* mode */ 
-  const modeButtons = document.querySelectorAll(".mode-board button"); /* modeのボタンを取得 */ 
+
+  // --- モード機能 ----
+  // modeの初期設定
+  const modeButtons = document.querySelectorAll(".mode-board .mode"); /* modeのボタンを取得 */ 
 
   modeButtons.forEach(button => {
-  button.addEventListener('click', function() {
-   modeButtons.forEach(btn => btn.classList.remove('active')); /* リセット（他のボタンには色がついているから） */ 
-   this.classList.add('active'); /* activeを実行 */
-    });
-   modeButtons[1].classList.add('active'); /* 初期のmodeが「編集」だから */
+  // 最初のモード(ひらめきモード)を選択済みにする
+   modeButtons[1].classList.add('nowMode'); /* 初期のmodeが「編集」だから */
    nowmode = "edit";
   });
+  // モードを切り替える関数
+  function changeMode(mode) {
+
+    modeButtons.forEach(btn => btn.classList.remove('nowMode')); /* リセット（他のボタンには色がついているから） */ 
+    if (mode === 'see') {
+      modeButtons[0].classList.add('nowMode');
+      nowmode = "move"; /* モードを「操作」にする */
+
+    } else if (mode === 'idea') {
+      modeButtons[1].classList.add('nowMode');
+      nowmode = "edit"; /* モードを「ひらめき」にする */
+
+      document.body.classList.remove('PlotMode-engineer'); /* bodyのclassを「くみたてモード」にする */
+      document.body.classList.add('PlotMode-idea');
+
+    } else if (mode === 'engineer') {
+      modeButtons[2].classList.add('nowMode');
+      nowmode = "engineer"; /* モードを「くみたて」にする */
+      
+      document.body.classList.remove('PlotMode-idea');
+      document.body.classList.add('PlotMode-engineer'); /* bodyのclassを「くみたてモード」にする */
+
+    } else if (mode === 'report') {
+      modeButtons[3].classList.add('nowMode');
+      nowmode = "report"; /* モードを「レポート」にする */
+    }
+    console.log(`現在のモード: ${nowmode}, 現在のツール: ${nowtool}`);
+  };
+
 
  /* --- canvas --- */
   
