@@ -35,7 +35,8 @@ h3{ color:#FCAF17; }
 .scrollbar-hidden{ scrollbar-width: none;/* Fierfox用 */ -ms-overflow-style: none;/* IE,Edgs用 */ }
 .scrollbar-hidden::-webkit-scrollbar{ display:none; }/* chrome,safari,Opera用 */
 
-/* ツールチップ　*/
-button{position: relative;}
-button[data-tooltip]::after{content: attr(data-tooltip); /* data-tooltipの内容を表示 */ position: absolute; visibility: hidden; flex-direction:row; justify-content:center; align-items:center; flex-wrap: nowrap; color:#fff; font-size:10px; background-color:#00000080; height:20px; padding:2px 5px; top: 110%; left: 0%; border-radius: 10px; z-index:1000; }
-button[data-tooltip]:hover::after { opacity: 1; visibility: visible; }
+/* ツールチップ */
+[tooltip]::after{content: attr(tooltip); /* tooltipの内容を表示 */ position: fixed;
+    top:0; left:0; transform: translate(calc(var(--mouse-x) * 1px - 50% + 10px), calc(var(--mouse-y) * 1px - 50% + var(--UpOrUnder) ));
+    visibility: hidden; display: flex; flex-direction:row; justify-content:center; align-items:center; flex-wrap: nowrap; color:#fff; font-size:10px; background-color:#00000080; width: max-content; height:20px; padding:2px 5px; border-radius: 10px; z-index:1000; }
+[tooltip]:hover::after { opacity: 1; visibility: visible; }
