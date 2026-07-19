@@ -11,10 +11,10 @@ if(language.startsWith('ja')) {
       el.textContent = parts[0]; /* 前側の日本語を表示 */
     }
  // ツールチップ
- const tooltipText = el.getAttribute("data-tooltip"); //要素（el）の data-tooltip 属性の中身を読み取る
- if (tooltipText && tooltipText.includes("|")) { // data-tooltip が設定されているか？文字列の中に | が含まれているか？をチェック
+ const tooltipText = el.getAttribute("tooltip"); //要素（el）の tooltip 属性の中身を読み取る
+ if (tooltipText && tooltipText.includes("|")) { // tooltip が設定されているか？文字列の中に | が含まれているか？をチェック
   const parts = tooltipText.split("|");
-  el.setAttribute("data-tooltip", parts[0]);
+  el.setAttribute("tooltip", parts[0]);
  }
   
   }); //elements.forEach((el)ここまで
