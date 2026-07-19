@@ -2,4 +2,14 @@
 .PlotMode-idea .engineer-tools{ display:none !important; }
 
 /* くみたてモードの時のスタイル */
-.PlotMode-engineer .only-idea-tools{ display:none !important; }
+.PlotMode-engineer .only-idea-tools{ display:none !important; }/* くみたてモードの機能を表示 */
+.file-settings{ background-color:#fff; color:#000; border-radius:20px; border:none; width:80px; height:40px; display:flex; align-items:center; justify-content:center; padding:0; margin:0 5px; transition: all 0.2s ease; }
+.file-settings:hover{ background-color:#f2e9d7; }
+.file-settings .setting-icon{ flex:5; display:flex; flex-direction:row; align-items:center; justify-content:center; }
+.file-settings .under-icon{ flex:1; }
+
+.under-toolbar{ position:fixed; bottom:0px; left:0px; width:100%; height:25px; padding:0; margin:0; display:flex; flex-direction:row; align-items:center; background-color:#a6a39986; z-index:250; }
+.under-toolbar .mini-hint-text{ font-size:12px; color:#000; margin:0 5px; }
+.under-tools{ margin:0 5px; padding:0; width:35px; height:25px; border:none; background:none; color:#000; }
+.under-tools:hover{ background-color:#f5f5f5; }
+.under-tools .material-symbols-outlined{ font-size:20px; }

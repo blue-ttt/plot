@@ -3,8 +3,7 @@ button{cursor:pointer;}
 .btn-close{ width:50px; aspect-ratio:1/1; border-radius:50%; }
 .overlay{ width:100vw; height:100vh; background-color:#00000080; position:fixed; z-index:290; display:none; }
 
-header ul{ display:flex; flex-direction:row; list-style:none; width:100%; align-items:center; margin:0; position:fixed; top:0; padding:0 20px; box-sizing:border-box; }
-header{ background-color:#FCAF17; width:100%; height:50px; align-items:center; position:fixed; z-index:250; }
+header{ background-color:#FCAF17; width:100%; height:50px; display:flex; align-items:center; justify-content: center; position:fixed; margin:0; padding:0; z-index:250; }
 header hr{ width:1px; height:20px; margin:0 5px; border:none; background-color:#fff; }
 .header-btn{ width:40px; height:40px; border-radius:10px; background-color:#00000000; border:1px solid #fff; color:#fff; margin:0 5px; transition:all 0.2s ease; }
 .header-btn:hover{ background-color:#df9b12; }
@@ -12,7 +11,7 @@ header hr{ width:1px; height:20px; margin:0 5px; border:none; background-color:#
 .header-undoAndredo-btn:hover{ background-color:#df9b12; }
 .btn-head-share{ font-size:18px; padding:5px; margin:0 5px; width:80px; height:40px; border-radius:10px; background-color:#fff; border:1px solid #000; color:#000; transition:all 0.2s ease; }
 .btn-head-share .material-symbols-outlined{ font-size:20px; padding:0; margin:0; color:#000; }
-.btn-head-share:hover{ background-color:#f5f5f5; }
+.btn-head-share:hover{ background-color:#f2e9d7; }
 .right{ margin-left:auto; }
 .rogo{ padding:5px; margin:0; }
 .rogo img{ width:30px; height:auto; aspect-ratio:1/1; }
@@ -21,18 +20,14 @@ header hr{ width:1px; height:20px; margin:0 5px; border:none; background-color:#
 .toolbar .tools{ margin:5px; padding:0; width:35px; height:35px; border-radius:10px; color:#413c2d; border:none; background:none; }
 .toolbar .tools:hover{ background-color:#f2e9d7; }
 .toolbar .tools.nowTools{ background-color:#FCAF17; color:#fff; }
+.toolbar .tools.nowTools.MagicPencil{ background-color: rgb(156, 43, 226) !important; fill: #fff !important; }
 .toolbar hr{ width:80%; padding:0; color:#8A8C8E; margin:5px auto; }
+
 
 .mode-board{ margin:0; padding:0; display:flex; flex-direction:row; align-items: center; justify-content: center; position:fixed; z-index:250; bottom:20px; left:40px; width:max-content; height:45px; background-color:#FFF9E6; border-radius:20px; box-shadow:1px 1px 5px 1px #8A8C8E; }
 .mode-board .mode{ margin:0 3px; border-radius:10px; border:none; width:35px; height:35px; padding:0; background:none; color:#000; }
 .mode-board .mode:hover{ background-color:#f2e9d7;}
 .mode-board .mode.nowMode{ background-color:#FCAF17; color:#fff; }
-
-.under-toolbar{ position:fixed; bottom:0px; left:0px; width:100%; height:25px; padding:0; margin:0; display:flex; flex-direction:row; align-items:center; background-color:#a6a39986; z-index:250; }
-.under-toolbar .mini-hint-text{ font-size:12px; color:#000; margin:0 5px; }
-.under-tools{ margin:0 5px; padding:0; width:35px; height:25px; border:none; background:none; color:#000; }
-.under-tools:hover{ background-color:#f5f5f5; }
-.under-tools .material-symbols-outlined{ font-size:20px; }
 
 .cade_QRcode_share{ position:fixed; top:calc(50% - 150px); left:calc(50% - 150px); margin:0; padding:5px; border-radius:10px; width:370px; height:450px; box-shadow:0px 0px 5px 2px #8A8C8E; background-color:#fff; }
 .shareQRcode{ position:absolute; top:calc(50% - 150px); left:calc(50% - 150px); padding:0; margin:0; z-index:300; }
@@ -85,7 +80,7 @@ header hr{ width:1px; height:20px; margin:0 5px; border:none; background-color:#
 
 .edit-viewmode-setting{ display:none; flex-direction:row; align-items:center; justify-content:center; background-color:#fff; position:fixed; left:50%; transform:translateX(-50%); top:50px;}
 
-.ai-btn button{ color:#fff; background-color:#FCAF17; border-radius:30px; aspect-ratio:1/1; margin:5px; padding:10px; width:50px; bottom: 20px;/* 下から20pxの位置 */ right: 20px;/* 右から20pxの位置 */ position:fixed;/* 画面に固定 */ z-index:100; }
+.ai-btn button{ color:#fff; background-color:#FCAF17; border-radius:30px; margin:5px; padding:10px; width:50px; height:50px; border:1px solid #000; bottom:20px; right:20px; position:fixed; z-index:100; }
 
 .ContextMenu{  position:fixed; background-color:#fff; box-shadow:0px 0px 5px 1px #8A8C8E; width:200px; height:auto; border-radius:20px; padding:0; margin:0; display:none; }
 .ContextMenu ul{ list-style:none; }
@@ -136,9 +131,24 @@ header hr{ width:1px; height:20px; margin:0 5px; border:none; background-color:#
 .sticky-note textarea{ width:150px; height:150px; background-color:#00000000; border:none; outline:none; overflow:auto; resize:both;/*縦横変更可能*/ margin:0; padding:0; } /* 付箋の入力欄のところ */
 .title-edit{ width:200px; height:30px; white-space:nowrap;/*折り返しを防止*/ overflow:hidden;/*はみ出た部分を隠す*/ min-width:200px;/*空の時も最小値200pxより小さくならない*/ color:#fff; }
 
-  
+@media (min-width:768px) {
+  .Mobile-only{ display: none; }
+}
 @media(max-width:768px){
-  .toolbar{ display:flex; flex-direction:row; margin:0; padding:0; width:max-content; height:45px; background-color:#FFF9E6; border-radius:0; position:fixed; bottom:45px; left:15px; z-index:250; overflow-x:auto; }
-  .toolbar button.active{ background-color:#FCAF17; color:#fff; }
-  .toolbar .tools{ margin:0 5px; padding:0; width:40px; height:40px; border-radius:50%; color:#000; }
+  .pc-only{ display: none; }
+  .btn-head-share{ width:50px; }
+  .under-toolbar{ display:none !important; }
+
+  .toolbar{ display:flex; flex-direction:row; align-items: center; flex-wrap: nowrap; margin:0; padding:0; width:100vw; height:50px; border-radius:0; position:fixed; top: auto; bottom:0px !important; left:0px; padding-left: 50px; box-sizing: border-box; overflow-x:auto; }
+  .toolbar-choose-area{ display:flex; flex-direction:row; align-items: center; flex-wrap: nowrap; }
+  .toolbar-OnOff-area{ display:flex; flex-direction:row; align-items: center; flex-wrap: nowrap; }
+  .toolbar .tools{ margin:2px 3px; padding:0; width:40px; height:40px;  color:#000; }
+  .toolbar .tools.nowTools{ background-color:#FCAF17; color:#fff; }
+  .toolbar hr{ width:0.5px; height:60%; background-color: #000; }
+  .toolbar-MobileVer-hr{ display:block; }
+
+  .mode-board{ flex-direction: column; justify-content: flex-start; border-radius: 0%; box-shadow: none; height:50px; margin-top: 30px; position: fixed; left:0px; bottom: 0px; overflow-y: auto; z-index: 290; }
+  .mode{ width:30px; height: 30px; margin:0; padding: 0; flex-shrink: 0; }
+
+  .share{ width:100vw; left:0px; bottom: 0px; }
 }
