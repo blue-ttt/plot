@@ -5,23 +5,10 @@
  <link rel="stylesheet" href="program/style.css">
  <link rel="stylesheet" href="program/core/style.css">
  <link rel="stylesheet" href="program/core/engineer-mode.css">
- <meta chareset="UTF-8">
+ <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
 
- <script src="program/core/function.js"></script>
- <script src="program/core/menu.js"></script>
- <script src="program/i18n.js"></script>
- <script src="program/Question.js"></script>
- <script src="program/core/data.js"></script>
- <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script><!--- qrコード(外部ツール) --->
- <script src="data/material-data/data.js"></script><!--- 素材のデータ --->
- <script src="program/mouse-check.js"></script>
-
- <style>
- .loading-edit-page{ width:100vw; height:100vh; background-color:#fff; color:#000; z-index:300; position:fixed; }
-</style>
-</head>
-<script>
+ <script>
  /* 最初に変数を設定（エラー防止） */
   let nowmode = "edit";
   let nowtool = "move";
@@ -31,89 +18,117 @@
   let diffY = 0;
  /* データリスト */
  let DataList = [];
+ let selectElement = null;
 </script>
+
+ <script src="program/core/function.js" defer></script>
+ <script src="program/core/menu.js" defer></script>
+ <script src="program/i18n.js"></script>
+ <script src="program/Question.js" defer></script>
+ <script src="program/core/data.js"></script><!--データ管理-->
+ <script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script><!--- qrコード(外部ツール) --->
+ <script src="data/edit-material-data.js"></script><!--- 素材のデータ --->
+ <script src="program/css-helper.js" defer></script><!--tooltipの調節-->
+ <script src="program/magicpencil.js" defer></script>
+
+ <style>
+ .loading-edit-page{ width:100vw; height:100vh; background-color:#fff; color:#000; z-index:300; position:fixed; }
+ </style>
+</head>
 <body class="PlotMode-idea"><!--- ここのclassでplotのモードを指定(cssで表示非表示が変わる) --->
   <div class="loading-edit-page">
-    <p>プロットを準備中です...</p>
+    <p>プロットを準備中...</p>
   </div>
  <header>
-   <div class="rogo" tooltip="plot"><img src="https://blue-ttt.github.io/plot/data/plot-icon.png"></div>
+   <div class="rogo" tooltip="ホームへ" onclick="window.open('index.html')"><img src="https://blue-ttt.github.io/plot/data/plot-icon.png"></div>
    <!--- 題名入力欄 --->
    <div class="title-edit i18n pc-only" contenteditable="true" role="textbox" aria-label="題名の入力エリア" tooltip="このアイデアの名前を書きましょう">
     無題のプロット | Untitled plot
    </div>
    <hr>
-   <button tooltip="取り消し | undo" class="header-undo-btn header-undoAndredo-btn i18n"><span class="material-symbols-outlined">undo</span></button>
-   <button tooltip="やり直し | redo" class="header-redo-btn header-undoAndredo-btn i18n"><span class="material-symbols-outlined">redo</span></button>
+   <button tooltip="取り消し | undo" class="header-undo-btn header-undoAndredo-btn i18n"><icon class="btn">undo</icon></button>
+   <button tooltip="やり直し | redo" class="header-redo-btn header-undoAndredo-btn i18n"><icon class="btn">redo</icon></button>
    <hr>
-   <div class="right"></div>
-   <button class="header-btn engineer-tools pc-only" tooltip="拡張機能"><span class="material-symbols-outlined">extension</span></button>
-   <button class="header-btn engineer-tools pc-only" tooltip="ブランチ"><span class="material-symbols-outlined">fork_right</span></button>
-   <button class="header-help-btn header-btn pc-only" tooltip="ヘルプ" onclick="HelpDisplay();"><span class="material-symbols-outlined">help</span></button>
-   <button class="btn-head-share i18n" tooltip="共有" onclick="ShareDisplay(); OverlayIsDisplay();"><span class="material-symbols-outlined">ios_share</span><span class="pc-only">共有</span></button>
-   <button class="file-settings engineer-tools" tooltip="ファイル設定"><div class="setting-icon"><span class="material-symbols-outlined">settings_screen</span>設定</div><span class="material-symbols-outlined under-icon">keyboard_arrow_down</span></button>
- </header>
 
- <div class="ai-btn"><button tooltip="AI分析" onclick="OverlayIsDisplay(); YesOrNo('実行しますか？' , '取り消せません' , '実行' , 'キャンセル');"><span class="material-symbols-outlined">smart_toy</span></button></div>
+   <div class="right"></div>
+   <button class="header-btn engineer-tools pc-only" tooltip="拡張機能"><icon class="btn">extension</icon></button>
+   <button class="header-btn engineer-tools pc-only" tooltip="ブランチ"><icon class="btn">fork_right</icon></button>
+   <button class="header-help-btn header-btn" tooltip="ヘルプ" onclick="HelpDisplay(); OverlayIsDisplay();"><icon class="btn">help</icon></button>
+   <button class="btn-head-share i18n" tooltip="共有" onclick="ShareDisplay(); OverlayIsDisplay();"><icon class="btn">ios_share</icon><span class="pc-only">共有</span></button>
+   <button class="file-settings engineer-tools" tooltip="ファイル設定"><div class="setting-icon"><icon class="btn">settings_screen</icon>設定</div></button>
+ </header>
+ <div class="help">
+  <button class="btn-close" style="border-radius:10px 10px 0 0;" aria-label="閉じる" onclick="HelpClose();"><icon class="btn">close</icon>閉じる</button><hr style="margin:0;">
+  <button class=""><icon class="btn">info</icon>使い方ガイド</button>
+  <button class=""><icon class="btn">school</icon>解説記事</button>
+  <button class=""><icon class="btn">balance</icon>利用規約</button>
+  <button class=""><icon class="btn">feedback</icon>フィードバック</button>
+ </div>
+
+ <div class="ai-btn"><button tooltip="AI分析" onclick="OverlayIsDisplay(); YesOrNo('実行しますか？' , '取り消せません' , '実行' , 'キャンセル');"><icon class="btn">smart_toy</icon></button></div>
  
  <div class="mini-study">
-  <button class="mini-study-close btn-close i18n" tooltip="閉じる | close" onclick="StudyClose();"><span class="material-symbols-outlined">close</span></button>
+  <button class="mini-study-close btn-close i18n" aria-label="閉じる" tooltip="閉じる | close" onclick="StudyClose();"><icon class="btn">close</icon></button>
   <iframe src="https://blue-ttt.github.io/plot/study/index" width="800px" height="100%"></iframe>
- </div>
- <div class="mini-setting">
-  <button class="mini-setting-close btn-close" i18n tooltip="閉じる | close" onclick="SettingClose();"><span class="material-symbols-outlined">close</span></button>
-  <iframe src="https://blue-ttt.github.io/plot/setting.html" width="800px" height="100%"></iframe>
  </div>
  <!---読み込みアニメーション---><div class="loading"><lottie-player src="https://blue-ttt.github.io/plot/data/sandy_loading.json" background="transparent" speed="1" style="width: 200px; height: 200px;" loop autoplay></lottie-player></div>
  <!--- 共有の選択画面 --->
  <div class="share">
-  <button class="share-close btn-close i18n" tooltip="閉じる | close" onclick="ShareClose(); OverlayIsNone();"><span class="material-symbols-outlined">close</span></button>
+  <button class="share-close btn-close i18n" tooltip="閉じる | close" onclick="ShareClose(); OverlayIsNone();"><icon class="btn">close</icon></button>
   <h1 class="i18n" style="margin:10px;">プロットの共有 | Sharing the plot</h1>
   <div class="share-circles" style="margin:15px 5px;">
-   <div class="share-CircleAndText"><button class="btn-share-circle btn-share-downloadPlot" tooltip="再編集可能な形式でダウンロードします"><span class="material-symbols-outlined">file_save</span></button><p style="margin:0; padding:0; font-size:10px;">書き出し</p></div>
-   <div class="share-CircleAndText"><button class="btn-share-circle btn-share-downloadFile" tooltip="その場に応じた形式に変換してダウンロードします"><span class="material-symbols-outlined">download</span></button><p style="margin:0; padding:0; font-size:10px;">ダウンロード</p></div>
-   <div class="share-CircleAndText"><button class="btn-share-circle btn-share-WePlot" tooltip="共有ページWePlotへアイデアを投稿しましょう！"><span class="material-symbols-outlined">share</span></button><p style="margin:0; padding:0; font-size:10px;">WePlot</p></div>
+   <div class="share-CircleAndText"><button class="btn-share-circle btn-share-downloadPlot" tooltip="再編集可能な形式でダウンロードします"><icon class="btn">file_save</icon></button><p style="margin:0; padding:0; font-size:10px;">書き出し</p></div>
+   <div class="share-CircleAndText"><button class="btn-share-circle btn-share-downloadFile" tooltip="その場に応じた形式に変換してダウンロードします"><icon class="btn">download</icon></button><p style="margin:0; padding:0; font-size:10px;">ダウンロード</p></div>
+   <div class="share-CircleAndText"><button class="btn-share-circle btn-share-qrcode" tooltip="QRコードを読み込み、途中から編集を続けられます"><icon class="btn">qr_code_2</icon></button><p style="margin:0; padding:0; font-size:10px;">QRで共有</p></div>
   </div>
   <div style="background-image:url(https://blue-ttt.github.io/plot/data/plot_background_img_1.png); width:95%; padding:0; margin:5px auto;">
    <p style="font-size:12px; color:#fff; margin:0; text-align:center; padding:0;">素敵なアイデアを残すために...</p>
    <p style="font-size:20px; color:#fff; margin:0; text-align:center; padding:0;">今すぐダウンロードだ！</p>
   </div>
   <hr style="width:90%; margin:20px auto; padding:0; ">
-  <button class="btn-share-card btn-share-webCode"><span class="material-symbols-outlined">code_xml</span>Webに埋め込む</button>
-  <button class="btn-share-card btn-share-otherDevice"><span class="material-symbols-outlined">mobile_cast</span>スマホへ送信</button>
+  <button class="btn-share-card btn-share-webCode"><icon class="btn">code_xml</icon>Webに埋め込む</button>
+  <button class="btn-share-card btn-share-otherDevice"><icon class="btn">mobile_cast</icon>スマホへ送信</button>
  </div>
  
  <div class="toolbar scrollbar-hidden">
   <hr class="toolbar-MobileVer-hr Mobile-only">
   <div class="toolbar-choose-area">
-   <button class="tools edit-move" tooltip="操作する"><span class="material-symbols-outlined">arrow_selector_tool</span></button>
-   <button class="tools MagicPencil" tooltip="マジックペンシルで描く"><svg width="20px" height="20px" viewBox="0 0 562 542" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><path d="M549.084,110.135l-323.599,385.062l-104.882,-88.141l329.438,-393.838c0,0 44.646,-34.177 88.545,7.379c44.712,42.327 10.497,89.537 10.497,89.537Z"/><path d="M87.88,539.72c-14.408,-12.799 30.911,-121.463 30.911,-121.463l97,81.517c0,0 -113.665,52.602 -127.912,39.946Z"/></g><path d="M123.799,0c0,0 15.401,58.495 41.562,84.157c33.96,33.312 82.237,39.642 82.237,39.642c0,0 -57.591,11.191 -85.073,40.115c-30.223,31.809 -38.726,83.684 -38.726,83.684c0,0 -4.802,-53.614 -36.814,-81.713c-30.509,-26.78 -86.985,-42.086 -86.985,-42.086c0,0 59.614,-9.865 85.62,-40.248c25.712,-30.04 38.179,-83.551 38.179,-83.551Z"/></svg></button>
-   <button class="tools edit-write" tooltip="筆記用具で描く"><span class="material-symbols-outlined">ink_pen</span></button>
-   <button class="tools edit-note" tooltip="付箋を追加"><span class="material-symbols-outlined">note_stack</span></button>
-   <button class="tools edit-pin" tooltip="ピンを追加"><span class="material-symbols-outlined">add_location</span></button>
-   <button class="tools edit-material" tooltip="素材を追加"><span class="material-symbols-outlined">shapes</span></button>
-   <button class="tools edit-text" tooltip="テキストを追加"><span class="material-symbols-outlined">insert_text</span></button>
-   <button class="tools edit-graph" tooltip="グラフを追加"><span class="material-symbols-outlined">add_chart</span></button>
-   <button class="tools edit-file" tooltip="ファイルをアップロード"><span class="material-symbols-outlined">upload</span></button>
+   <button class="tools edit-move" tooltip="操作する" aria-label="操作する" onclick="nowtool = 'edit';"><icon>arrow_selector_tool</icon></button>
+   <button class="tools MagicPencil" tooltip="マジックペンシルで描く" aria-label="自動描画機能で描く"onclick="nowtool = 'magicPen';"><svg width="20px" height="20px" viewBox="0 0 562 542" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><path d="M549.084,110.135l-323.599,385.062l-104.882,-88.141l329.438,-393.838c0,0 44.646,-34.177 88.545,7.379c44.712,42.327 10.497,89.537 10.497,89.537Z"/><path d="M87.88,539.72c-14.408,-12.799 30.911,-121.463 30.911,-121.463l97,81.517c0,0 -113.665,52.602 -127.912,39.946Z"/></g><path d="M123.799,0c0,0 15.401,58.495 41.562,84.157c33.96,33.312 82.237,39.642 82.237,39.642c0,0 -57.591,11.191 -85.073,40.115c-30.223,31.809 -38.726,83.684 -38.726,83.684c0,0 -4.802,-53.614 -36.814,-81.713c-30.509,-26.78 -86.985,-42.086 -86.985,-42.086c0,0 59.614,-9.865 85.62,-40.248c25.712,-30.04 38.179,-83.551 38.179,-83.551Z"/></svg></button>
+   <button class="tools edit-write" tooltip="筆記用具で描く" aria-label="筆記用具を使う" onclick="nowtool = 'pen';"><icon>ink_pen</icon></button>
+
+   <button class="tools edit-note" tooltip="付箋を追加" aria-label="付箋を追加" onclick="nowtool = 'note';"><icon class="btn">note_stack</icon></button>
+   <div class="subTools-note subTools"><button class="addSelect" tooltip="白色の付箋を追加" onclick="addElement_note('#fff');"><icon class="fill" style="color:#fff; text-shadow:0 0 5px #8A8C8E;">note_stack</icon></button><button class="addSelect" tooltip="赤色の付箋を追加" onclick="addElement_note('#ffdfdf');"><icon class="fill" style="color:red;">note_stack</icon></button><button class="addSelect" tooltip="黄色の付箋を追加" onclick="addElement_note('#FFF9E6');"><icon class="fill" style="color:rgb(255, 183, 0);">note_stack</icon></button><button class="addSelect" tooltip="緑色の付箋を追加" onclick="addElement_note('#e6ffe9');"><icon class="fill" style="color:rgb(24, 203, 27);">note_stack</icon></button><button class="addSelect" tooltip="青色の付箋を追加" onclick="addElement_note('#dff4ff');"><icon class="fill" style="color:rgb(0, 110, 255);">note_stack</icon></button></div>
+
+   <button class="tools edit-pin" tooltip="ピンを追加" aria-label="ピンを追加" onclick="nowtool = 'pin';"><icon class="btn">add_location</icon></button>
+   <div class="subTools-pin subTools"><button class="addSelect" tooltip="赤ピンを追加" onclick="addElement_pin('color', 'red');"><icon class="fill" style="color:red;">circle</icon></button><button class="addSelect" tooltip="コメントピンを追加" onclick="addElement_pin('comment');"><icon class="fill" style="color:rgb(214, 202, 168);">comment</icon></button><button class="addSelect" tooltip="進行状況" onclick="addElement_pin('color', 'red');"><icon class="fill" style="color:orange;">line_start_circle</icon></button></div>
+
+   <button class="tools edit-text" tooltip="テキストを追加" aria-label="テキストを追加" onclick="nowtool = 'text';"><icon class="btn">insert_text</icon></button>
+   <div class="subTools-text subTools engineer-tools"><button class="addSelect" tooltip="見出し"><icon>title</icon></button><button class="addSelect" tooltip="本文"><icon>notes</icon></button><hr style="width:50%;"><button class="addSelect" tooltip="箇条書き"><icon>list</icon></button><button class="addSelect" tooltip="ランキング"><icon>format_list_numbered</icon></button><button class="addSelect" tooltip="注釈・引用"><icon>asterisk</icon></button><button class="addSelect" tooltip="数式"><icon>superscript</icon></button></div>
+
+   <button class="tools edit-material" tooltip="素材を追加" aria-label="素材を追加" onclick="nowtool = 'material';"><icon class="btn">shape_line</icon></button>
+   <div class="subTools-material subTools"><button class="tools edit-shape" tooltip="図形" onclick="nowtool = 'material_shape';"><icon class="btn">shapes</icon></button><button class="tools edit-stamp" tooltip="スタンプ" onclick="nowtool = 'material_stamp';"><icon class="btn">heart_smile</icon></button><button class="tools edit-asset" tooltip="アセット" onclick="nowtool = 'material_asset';"><icon class="btn">dine_lamp</icon></button></div>
+   <button class="tools edit-graph" tooltip="グラフを追加" aria-label="グラフを追加" onclick="nowtool = 'graph';"><icon class="btn">add_chart</icon></button>
+   <button class="tools edit-file" tooltip="ファイルをアップロード" aria-label="ファイルをアップロード" onclick="nowtool = 'upload';"><icon class="btn">upload</icon></button>
   </div>
   <hr>
   <div class="toolbar-OnOff-area">
-   <button class="tools edit-ruler" tooltip="定規"><span class="material-symbols-outlined">straighten</span></button>
+   <button class="tools edit-ruler" tooltip="定規を使う" aria-label="定規を使う"><icon class="btn">straighten</icon></button>
+   <button class="tools edit-setSquare engineer-tools" tooltip="三角定規" aria-label="三角定規"><icon class="btn">signal_cellular_null</icon></button>
+   <button class="tools edit-setSquare engineer-tools" tooltip="グリッド" aria-label="グリッド機能"><icon class="btn">grid_on</icon></button>
   </div>
  </div>
 
  <div class="mode-board scrollbar-hidden">
-   <button class="mode mode-see" onclick="changeMode('see');" tooltip="操作"><span class="material-symbols-outlined">arrow_selector_tool</span></button>
-   <button class="mode mode-edit" onclick="changeMode('idea');" tooltip="ひらめき"><span class="material-symbols-outlined">edit_square</span></button>
-   <button class="mode mode-engineer" onclick="changeMode('engineer');" tooltip="くみたて"><span class="material-symbols-outlined">construction</span></button>
-   <button class="mode mode-report" onclick="changeMode('report');" tooltip="レポート"><span class="material-symbols-outlined">article</span></button>
+   <button class="mode mode-edit" onclick="changeMode('idea');" tooltip="ひらめき" aria-label="シンプル操作モードにする"><icon class="btn">edit_square</icon></button>
+   <button class="mode mode-engineer" onclick="changeMode('engineer');" tooltip="くみたて" aria-label="高度カスタマイズモードにする"><icon class="btn">construction</icon></button>
  </div>
  <div class="overlay"></div><!--- 一時コンテンツを強調させるため画面全体をオーバーレイ --->
  <div id="QuestionYesOrNo"></div><!--- はい/いいえ のユーザーアクション --->
  <div id="plot_body"></div><!--- 画面上の要素 --->
 
  <div class="cade_QRcode_share" style="display:none;">
-  <button class="share-QRcode-close btn-close i18n" tooltip="閉じる | close" onclick="StudyClose();"><span class="material-symbols-outlined">close</span></button>
+  <button class="share-QRcode-close btn-close i18n" tooltip="閉じる | close" onclick="StudyClose();"><icon class="btn">close</icon></button>
   <div class="QRcode-share-QRandDecoration">
    <div id="QRcode_share" class="shareQRcode"></div><!--- 共有用QRコード --->
    <div class="QRcode_share_decoration QRcode_share_decoration_animation_1" style="right:10px; bottom:10px;"></div>
@@ -139,84 +154,48 @@
     });
   share_QRcode_data.append(document.getElementById('QRcode_share'));
  </script>
+
  <!--- 画面全体 --->
   <div id="viewport" class="viewport">
    <div id="canvas" class="canvas">
-     <div style="position:absolute; top:500px; left:500px;">中心の目印</div>
+     <div style="position:absolute; top:500px; left:500px; display:inline-block;"><h2>plotへようこそ！</h2><button onclick="">テキストを追加...</button><button onclick="addMenuDisplay();">要素を追加...</button><ul><li>左端のツールバーでペンで絵画、付箋や文章を追加できる</li><li>要素はクリックしてスワイプで移動、「編集」を押して編集</li><li>左下のモードバーでモードを変更(最初は「ひらめき」モード、高機能にするには「くみたて」モード)</li><li>右上の「共有」からダウンロード、書き出し</li></ul></div>
    </div>
   </div>
  
   <!--- コンテンツメニュー --->
- <div class="ContextMenu">
-  <ul>
-   <li><button class="ContextMenu-act act-paste"><span class="material-symbols-outlined">content_paste</span>ペースト</button></li>
-   <li><button class="ContextMenu-act act-copy"><span class="material-symbols-outlined">content_copy</span>コピー</button></li>
-   <li><button class="ContextMenu-act act-delete"><span class="material-symbols-outlined">delete</span>削除</button></li>
-   <hr>
-   <li><button class="ContextMenu-act act-layers"><span class="material-symbols-outlined">layers</span>レイヤー</button></li>
-  </ul>
+ <div class="content-menu ContextMenu" id="contentMenu">
+  <button class="act-copy engineer-tools" aria-label="要素を編集"><icon class="btn">edit</icon>編集</button>
+  <button class="act-copy engineer-tools" aria-label="要素の情報"><icon class="btn">info</icon>情報</button>
+  <hr class="engineer-tools">
+  <button class="act-copy" aria-label="要素をコピー"><icon class="btn">content_copy</icon>コピー</button>
+  <button class="act-Reproduction" aria-label="要素を複製" onclick="Reproduction(); contentMenuNone();"><icon class="btn">library_add</icon>複製</button>
+  <button class="act-delete btn-delete" aria-label="要素を削除" onclick="DeleteElement(); contentMenuNone();"><icon class="btn">delete</icon>削除</button>
+  <hr>
+  <button class="act-coment" aria-label="要素にコメントを追加" onclick="addComent(); contentMenuNone();"><icon class="btn">comment</icon>コメントを追加</button>
+  <hr class="engineer-tools">
+  <button class="act-layers engineer-tools" aria-label="要素のレイヤー"><icon class="btn">layers</icon>レイヤー</button>
  </div>
   <!--- ボードメニュー --->
- <div class="BoardMenu">
-   <button class="BoardMenu-act act-paste"><span class="material-symbols-outlined">content_paste</span><span class="i18n">ペースト | paste</span></button>
+ <div class="BoardMenu ContextMenu">
+   <button class="BoardMenu-act act-paste" aria-label="ペーストする"><icon class="btn">content_paste</icon><span class="i18n">ペースト | paste</span></button>
+   <button class="BoardMenu-act add-comment" aria-label="コメントを追加"><icon class="btn">comment</icon><span class="i18n">コメントを追加 | Add comment</span></button>
+   <hr class="engineer-tools">
+   <button class="BoardMenu-act act-paste engineer-tools" aria-label="レイヤー"><icon class="btn">layers</icon><span class="i18n">レイヤー | List of Layer</span></button>
+   <button class="BoardMenu-act act-paste engineer-tools" aria-label="要素一覧を見る"><icon class="btn">category</icon><span class="i18n">要素一覧 | List of Element</span></button>
    <hr>
-   <button class="BoardMenu-act act-paste"><span class="material-symbols-outlined">layers</span><span class="i18n">レイヤー | Layer</span></button>
-   <button class="BoardMenu-act act-open-engineer-tool"><span class="material-symbols-outlined">construction</span><span class="i18n">エンジニアツール | EngineerTool</span></button>
-   <hr>
-   <button class="BoardMenu-act" onclick="posX = 0; posY = 0;"><span class="material-symbols-outlined">center_focus_weak</span><span class="i18n">プロットの中央へ | Go to center</span></button>
-   <button class="BoardMenu-act add-comment"><span class="material-symbols-outlined">comment</span><span class="i18n">コメントを追加 | Add comment</span></button>
+   <button class="BoardMenu-act" onclick="posX = 0; posY = 0;" aria-label="キャンバスの中心へ移動"><icon class="btn">center_focus_weak</icon><span class="i18n">プロットの中央へ | Go to center</span></button>
+   <button class="BoardMenu-act" onclick="posX = 0; posY = 0;" aria-label="キャンバスを整理する"><icon class="btn">wand_stars</icon><span class="i18n">きれいにする | clean to canvas</span></button>
+   <button class="BoardMenu-act" onclick="posX = 0; posY = 0;" aria-label="キャンバス全体をチェック"><icon class="btn">check_box</icon><span class="i18n">全体をチェック | Check the whole canvas</span></button>
  </div>
  <!--- クイック挿入メニュー --->
  <div class="QuickMenu">
-   <button class="QuickMenu-add Q-add-text add-text" tooltip="テキストを追加"><span class="material-symbols-outlined">text_increase</span></button>
-   <button class="QuickMenu-add Q-add-note add-note" tooltip="付箋を追加"><span class="material-symbols-outlined">note_stack_add</span></button>
-   <button class="QuickMenu-add Q-add-pin add-pin" tooltip="ピンを追加"><span class="material-symbols-outlined">add_location</span></button>
-   <button class="QuickMenu-add all-add-Menu" tooltip="すべて見る" onclick="addMenuDisplay();"><span class="material-symbols-outlined">add</span></button>
-   <button class="QuickMenu-add Q-add-material add-material" tooltip="素材を追加"><span class="material-symbols-outlined">sticker_add</span></button>
+   <button class="QuickMenu-add Q-add-text add-text" aria-label="テキストを追加" tooltip="テキストを追加"><icon class="btn">text_increase</icon></button>
+   <button class="QuickMenu-add Q-add-note add-note" aria-label="付箋を追加" tooltip="付箋を追加" onclick="addElement_note('#FFF9E6'); QuickMenuNone()"><icon class="btn">note_stack_add</icon></button>
+   <button class="QuickMenu-add Q-add-pin add-pin" aria-label="ピンを追加" tooltip="ピンを追加" onclick="addElement_pin('color', 'red'); QuickMenuNone()"><icon class="btn">add_location</icon></button>
+   <button class="QuickMenu-add all-add-Menu" aria-label="すべて見る" tooltip="すべて見る" onclick="addMenuDisplay();"><icon class="btn">add</icon></button>
+   <button class="QuickMenu-add Q-add-line add-line" aria-label="線を追加" tooltip="線を追加"><icon class="btn">line_end</icon></button>
  </div>
- <!--- コンテンツヘッダー --->
- <div class="ContentsHeader">
-  <ul>
-   <li><button class="c-head-button c-head-act-comment" tooltip="コメント"><span class="material-symbols-outlined">comment</span></button></li>
-   <li><button class="c-head-button c-head-act-delete" tooltip="削除"><span class="material-symbols-outlined">delete</span></button></li>
-   <li><button class="c-head-button c-head-act-copys" tooltip="複製"><span class="material-symbols-outlined">library_add</span></button></li>
-   <li><button class="c-head-button c-head-act-more" tooltip="もっと表示"><span class="material-symbols-outlined">more_horiz</span></button></li>
-  </ul>
- </div>
- <!--- 挿入メニュー全て --->
- <div class="add-all-menu">
-  <button class="add-all-menu-close btn-close" tooltip="閉じる" onclick="addMenuClose();"><span class="material-symbols-outlined">close</span></button>
-  <div style="text-align:center; width:100%; display:block;"><h1>要素を追加</h1></div>
-  <br>
-  <div class="add-all-menu-card">
-   <button class="all-add-contents add-text"><span class="material-symbols-outlined" style="color:blue;">text_increase</span><br><p>テキストボックス</p></button>
-   <button class="all-add-contents select-sticky"><span class="material-symbols-outlined" style="color:#FCAF17;">note_stack</span><br><p>付箋</p></button>
-   <button class="all-add-contents select-Pin"><span class="material-symbols-outlined" style="color:red;">pin_drop</span><br><p>ピン</p></button>
-   <button class="all-add-contents select-graph"><span class="material-symbols-outlined" style="color:green;">insert_chart</span><br><p>グラフ</p></button>
-   <button class="all-add-contents select-material"><span class="material-symbols-outlined" style="color:#800080;">sticker</span><br><p>素材</p></button>
-   <button class="all-add-contents select-material"><span class="material-symbols-outlined" style="color:#800080;">shapes</span><br><p>図形</p></button>
-   <button class="all-add-contents select-material"><span class="material-symbols-outlined" style="color:#800080;">heart_smile</span><br><p>スタンプ</p></button>
-  </div>
-  <br>
-  <h2>概要</h2>
-  <button class="all-add-contents add-yellowSticky"><span class="material-symbols-outlined" style="color:#FCAF17; font-variation-settings:'FILL' 1;">note_stack</span><br><p>付箋-イエロー</p></button>
-  <button class="all-add-contents add-blueSticky"><span class="material-symbols-outlined" style="color:blue; font-variation-settings:'FILL' 1;">note_stack</span><br><p>付箋-ブルー</p></button>
-  <button class="all-add-contents add-greenSticky"><span class="material-symbols-outlined" style="color:green; font-variation-settings:'FILL' 1;">note_stack</span><br><p>付箋-グリーン</p></button>
-  <button class="all-add-contents add-redSticky"><span class="material-symbols-outlined" style="color:red; font-variation-settings:'FILL' 1;">note_stack</span><br><p>付箋-レッド</p></button>
-  <button class="all-add-contents add-circleShapes"><span class="material-symbols-outlined" style="color:#800080; font-variation-settings:'FILL' 1;">circle</span><br><p>円形</p></button>
-  <button class="all-add-contents add-squareShapes"><span class="material-symbols-outlined" style="color:#800080; font-variation-settings:'FILL' 1;">square</span><br><p>四角形</p></button>
-  <button class="all-add-contents add-arrowShapes"><span class="material-symbols-outlined" style="color:#800080; font-variation-settings:'FILL' 1;">east</span><br><p>矢印</p></button>
-  <button class="all-add-contents add-commentPin"><span class="material-symbols-outlined" style="color:#FCAF17; font-variation-settings:'FILL' 1;">edit_location</span><br><p>コメント付きピン</p></button>
-  <button class="all-add-contents add-importantPin"><span class="material-symbols-outlined" style="color:#FCAF17; font-variation-settings:'FILL' 1;">fmd_bad</span><br><p>重要ピン</p></button>
-  <button class="all-add-contents add-linkPin"><span class="material-symbols-outlined" style="color:#FCAF17; font-variation-settings:'FILL' 1;">home_pin</span><br><p>リンク付きピン</p></button>
-  <button class="all-add-contents add-pieChart"><span class="material-symbols-outlined" style="color:green; font-variation-settings:'FILL' 1;">pie_chart</span><br><p>円グラフ</p></button>
-  <button class="all-add-contents add-barChart"><span class="material-symbols-outlined" style="color:green; font-variation-settings:'FILL' 1;">bar_chart_4_bars</span><br><p>棒グラフ</p></button>
- </div>
- <!--- 要素 (メモ・素材とか) --->
- <!--- 付箋 --->
- 
- <!--- 要素を移動ボタン ---><button class="btn-drag"><span class="material-symbols-outlined">drag_pan</span></button>
- 
+
  <div class="edit-background-cade">
   <input type="search" name="list-add-contents-search" placeholder="素材を検索..." oninput="MaterialSearch(this.value);" class="material-search-bar" style="padding:5px; margin:5px; border-radius:20px; width:90%; height:40px; border:1px solid #000;">
   <div id="all-material-cards" class="all-material-cards"></div>
@@ -235,13 +214,26 @@
     MaterialSearch("");
   </script>
  </div>
+ <!-- シンプルスタイルバー -->
+  <div class="simple-style-bar only-idea-tools">
+    <button class="color background" tooltip="色" aria-label="色を変更" onclick="" id="simpleStyle_color"><icon class="fill">circle</icon></button>
+    <button class="text-color simple-text" tooltip="テキスト色" aria-label="テキストの色を変更" onclick="" id="TextColor"><icon>format_color_text</icon></button>
+    <button class="text-bold text" tooltip="文字を強調する" aria-label="文字を強調する" onclick=""><icon>format_bold</icon></button>
+    <button class="text-bold text" tooltip="箇条書き" aria-label="箇条書きにする" onclick=""><icon>list</icon></button>
+  </div>
+
+  </div>
 <!--- ⚙️くみたて(エンジニア)モードでの追加要素 -->
 <div class="under-toolbar engineer-tools">
   <div class="mini-hint-text" id="mini-hint-textarea"></div>
   <div class="right"></div>
-  <button class="undertool-fullscreen under-tools"><span class="material-symbols-outlined">fullscreen</span></button>
+  <button class="undertool-fullscreen under-tools" aria-label="フルスクリーンにする"><icon class="btn">fullscreen</icon></button>
 </div>
 
+<div class="Eng-menu engineer-tools">
+  <div class="tab-area" id="EngMenu_TabArea"></div>
+  <div class="main-menuscreen" id="EngMenu_MainScreen"></div>
+</div>
 
  <script>
   // 読み込み中画面
@@ -251,16 +243,12 @@
   });
   // モードの初期設定
   const modeButtons = document.querySelectorAll(".mode-board .mode"); /* modeのボタンを取得 */ 
-
-   /* header */ 
-  document.querySelector(".rogo").addEventListener('click', function() { window.open("https://blue-ttt.github.io/plot/index.html", "_blank"); }); /* ホームへ移動 */
   
   /* 題名入力欄の部分 */
   const titleEdit = document.querySelector('.title-edit');titleEdit.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
   e.preventDefault(); // 改行（Enter）の動作を無効化
     }});
-
   // toolbarのボタンを押したときの処理
    // toolbar-アクティブエリア
    const toolButtons_activearea = document.querySelectorAll(".toolbar-choose-area .tools"); /* toolbarのtoolbar-choose-areaのボタンを取得 */ 
@@ -271,159 +259,133 @@
   button.addEventListener('click', function() {
    toolButtons_activearea.forEach(btn => btn.classList.remove('nowTools')); /* リセット（他のボタンには色がついているから） */ 
    this.classList.add('nowTools'); /* activeを実行  */
+
+   console.log(`現在のモード: ${nowmode}, 現在のツール: ${nowtool}`);
+
+  // --- サブツール ---
+  const subToolsHtml = document.querySelectorAll('.subTools');
+
+  if (nowtool.includes('note') || nowtool.includes('text') && nowmode.includes('eng') || nowtool.includes('pin') || nowtool.includes('material')  ) {
+
+    const thisSubToolsHtml = document.querySelector('.subTools-' + nowtool);
+
+    document.documentElement.style.setProperty('--toolbarWidth', '90px');
+    subToolsHtml.forEach(el => el.style.display = 'none');
+    if(thisSubToolsHtml){ thisSubToolsHtml.style.display = 'flex'; }
+
+  } else {
+
+    document.documentElement.style.setProperty('--toolbarWidth', '45px');
+    subToolsHtml.forEach(el => el.style.display = 'none');
+  };
+ 
     });
    toolButtons_activearea[0].classList.add('nowTools'); /* 初期のtoolが「操作」だから */
    nowtool = "move";
-   
   });
+ 
 
-  // <昔のもの>ボタンが押されたら付箋を追加(今後加工する)
-   document.querySelector(".edit-note").addEventListener('click', addStickyNote);
+  
 
   // --- モード機能 ----
   // モードの初期設定
 
   modeButtons.forEach(button => {
   // 最初のモード(ひらめきモード)を選択済みにする
-   modeButtons[1].classList.add('nowMode'); /* 初期のmodeが「編集」だから */
+   modeButtons[0].classList.add('nowMode'); /* 初期のmodeが「編集」だから */
    nowmode = "edit";
   });
   // モードを切り替える関数
   function changeMode(mode) {
 
     modeButtons.forEach(btn => btn.classList.remove('nowMode')); /* リセット（他のボタンには色がついているから） */ 
-    if (mode === 'see') {
+    if (mode === 'idea') {
       modeButtons[0].classList.add('nowMode');
-      nowmode = "move"; /* モードを「操作」にする */
-
-    } else if (mode === 'idea') {
-      modeButtons[1].classList.add('nowMode');
-      nowmode = "edit"; /* モードを「ひらめき」にする */
+      nowmode = "idea"; /* モードを「ひらめき」にする */
 
       document.body.classList.remove('PlotMode-engineer'); /* bodyのclassを「くみたてモード」にする */
       document.body.classList.add('PlotMode-idea');
 
     } else if (mode === 'engineer') {
-      modeButtons[2].classList.add('nowMode');
-      nowmode = "engineer"; /* モードを「くみたて」にする */
+      modeButtons[1].classList.add('nowMode');
+      nowmode = "eng"; /* モードを「くみたて」にする */
       
       document.body.classList.remove('PlotMode-idea');
       document.body.classList.add('PlotMode-engineer'); /* bodyのclassを「くみたてモード」にする */
 
-    } else if (mode === 'report') {
-      modeButtons[3].classList.add('nowMode');
-      nowmode = "report"; /* モードを「レポート」にする */
-    }
+    } 
     console.log(`現在のモード: ${nowmode}, 現在のツール: ${nowtool}`);
   };
+  // シンプルスタイル調節を取得(data.jsで使う)
+  const simpleStyleBar = document.querySelector('.simple-style-bar');
 
-
- /* --- canvas --- */
+ // --- canvas ---
   
-  /* 初期設定 */
+  // 初期設定
 let scale = 1.0; 
 let posX = 0;    
 let posY = 0;
-const keys = {};
+const pushKey = new Set();
 
-const content = document.getElementById("canvas");
-const Keys = {};
- 
- /* ---- 操作準備 ---- */
+const canvas = document.getElementById("canvas");
   
-  /* --- ブラウザ全体でキーの「ON/OFF」を監視する --- */
+  // --- ブラウザ全体でキーの「ON/OFF」を監視する ---
 window.addEventListener('keydown', (event) => {
-  // キーが押されたら true にする
-  keys[event.code] = true;
-});
+  const keyName = event.key.toLowerCase();
+  pushKey.add(keyName);
 
+  if (!event.repeat) {
+    const isCmd = event.metaKey;
+    const isCtrl = event.ctrlKey;
+    if(!selectElement){
+    // 画面のショートカットキー
+      if (isCmd && keyName === "v") { console.log("ペースト"); }
+      if (isCmd && keyName ==="m") { event.preventDefault(); addComent(); console.log("コメント"); }
+      if (isCmd && isCtrl && keyName === "n") { event.preventDefault(); addElement_note("#fff"); }
+      if (keyName === "F1") { event.preventDefault(); HelpDisplay(); }
+    }
+    //要素のショートカットキー
+    if (selectElement) {
+      if (keyName === "delete") { DeleteElement(); }
+      if (isCmd && keyName === "m") { event.preventDefault(); addComent(); console.log("要素コメント"); }
+      if (isCmd && keyName === "d") { event.preventDefault(); Reproduction(); }
+    }
+  }
+});
+//キーが話された時
 window.addEventListener('keyup', (event) => {
-  /* キーが離されたら false にする */
-  keys[event.code] = false;
+
+  pushKey.delete(event.key.toLowerCase());
 });
   
-/* --- 操作 --- */
+/* --- 画面の操作 --- */
   
  function update() {
  
-  if (keys["ArrowRight"]) { posX -= 10; } 
-  if (keys["ArrowLeft"])  { posX += 10; }
-  if (keys["ArrowUp"])    { posY += 10; }
-  if (keys["ArrowDown"])  { posY -= 10; }
-  if (keys["Semicolon"]) { scale += 0.01; }
-  if (keys["Minus"]) { scale -= 0.01; }
+  if (!selectElement) {
+    if (pushKey.has("arrowright")) { posX -= 10; } 
+    if (pushKey.has("arrowleft"))  { posX += 10; }
+    if (pushKey.has("arrowup"))    { posY += 10; }
+    if (pushKey.has("arrowdown"))  { posY -= 10; }
+    if (pushKey.has(";")) { scale += 0.01; scaleChange(); }
+    if (pushKey.has("-")) { scale -= 0.01; scaleChange(); }
 
-  //小さく(大きく)なりすぎ防止
-  if (scale < 0.1) scale = 0.1;
-  if (scale > 5) scale= 5;
+    //小さく(大きく)なりすぎ防止
+    if (scale < 0.1) scale = 0.1;
+    if (scale > 5) scale= 5;
 
-// cssへ書き換え
-  content.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`; /* 座標の書き換え */
-  
-  requestAnimationFrame(update);
- }
-  update(); /* 更新 */
-  
-  
-/* --- 要素 --- */
-  /* 付箋 */
-function addStickyNote(){
-  const sticky = document.createElement("div");  /* divを作成 */
-  sticky.className = "sticky-note";
-
-   /* データ */
-   const newId = `note_${Date.now()}`; /* 新しいIDを作成 */
-   const newData = {
-   "id" : newId,
-   "x" : "(poX)",
-   "y" : "(posY)",
-   "size" : "1.50",
-   "type" : "note",
-   "attributes" : {
-    "color":"#fff9c4",
-    "text-color":"#000",
-      }
-    };
-    DataList.push(newData); /* データ集に追加 */
- 
-  sticky.innerHTML = '<textarea placeholder="メモを入力..."></textarea><div class="drag"><span class="material-symbols-outlined" style="font-size:20px; background-color:#fff; cursor:move; ">drag_pan</span></div> ';
-
-  content.appendChild(sticky);
-
-   /* 付箋の移動 */
-   const handle = sticky.querySelector(".drag"); /* 移動のボタンを探す */
-  handle.addEventListener('mousedown', (e) => {
-    e.stopPropagation(); // 親（付箋）へのイベント伝達を止める
-    isDragging = true;
-   
-    /* マウスと付箋の左上の距離を計算 */
-    diffX = e.clientX - sticky.offsetLeft * scale;
-    diffY = e.clientY - sticky.offsetTop * scale;
+    // cssへ書き換え
+    if (canvas) {canvas.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;} /* 座標の書き換え */
     
-    sticky.style.zIndex = 1000;
-  });
-
-  window.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-
-    /* スケールを考慮して位置を更新 */
-    const newX = (e.clientX - diffX) / scale;
-    const newY = (e.clientY - diffY) / scale;
-
-    sticky.style.left = `${newX}px`;
-    sticky.style.top = `${newY}px`;
-  });
-  window.addEventListener('mouseup', () => {
-    isDragging = false; /* マウスを離したら終了 */
-    sticky.style.zIndex = 10;
-  });
- } /* 付箋コードここまで */
+  
+  }
+  requestAnimationFrame(update);
+ };
+  update();
    
  </script>
 </body>
- <script src="https://blue-ttt.github.io/plot/program/core/function.js"></script>
  <script>
-  /* 言語のやつの関数 */
   i18nStart();
  </script>
 </html>

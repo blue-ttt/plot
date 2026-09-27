@@ -2,20 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block');
 
 body{ font-family: "M PLUS Rounded 1c", sans-serif; color:#000;}
-a{ font-family: "M PLUS Rounded 1c", sans-serif; }
 button{ cursor:pointer; }
+input:focus, select:focus{ border:1px solid #FCAF17; }
+:focus-visible { outline: 1px solid #FCAF17 !important; border: none !important; }
+:root{ --background-color:#fff; --hover:#e0e0e0bf; --color:#000; --shadow:#afafaf; --yellowback:#FFF9E6; --yellow-hover:#f2e9d7; }
+*, *::before, *::after{ box-sizing: border-box; }
 
 .material-symbols-outlined { font-variation-settings:'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; padding:0; margin:0; }
+.material-symbols-outlined.fill { font-variation-settings:'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; padding:0; margin:0; }
 .text-link a{ color:#FCAF17; text-decoration:none; }
 .text-link a:hover{ text-decoration:underline; }
 .text-link a:active{ text-decoration:underline; background-color:#bdbdbd;}
 a.text-link{ color:#FCAF17; text-decoration:none; }
 a.text-link:hover{ text-decoration:underline; }
 a.text-link:active{ text-decoration:underline; background-color:#bdbdbd;}
+/* アイコン */
+icon{ display: inline-block; font-family: 'Material Symbols Outlined'; font-size: 24px; font-variation-settings:'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+icon.btn{ cursor: pointer; }
+icon.fill{ font-variation-settings: 'FILL' 1; }
+/* 詳細画面 */
+InfoCade{ display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 5px; margin: 0; background-color: var(--background-color); color: var(--color); }
 
-h1{ color:#FCAF17;}
-h2{ color:#FCAF17; }
-h3{ color:#FCAF17; }
+
+h1, h2, h3{ color:#FCAF17;}
+.maincolor{ color:#FCAF17; }
 
 /* 実行しますか？ はい/いいえ のやつ */
 .QuestionCade{ background-color:#fff; width:300px; height:300px; z-index:500; position:fixed; top:calc(50% - 150px); left:calc(50% - 150px); }
@@ -25,11 +35,12 @@ h3{ color:#FCAF17; }
 .btn-QuestionCancel:active{ background-color:#f5f5f5; transform:scale(0.9); }
 
 /* 閉じるボタン */
-.btn-close{ width:50px; height:50px; border-radius:50%; background:none; border:none; align-items:center; justify-content:center; }
-.btn-close:hover{ background-color:#f5f5f5; }
+.btn-close{ width:50px; height:50px; position: 0; margin: 0; color: var(--color); border-radius:50%; background:none; border:none; align-items:center; justify-content:center; }
+.btn-close:hover{ background-color:var(--hover); }
 /* 戻るボタン */
-.btn-back{ background:none; border:none; border-radius:5px; width:80px; height:40px; padding:0; margin:0; display:flex; flex-direction:row; align-items:center; justify-content:center; }
-.btn-back:hover{ background-color:#f5f5f5; }
+.btn-back{ background:none; border:none; border-radius:5px; width:80px; height:40px; color: var(--color); padding:0; margin:0; display:flex; flex-direction:row; align-items:center; justify-content:center; }
+.btn-back:hover{ background-color:var(--hover); }
+.btn-delete:hover{ background-color: #f0d3ce !important; }
 
 /* スクロールバーを非表示にする */
 .scrollbar-hidden{ scrollbar-width: none;/* Fierfox用 */ -ms-overflow-style: none;/* IE,Edgs用 */ }
@@ -40,3 +51,6 @@ h3{ color:#FCAF17; }
     top:0; left:0; transform: translate(calc(var(--mouse-x) * 1px - 50% + 10px), calc(var(--mouse-y) * 1px - 50% + var(--UpOrUnder) ));
     visibility: hidden; display: flex; flex-direction:row; justify-content:center; align-items:center; flex-wrap: nowrap; color:#fff; font-size:10px; background-color:#00000080; width: max-content; height:20px; padding:2px 5px; border-radius: 10px; z-index:1000; }
 [tooltip]:hover::after { opacity: 1; visibility: visible; }
+/* ダークモード */
+body.dark-screen{ --background-color:#373331 !important; --hover:#8A8C8E; --color:#fff !important; --shadow:#afafaf !important; --yellowback:#a49983; --yellow-hover:#827d72 !important; }
+body.dark-screen .btn-delete:hover{ background-color: #b70000 !important; }
