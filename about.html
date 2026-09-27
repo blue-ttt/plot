@@ -3,10 +3,67 @@
 <head>
  <meta charset="UTF-8">
  <title>plot 誰もが小さなアイディアを大きな創造に</title>
- <link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/style.css">
+ <link rel="stylesheet" href="program/style.css">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <script src="https://blue-ttt.github.io/plot/program/fetch.js"></script>
- <script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>
+ <script src="program/fetch.js"></script>
+ <script src="program/i18n.js"></script>
+ <style>
+  body{ padding:0; margin:0; padding-top:50px; }
+  header{ display: block; width:100vw; background-color: #fff;padding:0; margin:0; position: fixed; top: 0; z-index:200; }
+  .header{ background-color:#FCAF17; width:60%; border-radius:30px; padding:5px; margin:auto; display:flex; flex-direction:column; align-items:center; justify-content:center; position: fixed; top: 5px; left:50%; transform: translateX(-50%); }
+  .head-infolink{ padding:0; margin:0 10px; color:#fff; text-decoration:none; }
+  .head-infolink:hover{ text-decoration:underline; }
+  .head-makebtn{ display:inline-block; height:20px; padding:10px; margin:0 15px; background-color:#fff; color:#FCAF17; border-radius:30px; text-decoration:none; }
+  .header:hover .header-more-text{ display:flex; }
+  .header-more-text{ display:none; flex-direction:row; align-items:center; justify-content:center; }
+  .header-more-text-textbox{ display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .header-question{ flex:1; }
+  .header-question hr{ width:80%; padding:0; margin:5px auto; height:0; border-top:1px solid #797773; }
+  .header-main{ display: flex; flex-direction: row; justify-content: center; align-items: center; }
+
+  .header-link{ flex:1; }
+  .header-link p{ font-size:10px; margin:0; padding:0; margin-left:10px; }
+  .header-text-link{ text-decoration:underline; color:#fff; }
+  
+  .title-area{ padding:0; margin:20px; margin-top: 100px; display:flex; flex-direction:column; }
+  .title1{ color:#F067A6; font-size:50px; padding:0; margin:0; }
+  .title2{ color:#000; font-size:30px; display:flex; align-items:center; }
+  .title3{ font-size:50px; padding:0; margin:0; background:linear-gradient(to right, #4facfe 0%, #00f2fe 100%); -webkit-background-clip:text; background-clip:text;/*文字へ切り抜く*/ color:transparent; }
+  .title-idea{ display:flex; flex-direction:column; }
+  .title-souzou{ display:flex; flex-direction:column; }
+  .title_textarea{ padding:0; margin:0; display:flex; flex-direction:row; }
+  .title_video{ width:300px; border-radius:10px; box-shadow:1px 1px 10px 2px #8A8C8E; margin-left: auto; }
+  .text1{ margin:0px 5px; padding: 0; color: #797773; }
+  .btn-now-make{ display:flex; flex-direction: row; align-items: center; justify-content: center; background-color: #FCAF17; text-decoration: none; color:#fff; border-radius: 20px; width:300px; height:70px; padding: none; margin: 10px 5px; box-shadow: 0px 2px 5px 2px #8A8C8E; }
+
+  .index{ background-color:#fff; padding:10px; margin:0; }
+  .index2_cade_board{ padding:10px 20px; display:flex; flex-direction:row; }
+
+  .index1{ display:flex; flex-direction: column; }
+  .index1-cades{ display: flex; flex-direction: row; align-items: center; justify-content: center; padding:0; margin:5px 10px; width:100%; }
+  .index1 .cade{ display: flex; flex-direction: column; justify-content: center; flex:1; margin:5px 10px; padding:5px 20px; background-color:aliceblue; }
+  .index1 .cade-title{ color:#FCAF17; margin:10px 5px !important; }
+  .index1 .cade-title{ font-size: 20px; }
+  .index1 .cade p{margin:0 5px;}
+  .index1 .mini-text{ color:#797773; font-size: 15px; margin:5px; }
+  .index1 hr{width:95%; }
+  
+  .index2{ position:sticky; top:0px; z-index:100; }
+  .index2_cade{ display:flex; flex-direction:column; align-items:center; justify-content:center; padding:10px; margin:15px; box-shadow:0px 0px 10px 2px var(--shadowColor); border-radius:20px; height:300px; color:#fff; border:1px solid #fff; z-index:5; transition:all 0.2s ease-in-out; }
+  .index2_cade b{ font-size:40px; }
+  .index2_cade p{ font-size:20px; }
+  .index2_cade .material-symbols-outlined{ background-color:#fff; font-size:50px; padding:5px; margin:0; border-radius:50%; }
+  .index2_cade:hover{ transform:translateY(-5px); box-shadow:0px 3px 10px 2px var(--shadowColor); z-index:5; }
+
+  .index3{ display: flex; flex-direction: row; align-items: center; }
+  .index3 svg{ margin:0 10px; }
+
+  @media(max-width:768px){
+   .index{ background-color:#fff; padding:5px; margin:0; }
+   .index2_cade{ width:90% !important; }
+   .index2_cade_board{ padding:10px; display:flex; flex-direction:column; }
+  }
+ </style>
 </head>
 <body>
  <header>
@@ -33,78 +90,80 @@
     <p>A：無料です！追加料金もなく基本的に無制限に使えます。</p>
     <hr>
     <p>Q：高度な技術の知識がないのですが</p>
-    <p>A：大丈夫です。簡単な操作で直感的に思いついたことを形にできます。</p>
+    <p>A：大丈夫です。簡単な操作でノートのように直感的に思いついたことを形にできます。</p>
     <hr>
     <p>Q：大まかに作った後、詳細をカスタマイズしたいのですが、この切り替えは可能ですか？</p>
-    <p>A：可能です！直感操作のプロッティングモードから細かいところまで正確に設計できるエンジニアモードへ途中変更可能です。</p>
+    <p>A：可能です！直感操作の「ひらめき」モードから細かいところまで正確に設計できる「くみたて」モードへ途中変更可能です。</p>
     </div>
    </div>
  </header>
  
- <div class="title">
+ <div class="title-area">
   <div class="title_textarea">
-   <span class="title-idea"><span>小さな</span><span class="title1"> 思いつき</span></span>
+   <span class="title-idea"><span>1％の</span><span class="title1"> 思いつき</span></span>
    <span class="title2">を</span>
-   <span class="title-souzou"><span>大きな</span><span class="title3"> 創造へ</span></span>
+   <span class="title-souzou"><span>９９％の</span><span class="title3"> 創造へ</span></span>
   </div>
   <div class="title_video"><video src="" loop autoplay muted playsinline poster="https://blue-ttt.github.io/plot/data/plot-icon.png"></video></div>
+  <p class="text1">まず<a href="">利用規約</a>へ同意して、利用してね！</p>
+  <a href="" class="btn-now-make">今すぐ作成！</a>
  </div>
- 
+<div class="index1">
+  <h1>ここは限界の壁が壊れた自由なキャンバス</h1>
+  <p style="margin:0 10px; margin-top: 5px;">今までのアイデア・設計の限界</p>
+  <div class="index1-cades">
+  <div class="cade">
+    <p class="cade-title">ノート</p><hr>
+    <li>すぐに書き込める</li><hr>
+    <p class="mini-text">だけど...</p><hr>
+    <li>端がある</li><hr>
+    <li>アナログで不便</li><hr>
+  </div>
+  <div class="cade">
+    <p class="cade-title">メモソフト</p><hr>
+    <li>操作がシンプル</li><hr>
+    <p class="mini-text">だけど</p><hr>
+    <li>機能が少ない</li><hr>
+    <li>共有が不便</li><hr>
+  </div>
+  <div class="cade">
+    <p class="cade-title">高度なキャンバスソフト</p><hr>
+    <li>高機能で拡張しやすい</li><hr>
+    <p class="mini-text">だけど</p><hr>
+    <li>操作が難しい</li><hr>
+    <li>アイデアを広げられない</li><hr>
+  </div>
+  </div>
+  <p>今、これらの<span class="maincolor">壁が消え</span>ます</p>
+  <p>同時に<span class="maincolor">メリットが一体化</span>します</p>
+</div>
+
+
  <div>
-  <h1 class="index index1">これまでにない<b>アイデア</b>を作る</h1>
-  <div class="index1_cade_board">
-   <div class="index1_cade" style="width:40%; background-color:#F75252; --shadowColor:#FF8181;"><span class="material-symbols-outlined" style="color:#F75252;">fullscreen</span><b>無限なスペース</b><p>端のないノートやボードでアイデアを無限に広げましょう</p></div>
-   <div class="index1_cade" style="width:50%; background-color:#F8AB21; --shadowColor:#FFBB41;"><span class="material-symbols-outlined" style="color:#F8AB21;">category</span><b>豊富なツール</b><p>ボードやノートだけでなく、人気の思考ツールや2D空間デザイン、目標作りなど簡単に書き込めます</p></div>
+  <h1 class="index index2">plotだからこそ、こんなにできる!</h1>
+  // (plotのイメージマップなどを使ってまとめる)
+  <div class="index2_cade_board">
+   <div class="index2_cade" style="width:40%; background-color:#F75252; --shadowColor:#FF8181;"><span class="material-symbols-outlined" style="color:#F75252;">fullscreen</span><b>無限なスペース</b><p>端のないノートやボードでアイデアを無限に広げましょう</p></div>
+   <div class="index2_cade" style="width:50%; background-color:#F8AB21; --shadowColor:#FFBB41;"><span class="material-symbols-outlined" style="color:#F8AB21;">category</span><b>豊富なツール</b><p>ボードやノートだけでなく、人気の思考ツールや2D空間デザイン、目標作りなど簡単に書き込めます</p></div>
   </div>
-  <div class="index1_cade_board">
-   <div class="index1_cade" style="width:50%; background-color:#43E73B; --shadowColor:#5FFD57;"><span class="material-symbols-outlined" style="color:#43E73B;">fullscreen</span><b>理想的な素材</b><p>設計図を詳しく、わかりやすく、高品質にできます。説得力を持たせるグラフからカスタマイズできる図形、飾りまで。</p></div>
-   <div class="index1_cade" style="width:40%; background-color:#3BB4F3; --shadowColor:#48C0FF;"><span class="material-symbols-outlined" style="color:#3BB4F3;">bolt_boost</span><b>瞬間でデザイン</b><p>高品質かつ低容量なファイルで、瞬間に作成・保存が可能</p></div>
+  <div class="index2_cade_board">
+   <div class="index2_cade" style="width:50%; background-color:#43E73B; --shadowColor:#5FFD57;"><span class="material-symbols-outlined" style="color:#43E73B;">fullscreen</span><b>理想的な素材</b><p>設計図を詳しく、わかりやすく、高品質にできます。説得力を持たせるグラフからカスタマイズできる図形、飾りまで。</p></div>
+   <div class="index2_cade" style="width:40%; background-color:#3BB4F3; --shadowColor:#48C0FF;"><span class="material-symbols-outlined" style="color:#3BB4F3;">bolt_boost</span><b>瞬間でデザイン</b><p>高品質かつ低容量なファイルで、瞬間に作成・保存が可能</p></div>
   </div>
  </div>
+
+ <div>
+  <h1 class="index index3">あなたが<svg width="200px" height="100%" viewBox="0 0 2082 337" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g transform="matrix(1,0,0,1,-199.48682,-1071.988267)"><g transform="matrix(1,0,0,1,-18957.535433,0)"><g transform="matrix(0.216315,0,0,0.216315,18946.628004,1116.610289)"><g transform="matrix(1662.947697,0,0,1662.947697,11065.059385,1027.624421)"></g><text x="788.043px" y="1027.624px" style="font-family:'HanziPenSC-W3', 'HanziPen SC', cursive;font-size:1662.948px;fill:url(#_Linear1);">やりたいこと</text></g></g></g><defs><linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(9621.815373,0,0,1554.856096,972.629814,571.145279)"><stop offset="0" style="stop-color:rgb(255,0,217);stop-opacity:1"/><stop offset="0.73" style="stop-color:rgb(255,124,50);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(255,131,0);stop-opacity:1"/></linearGradient></defs></svg>は、なんですか？</h1>
+  <p>どんな作業も、plotでレベルアップ</p>
+  <div></div>
+ </div>
+
+ <h1 class="index">みんなのために。</h1>
+ <p>学生でも使いやすく</p>
+ <p>クリエイターのために拡張できるように</p>
  
  <footer><div id="footer"></div></footer>
- <style>
-  body{ padding:0; margin:0; padding-top:50px; }
-  header{ width:100vw; }
-  .header{ background-color:#FCAF17; width:60%; border-radius:30px; padding:5px; margin:auto; display:flex; flex-direction:column; align-items:center; justify-content:center; position:fixed; top:5px; left:20%; z-index:200; }
-  .head-infolink{ padding:0; margin:0 10px; color:#fff; text-decoration:none; }
-  .head-infolink:hover{ text-decoration:underline; }
-  .head-makebtn{ display:inline-block; height:20px; padding:10px; margin:0 15px; background-color:#fff; color:#FCAF17; border-radius:30px; text-decoration:none; }
-  .header:hover .header-more-text{ display:flex; }
-  .header-more-text{ display:none; flex-direction:row; align-items:center; justify-content:center; }
-  .header-more-text-textbox{ display:flex; flex-direction:column; align-items:center; justify-content:center; }
-  .header-question{ flex:1; }
-  .header-question hr{ width:80%; padding:0; margin:5px auto; height:0; border-top:1px solid #797773; }
-
-  .header-link{ flex:1; }
-  .header-link p{ font-size:10px; margin:0; padding:0; margin-left:10px; }
-  .header-text-link{ text-decoration:underline; color:#fff; }
-  
-  .title{ padding:0; margin:20px; display:flex; flex-direction:row; }
-  .title1{ color:#F067A6; font-size:50px; padding:0; margin:0; }
-  .title2{ color:#000; font-size:30px; display:flex; align-items:center; }
-  .title3{ font-size:50px; padding:0; margin:0; background:linear-gradient(to right, #4facfe 0%, #00f2fe 100%); -webkit-background-clip:text; background-clip:text;/*文字へ切り抜く*/ color:transparent; }
-  .title-idea{ display:flex; flex-direction:column; }
-  .title-souzou{ display:flex; flex-direction:column; }
-  .title_textarea{ padding:0; margin:0; display:flex; flex-direction:row; }
-  .title_video{ width:300px; border-radius:10px; box-shadow:1px 1px 10px 2px #8A8C8E; }
-
-  .index{ background-color:#fff; padding:10px; margin:0; }
-  .index1_cade_board{ padding:10px 20px; display:flex; flex-direction:row; }
-  
-  .index1{ position:sticky; top:0px; z-index:100; }
-  .index1_cade{ display:flex; flex-direction:column; align-items:center; justify-content:center; padding:10px; margin:15px; box-shadow:0px 0px 10px 2px var(--shadowColor); border-radius:20px; height:300px; color:#fff; border:1px solid #fff; z-index:5; transition:all 0.2s ease-in-out; }
-  .index1_cade b{ font-size:40px; }
-  .index1_cade p{ font-size:20px; }
-  .index1_cade .material-symbols-outlined{ background-color:#fff; font-size:50px; padding:5px; margin:0; border-radius:50%; }
-  .index1_cade:hover{ transform:translateY(-5px); box-shadow:0px 3px 10px 2px var(--shadowColor); z-index:5; }
-
-  @media(max-width:768px){
-   .index{ background-color:#fff; padding:5px; margin:0; }
-   .index1_cade{ width:90% !important; }
-   .index1_cade_board{ padding:10px; display:flex; flex-direction:column; }
-  }
- </style>
+ 
  <script>
   i18nStart();
  </script>

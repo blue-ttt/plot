@@ -4,51 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>plot 誰もが小さなアイディアを大きな創造に</title>
-  <link rel="icon" href="https://blue-ttt.github.io/plot/data/plot-icon.png">
-  <link rel="stylesheet" href="https://blue-ttt.github.io/plot/program/style.css">
-  <script src="https://blue-ttt.github.io/plot/program/fetch.js"></script>
-  <script src="https://blue-ttt.github.io/plot/program/i18n.js"></script>
-</head>
-
-<body>
-  <nav><div id="navi"></div></nav>
- <div class="allcenter">
-  <h1 class="i18n">プロットへようこそ | Welcome to the Plot</h1>
-  <h2 class="i18n">新しいアイデアを形にしましょう！ | Let's turn new ideas into reality !</h2>
-  <div class="make-new-plots">
-   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-blank" style="color:#000; background-color:#f5f5f5;"><span class="material-symbols-outlined">new_window</span></button><p class="i18n">空白 | originality</p></div>
-   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-whiteboard" style="color:#000; background-color:#FFF1AB;"><span class="material-symbols-outlined">jamboard_kiosk</span></button><p class="i18n">ホワイトボード | whiteboard</p></div>
-   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-whiteboard" style="color:#fff; background-color:#6495ED;"><span class="material-symbols-outlined">menu_book</span></button><p class="i18n">ノート | notebook</p></div>
-   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-bulletinboard" style="color:#fff; background-color:#9A6229;"><span class="material-symbols-outlined">dashboard</span></button><p class="i18n">掲示板 | bulletin board</p></div>
-   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-thinkingtools" style="color:#fff; background-color:#C77EB5;"><span class="material-symbols-outlined">category</span></button><p class="i18n">思考ツール | thinking tools</p></div>
-   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-spacedesign" style="color:#fff; background-color:#00AE95;"><span class="material-symbols-outlined">meeting_room</span></button><p class="i18n">空間デザイン | Spatial design</p></div>
-   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-thinkingtools" style="color:#fff; background-color:#007B49;"><span class="material-symbols-outlined">flowchart</span></button><p class="i18n">技術 | technology</p></div>
-   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-roadmap" style="color:#fff; background-color:#FBB034;"><span class="material-symbols-outlined">route</span></button><p class="i18n">ロードマップ | roadmap</p></div>
-   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-more" style="color:#000; background-color:#f5f5f5;"><span class="material-symbols-outlined">more_horiz</span></button><p class="i18n">もっと見る | see more</p></div>
-  </div>
- </div>
-  
-  <h3 class="i18n">ピックアップ | Pickup</h3>
-  <div class="imgcursor">
-    <button class="imgcursor-leftcursor" data-tooltip="前のピックアップへ"><span class="material-symbols-outlined">chevron_left</span></button>
-    <button class="imgcursor-rightcursor" data-tooltip="次のピックアップへ"><span class="material-symbols-outlined">chevron_right</span></button>
-    <div class="imgcursor-imgs">
-    <div class="imgcursor-contents"><a href="https://blue-ttt.github.io/plot/program/footer"><img src="https://blue-ttt.github.io/plot/data/plot-ad1.png"></a></div>
-    <div class="imgcursor-contents"><a href="https://blue-ttt.github.io/plot/program/footer"><img src="https://blue-ttt.github.io/plot/data/plot-ad1.png"></a></div>
-    <div class="imgcursor-contents"><a href="https://blue-ttt.github.io/plot/program/footer"><img src="https://blue-ttt.github.io/plot/data/plot-ad1.png"></a></div>
-    <div class="imgcursor-contents"><a href="https://blue-ttt.github.io/plot/program/footer"><img src="https://blue-ttt.github.io/plot/data/plot-ad1.png"></a></div>
-   </div>
-  </div>
-  <hr style="width:90%;">
-  <h3 class="i18n">最近 形にしたアイデア | Ideas I've recently brought to fruition</h3>
-  <a href="https://blue-ttt.github.io/plot/myplot.html" class="i18n">もっと見る | see more</a>
-  <hr style="width:90%;">
-  
-   <footer>
-    <a href="" data-tooltip="ページ上へ戻る" class="back-to-top"><img src="https://blue-ttt.github.io/plot/data/plot-BackToTop.png" alt="ページ上に戻る" style="width:100px; height:auto;"></a>
-    <div id="footer"></div>
-   </footer>
- <style>
+  <link rel="icon" href="data/plot-icon.png">
+  <link rel="stylesheet" href="program/style.css">
+  <script src="program/fetch.js"></script>
+  <script src="program/i18n.js"></script>
+  <style>
    body{ margin:0; padding-left:70px;/* navの分開ける */ }
    .allcenter{ display:flex; flex-direction:column; justify-content:center; align-items:center;  }
    .back-to-top{ position:fixed; right:30px; bottom:30px; z-index:240; }
@@ -58,11 +18,9 @@
    .make-new-plots{ display:flex; flex-direction:row; padding:0; flex-wrap:wrap; }
    .make-new-plots p{ font-size:10px; }
 
-   .imgcursor-contents img{ width:300px; height:auto; padding:0; margin:5px; }
-   .imgcursor-imgs{ display:flex; flex-direction:row; transition:all 0.5s ease-in-out; overflow:hidden; overflow-x:auto; }
-   
-   footer{ margin:0; padding:0; width:100%; }
-   nav{ position:fixed; left:0; margin:0; }
+   .noplot{ margin: 5px; width:100%; display:flex; flex-direction: column; justify-content:center; align-items: center; }
+   .noplot img{ width:100px; height:100px; margin:5px; padding:0; }
+   .noplot button{ width:200px; height:40px; background-color:#FCAF17; color:#fff; border:none; box-shadow:0 0 10px 2px #d5c29b; border-radius:10px; display:flex; flex-direction:row; justify-content:center; align-items:center; }
     
   @media(max-width:768px){
     body{ padding-left:0; padding-bottom:50px;/*navの左余白を消し,下に作る*/ }
@@ -70,5 +28,43 @@
     .back-to-top{ position:fixed; right:10px; bottom:35px; z-index:240; }
     }
   </style>
+</head>
+<body>
+  <nav><div id="navi"></div></nav>
+ <div class="allcenter">
+  <h1 class="i18n">プロットへようこそ | Welcome to the Plot</h1>
+  <h2 class="i18n">新しいアイデアを形にしましょう！ | Let's turn new ideas into reality !</h2>
+  <div class="make-new-plots">
+   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-blank" style="color:#000; background-color:#f5f5f5;"><icon class="btn">new_window</icon></button><p class="i18n">空白 | originality</p></div>
+   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-whiteboard" style="color:#000; background-color:#FFF1AB;"><icon class="btn">jamboard_kiosk</icon></button><p class="i18n">ホワイトボード | whiteboard</p></div>
+   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-whiteboard" style="color:#fff; background-color:#6495ED;"><icon class="btn">menu_book</icon></button><p class="i18n">ノート | notebook</p></div>
+   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-bulletinboard" style="color:#fff; background-color:#9A6229;"><icon class="btn">dashboard</icon></button><p class="i18n">掲示板 | bulletin board</p></div>
+   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-thinkingtools" style="color:#fff; background-color:#C77EB5;"><icon class="btn">category</icon></button><p class="i18n">思考ツール | thinking tools</p></div>
+   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-spacedesign" style="color:#fff; background-color:#00AE95;"><icon class="btn">meeting_room</icon></button><p class="i18n">空間デザイン | Spatial design</p></div>
+   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-thinkingtools" style="color:#fff; background-color:#007B49;"><icon class="btn">flowchart</icon></button><p class="i18n">技術 | technology</p></div>
+   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-roadmap" style="color:#fff; background-color:#FBB034;"><icon class="btn">route</icon></button><p class="i18n">ロードマップ | roadmap</p></div>
+   <div class="make-new-plots-BtnAndText"><button class="btn-make-plot make-plot-more" style="color:#000; background-color:#f5f5f5;"><icon class="btn">more_horiz</icon></button><p class="i18n">もっと見る | see more</p></div>
+  </div>
+ </div>
+  
+  <h3 class="i18n">最近 形にしたアイデア | Ideas I've recently brought to fruition</h3>
+  <div id="MyPlots"><div id="noPlot" class="noplot"><img src="data/plot-none.svg"></img><p>まだプロットが作られていないよ</p><button>とりあえず始めてみる?!<icon class="btn" style="margin-left: 5px;">play_circle</icon></button></div></div>
+
+  <hr style="width:90%;">
+  <h3>Plot Discover</h3>
+  
+   <footer>
+    <a href="" data-tooltip="ページ上へ戻る" class="back-to-top"><img src="data/plot-BackToTop.png" alt="ページ上に戻る" style="width:100px; height:auto;"></a>
+    <div id="footer"></div>
+   </footer>
+ <script>
+  const MyPlot_data = '';
+  if (MyPlot_data){
+
+  } else {
+    document.getElementById('noPlot').style.display = 'flex';
+  };
+  i18nStart();
+ </script>
 </body>
 </html>
